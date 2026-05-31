@@ -1,0 +1,116 @@
+<main class="compliance-page" id="top">
+  <section class="compliance-hero" aria-labelledby="compliance-page-title">
+    <div class="compliance-hero-copy">
+      <p class="section-kicker">EU trade readiness</p>
+      <h1 id="compliance-page-title">Compliance-aware exports from India to Europe.</h1>
+      <p>
+        Shoppingmart Exports prepares sourcing conversations with EU buyer expectations in mind:
+        data protection, origin records, customs documents, product standards, and transparent shipment files.
+      </p>
+      <div class="compliance-hero-actions">
+        <a class="button primary" href="#readiness">View readiness model</a>
+        <button class="button tertiary" type="button" (click)="toggleChecklist()">
+          {{ showChecklist ? 'Hide checklist' : 'Open checklist' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="trade-visual" aria-label="Animated trade route from India to Europe">
+      <div class="globe">
+        <div class="latitude latitude-one"></div>
+        <div class="latitude latitude-two"></div>
+        <div class="longitude longitude-one"></div>
+        <div class="longitude longitude-two"></div>
+        <div class="route-arc"></div>
+        <div class="route-pulse pulse-one"></div>
+        <div class="route-pulse pulse-two"></div>
+        <div class="map-node india-node">
+          <span>India</span>
+        </div>
+        <div class="map-node europe-node">
+          <span>Europe</span>
+        </div>
+      </div>
+      <div class="compliance-strip">
+        <span>Origin</span>
+        <span>Customs</span>
+        <span>GDPR</span>
+        <span>Standards</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="agreement-band" aria-labelledby="agreement-title">
+    <div>
+      <p class="section-kicker">Current agreement status</p>
+      <h2 id="agreement-title">EU-India FTA negotiations are concluded, but legal finalization still matters.</h2>
+    </div>
+    <p>
+      The European Commission states that FTA negotiations concluded on 27 January 2026. The published text is
+      informational, may still be legally revised, and becomes binding only after signature and each side completes
+      the required internal procedures. We use that status as a planning signal, not as a shortcut around compliance.
+    </p>
+  </section>
+
+  <section class="section compliance-pillars" id="readiness" aria-labelledby="readiness-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">How we work</p>
+        <h2 id="readiness-title">A practical compliance model for export enquiries.</h2>
+      </div>
+      <p>
+        We do not treat compliance as a final paperwork step. It starts at product selection, supplier qualification,
+        market fit, and order documentation.
+      </p>
+    </div>
+
+    <div class="pillar-grid">
+      @for (pillar of pillars; track pillar.title) {
+        <article class="pillar-card">
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="checklist-section" aria-labelledby="checklist-title">
+    <div class="checklist-panel">
+      <div>
+        <p class="section-kicker">Interactive checkpoint</p>
+        <h2 id="checklist-title">Buyer-ready compliance checklist.</h2>
+        <p>
+          Expand this checklist during an enquiry call to keep the discussion concrete and evidence-led.
+        </p>
+        <button class="button tertiary" type="button" (click)="toggleChecklist()">
+          {{ showChecklist ? 'Collapse checklist' : 'Expand checklist' }}
+        </button>
+      </div>
+
+      <div class="checklist-items" [class.is-open]="showChecklist">
+        @for (item of readinessItems; track item.label) {
+          <article>
+            <h3>{{ item.label }}</h3>
+            @if (showChecklist) {
+              <p>{{ item.details }}</p>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section source-section" aria-labelledby="sources-title">
+    <div>
+      <p class="section-kicker">Official references</p>
+      <h2 id="sources-title">Trade status checked against official sources.</h2>
+    </div>
+    <div class="source-grid">
+      @for (source of sourceLinks; track source.href) {
+        <a href="{{ source.href }}" target="_blank" rel="noopener noreferrer">
+          {{ source.label }}
+        </a>
+      }
+    </div>
+  </section>
+</main>

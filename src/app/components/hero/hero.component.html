@@ -1,0 +1,27 @@
+<section class="hero" aria-labelledby="hero-title">
+  <img
+    class="hero-image"
+    src="hero-container-ship.jpeg"
+    alt="Cargo containers moving across the ocean on an international trade route"
+  >
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Global sourcing from India</p>
+    <h1 id="hero-title">Shoppingmart Exports</h1>
+    <p class="hero-copy">
+      A modern export partner for verified products, clear documentation, and shipment-ready trade workflows.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#quote">Start an enquiry</a>
+      <a class="button secondary" href="#products">Explore categories</a>
+    </div>
+    <dl class="hero-metrics" aria-label="Export service highlights">
+      @for (metric of metrics; track metric.label) {
+        <div>
+          <dt>{{ metric.label }}</dt>
+          <dd>{{ metric.value }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>

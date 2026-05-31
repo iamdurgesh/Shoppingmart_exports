@@ -1,0 +1,24 @@
+<section class="section process-section" id="process" aria-labelledby="process-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Operating flow</p>
+      <h2 id="process-title">A clear path from enquiry to shipment readiness.</h2>
+    </div>
+    <p>
+      Every order moves through visible checkpoints, so importers know what is being sourced, checked,
+      documented, and prepared for dispatch.
+    </p>
+  </div>
+
+  <ol class="timeline">
+    @for (step of steps; track step.number) {
+      <li>
+        <span>{{ step.number }}</span>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </li>
+    }
+  </ol>
+</section>

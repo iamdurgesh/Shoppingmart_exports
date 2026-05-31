@@ -1,0 +1,36 @@
+<header class="site-header" [class.is-scrolled]="isScrolled" [class.is-open]="isMenuOpen">
+  <a class="brand" routerLink="/" aria-label="Shoppingmart Exports home" (click)="closeMenu()">
+    <span class="brand-mark">SE</span>
+    <span>
+      <strong>Shoppingmart</strong>
+      <small>Exports</small>
+    </span>
+  </a>
+
+  <button
+    class="menu-button"
+    type="button"
+    [attr.aria-expanded]="isMenuOpen"
+    aria-controls="site-nav"
+    (click)="toggleMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Open navigation</span>
+  </button>
+
+  <nav class="site-nav" id="site-nav" [class.is-open]="isMenuOpen">
+    @for (item of navItems; track item.label) {
+      <a
+        [routerLink]="item.routerLink"
+        [fragment]="item.fragment"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: item.routerLink === '/compliance' }"
+        (click)="closeMenu()"
+      >
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</header>

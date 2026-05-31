@@ -1,0 +1,22 @@
+<section class="section products-section" id="products" aria-labelledby="products-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Export categories</p>
+      <h2 id="products-title">Built around products buyers can reorder.</h2>
+    </div>
+    <p>
+      Start with priority product lines, then expand into custom sourcing once the documentation and quality
+      expectations are aligned.
+    </p>
+  </div>
+
+  <div class="product-grid">
+    @for (category of productCategories; track category.number) {
+      <article class="product-card">
+        <span class="product-icon">{{ category.number }}</span>
+        <h3>{{ category.title }}</h3>
+        <p>{{ category.description }}</p>
+      </article>
+    }
+  </div>
+</section>
