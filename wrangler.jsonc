@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "shoppingmart-exports",
+  "main": "./worker/index.mjs",
+  "compatibility_date": "2026-06-02",
+  "assets": {
+    "directory": "./dist/shoppingmart-exports/browser",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "observability": {
+    "enabled": false
+  }
+}
