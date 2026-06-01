@@ -1,0 +1,48 @@
+<section class="quote-section" id="quote" aria-labelledby="quote-title">
+  <div class="quote-panel">
+    <div class="quote-copy">
+      <p class="section-kicker">Basic feature</p>
+      <h2 id="quote-title">Create a quick export enquiry profile.</h2>
+      <p>
+        Select the starting details and the page will suggest the next operational focus for your enquiry.
+        No data is sent anywhere in this first version.
+      </p>
+    </div>
+
+    <form class="quote-form" #quoteForm="ngForm" (ngSubmit)="prepareEnquiry()">
+      <label>
+        Destination market
+        <select name="market" [(ngModel)]="enquiry.market" required>
+          @for (market of markets; track market) {
+            <option [value]="market">{{ market }}</option>
+          }
+        </select>
+      </label>
+      <label>
+        Product category
+        <select name="category" [(ngModel)]="enquiry.category" required>
+          @for (category of categories; track category) {
+            <option [value]="category">{{ category }}</option>
+          }
+        </select>
+      </label>
+      <label>
+        Shipment size
+        <select name="volume" [(ngModel)]="enquiry.volume" required>
+          @for (volume of volumes; track volume.value) {
+            <option [value]="volume.value">{{ volume.label }}</option>
+          }
+        </select>
+      </label>
+      <button class="button primary full-width" type="submit" [disabled]="quoteForm.invalid">
+        Prepare enquiry summary
+      </button>
+    </form>
+
+    <aside class="quote-result" aria-live="polite">
+      <span class="result-label">Recommended first step</span>
+      <h3>{{ result.title }}</h3>
+      <p>{{ result.description }}</p>
+    </aside>
+  </div>
+</section>

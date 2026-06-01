@@ -1,0 +1,59 @@
+<section class="section compliance-section" id="compliance" aria-labelledby="compliance-title">
+  <div>
+    <p class="section-kicker">EU trade awareness</p>
+    <h2 id="compliance-title">Compliance-aware sourcing for EU-facing exports.</h2>
+    <p>
+      The EU and India concluded Free Trade Agreement negotiations on 27 January 2026. We track this
+      development without overclaiming: the published text is still subject to legal revision, signature,
+      and each side's internal entry-into-force procedures.
+    </p>
+    <div class="compliance-actions">
+      <button class="button tertiary" type="button" (click)="toggleTradeDetails()">
+        {{ showTradeDetails ? 'Hide trade status' : 'View trade status' }}
+      </button>
+      <a
+        class="button tertiary"
+        href="https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/india/eu-india-agreements_en"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        EU source
+      </a>
+    </div>
+  </div>
+
+  <div class="compliance-grid">
+    <article class="trade-status" [class.is-expanded]="showTradeDetails">
+      <span class="status-label">Current trade deal status</span>
+      <h3>Negotiations concluded, legal entry into force still matters.</h3>
+      <p>
+        The agreement is positioned as the largest trade agreement concluded by either side and is expected to reduce
+        tariffs on more than 96% of EU goods exports. For import and export planning, we still treat rules of origin,
+        customs facilitation, SPS, technical barriers to trade, and product-specific obligations as mandatory checks.
+      </p>
+
+      @if (showTradeDetails) {
+        <ul class="status-list">
+          <li>FTA negotiations concluded on 27 January 2026 after the 2022 relaunch.</li>
+          <li>Commission-published legal texts remain informational until signature and internal procedures are complete.</li>
+          <li>India's official release highlights preferential access for more than 99% of Indian exports by trade value to the EU.</li>
+        </ul>
+        <a
+          class="source-link"
+          href="https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/india/eu-india-agreements/text-agreements_en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Review published agreement text
+        </a>
+      }
+    </article>
+
+    @for (card of complianceCards; track card.title) {
+      <article>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </article>
+    }
+  </div>
+</section>
