@@ -2,6 +2,9 @@
   "name": "shoppingmart-exports",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x || 22.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
