@@ -1,10 +1,6 @@
 <header class="site-header" [class.is-scrolled]="isScrolled" [class.is-open]="isMenuOpen">
   <a class="brand" routerLink="/" aria-label="Shoppingmart Exports home" (click)="closeMenu()">
-    <span class="brand-mark">SE</span>
-    <span>
-      <strong>Shoppingmart</strong>
-      <small>Exports</small>
-    </span>
+    <app-brand-logo [background]="isScrolled || isMenuOpen ? 'light' : 'dark'" />
   </a>
 
   <button
