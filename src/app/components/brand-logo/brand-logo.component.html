@@ -1,0 +1,8 @@
+<span class="brand-logo" [class.is-on-dark]="background() === 'dark'" [class.is-on-light]="background() === 'light'">
+  <img
+    class="brand-logo__image"
+    [src]="background() === 'dark' ? 'shoppingmart-logo-light.svg' : 'shoppingmart-logo.svg'"
+    alt="Shoppingmart Exports"
+    decoding="async"
+  >
+</span>

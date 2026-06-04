@@ -2,6 +2,8 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+import { BrandLogoComponent } from '../brand-logo/brand-logo.component';
+
 interface NavItem {
   readonly label: string;
   readonly routerLink: string;
@@ -10,7 +12,7 @@ interface NavItem {
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, BrandLogoComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
