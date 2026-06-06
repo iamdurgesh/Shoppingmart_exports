@@ -18,6 +18,6 @@ import { QuoteFormComponent } from '../../components/quote-form/quote-form.compo
     QuoteFormComponent,
   ],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css',
+  styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {}

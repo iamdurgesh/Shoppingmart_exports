@@ -9,7 +9,7 @@ interface ProductCategory {
 @Component({
   selector: 'app-product-categories',
   templateUrl: './product-categories.component.html',
-  styleUrl: './product-categories.component.css',
+  styleUrl: './product-categories.component.scss',
 })
 export class ProductCategoriesComponent {
   protected readonly productCategories: readonly ProductCategory[] = [
