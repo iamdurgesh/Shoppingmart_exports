@@ -21,7 +21,7 @@ interface OptionItem {
   selector: 'app-quote-form',
   imports: [FormsModule],
   templateUrl: './quote-form.component.html',
-  styleUrl: './quote-form.component.css',
+  styleUrl: './quote-form.component.scss',
 })
 export class QuoteFormComponent {
   protected readonly markets = ['European Union', 'United Kingdom', 'Middle East', 'North America', 'Other market'];

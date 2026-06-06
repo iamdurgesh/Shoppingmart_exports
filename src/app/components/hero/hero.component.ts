@@ -8,7 +8,7 @@ interface HeroMetric {
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css',
+  styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
   protected readonly metrics: readonly HeroMetric[] = [

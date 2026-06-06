@@ -9,7 +9,7 @@ interface ProcessStep {
 @Component({
   selector: 'app-process',
   templateUrl: './process.component.html',
-  styleUrl: './process.component.css',
+  styleUrl: './process.component.scss',
 })
 export class ProcessComponent {
   protected readonly steps: readonly ProcessStep[] = [

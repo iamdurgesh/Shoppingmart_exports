@@ -35,7 +35,7 @@ interface SpherePoint {
 @Component({
   selector: 'app-compliance-page',
   templateUrl: './compliance-page.component.html',
-  styleUrl: './compliance-page.component.css',
+  styleUrl: './compliance-page.component.scss',
 })
 export class CompliancePageComponent {
   private static readonly sphereRadius = 220;

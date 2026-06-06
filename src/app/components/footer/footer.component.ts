@@ -6,6 +6,6 @@ import { BrandLogoComponent } from '../brand-logo/brand-logo.component';
   selector: 'app-footer',
   imports: [BrandLogoComponent],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {}
