@@ -18,12 +18,12 @@
     </style>
     <mask id="s-cutout" maskUnits="userSpaceOnUse" x="-10" y="0" width="260" height="260">
       <rect x="-10" y="0" width="260" height="260" fill="#fff"/>
-      <path d="M6 204 170 48" fill="none" stroke="#000" stroke-width="32" stroke-linecap="round"/>
+      <path d="M6 48 170 204" fill="none" stroke="#000" stroke-width="32" stroke-linecap="round"/>
     </mask>
   </defs>
   <g transform="translate(56 56)">
     <path fill="#F7F4EF" mask="url(#s-cutout)" d="M44 12H198L157 55H84c-19 0-33 11-37 27h92c46 0 78 29 78 70 0 49-40 84-95 84H0l42-44h81c25 0 41-14 44-34H75c-46 0-77-29-77-69C-2 45 35 12 44 12Z"/>
-    <path fill="#FFB39F" d="M133 84 222 40 200 128l-21-38-128 74-11-20 132-76-39 16Z"/>
+    <path fill="#FFB39F" d="M133 84 222 128 200 40l-21 38-128-74-11 20 132 76-39-16Z"/>
   </g>
   <text x="312" y="156" fill="#FFFFFF" class="wordmark">Shoppingmart</text>
   <g transform="translate(556 204)">
