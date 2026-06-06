@@ -16,19 +16,189 @@
     </div>
 
     <div class="trade-visual" aria-label="Animated trade route from India to Europe">
-      <div class="globe">
-        <div class="latitude latitude-one"></div>
-        <div class="latitude latitude-two"></div>
-        <div class="longitude longitude-one"></div>
-        <div class="longitude longitude-two"></div>
-        <div class="route-arc"></div>
-        <div class="route-pulse pulse-one"></div>
-        <div class="route-pulse pulse-two"></div>
-        <div class="map-node india-node">
-          <span>India</span>
-        </div>
-        <div class="map-node europe-node">
-          <span>Europe</span>
+      <div
+        class="globe"
+        [class.is-dragging]="isGlobeDragging"
+        [style.--globe-rotate-x]="globeRotateX"
+        [style.--globe-rotate-y]="globeRotateY"
+        (pointerdown)="startGlobeDrag($event)"
+        (pointermove)="updateGlobeRotation($event)"
+        (pointerup)="endGlobeDrag($event)"
+        (pointercancel)="endGlobeDrag($event)"
+        (dblclick)="resetGlobeRotation()"
+      >
+        <svg
+          class="trade-globe"
+          viewBox="0 0 560 560"
+          role="img"
+          aria-labelledby="trade-globe-title trade-globe-desc"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title id="trade-globe-title">India to Europe shipping route</title>
+          <desc id="trade-globe-desc">A cargo ship animates from India through multiple trade destinations before reaching Europe.</desc>
+          <defs>
+            <radialGradient id="globeOcean" cx="36%" cy="28%" r="74%">
+              <stop offset="0" stop-color="#2b9fba" />
+              <stop offset="0.42" stop-color="#11617b" />
+              <stop offset="1" stop-color="#082a3b" />
+            </radialGradient>
+            <radialGradient id="seaShelf" cx="48%" cy="42%" r="62%">
+              <stop offset="0" stop-color="#80e0d6" stop-opacity="0.18" />
+              <stop offset="0.6" stop-color="#80e0d6" stop-opacity="0.06" />
+              <stop offset="1" stop-color="#082a3b" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="routeStroke" x1="358" y1="331" x2="180" y2="178" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#80e0d6" />
+              <stop offset="0.52" stop-color="#ffb39f" />
+              <stop offset="1" stop-color="#ffd48a" />
+            </linearGradient>
+            <filter id="routeGlow" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <clipPath id="sphereClip">
+              <circle cx="280" cy="280" r="238" />
+            </clipPath>
+            <path id="indiaEuropeRoute" [attr.d]="routePath(europeLocation)" />
+            <path id="indiaMiddleEastRoute" [attr.d]="routePath(middleEastLocation)" />
+            <path id="indiaChinaRoute" [attr.d]="routePath(chinaLocation)" />
+            <path id="indiaJapanRoute" [attr.d]="routePath(japanLocation)" />
+            <path id="indiaAustraliaRoute" [attr.d]="routePath(australiaLocation)" />
+            <g id="cargoShipIcon">
+              <path class="ship-shadow" d="M5 35c14-5 34-5 50 0" />
+              <path class="ship-hull" d="M4 24h47l8 7-12 11H16L4 24Z" />
+              <path class="ship-bow" d="M47 24h12l-8 7h-9Z" />
+              <path class="ship-deck" d="M14 15h24l7 9H10l4-9Z" />
+              <path class="ship-bridge" d="M31 7h14l5 17H33Z" />
+              <path class="ship-window" d="M36 12h3M43 12h3" />
+              <path class="ship-stack" d="M18 7h8v8h-8Z" />
+              <path class="ship-container container-one" d="M11 18h8v6h-8Z" />
+              <path class="ship-container container-two" d="M21 18h8v6h-8Z" />
+              <path class="ship-container container-three" d="M31 18h8v6h-8Z" />
+              <path class="ship-wake" d="M2 47c9-4 18-4 27 0 7 3 15 3 24 0" />
+            </g>
+          </defs>
+
+          <circle class="globe-shell" cx="280" cy="280" r="246" />
+          <g clip-path="url(#sphereClip)">
+            <rect class="ocean-field" width="560" height="560" />
+            <circle class="sea-shelf" cx="294" cy="282" r="226" />
+            <g class="globe-grid">
+              @for (latitude of globeLatitudes; track latitude) {
+                <path [attr.d]="latitudePath(latitude)" />
+              }
+              @for (longitude of globeLongitudes; track longitude) {
+                <path [attr.d]="longitudePath(longitude)" />
+              }
+            </g>
+            <path class="route-shadow" [attr.d]="routePath(europeLocation)" [attr.opacity]="routeOpacity(europeLocation)" />
+            <path class="route-line" [attr.d]="routePath(europeLocation)" [attr.opacity]="routeOpacity(europeLocation)" />
+            <path class="route-dashes" [attr.d]="routePath(europeLocation)" [attr.opacity]="routeOpacity(europeLocation)" />
+            <g class="regional-routes">
+              @for (location of regionalLocations; track location.key) {
+                <path class="regional-route" [attr.d]="routePath(location)" [attr.opacity]="routeOpacity(location)" />
+              }
+              @for (location of regionalLocations; track location.key) {
+                <path class="regional-dashes" [attr.d]="routePath(location)" [attr.opacity]="routeOpacity(location)" />
+              }
+            </g>
+            <g class="route-packet packet-one">
+              <animateMotion dur="15s" keyPoints="0;1;1" keyTimes="0;0.16;1" repeatCount="indefinite">
+                <mpath href="#indiaMiddleEastRoute" xlink:href="#indiaMiddleEastRoute" />
+              </animateMotion>
+              <circle r="5" />
+            </g>
+            <g class="route-packet packet-two">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.2;0.36;1" repeatCount="indefinite">
+                <mpath href="#indiaChinaRoute" xlink:href="#indiaChinaRoute" />
+              </animateMotion>
+              <circle r="5" />
+            </g>
+            <g class="route-packet packet-three">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.4;0.56;1" repeatCount="indefinite">
+                <mpath href="#indiaJapanRoute" xlink:href="#indiaJapanRoute" />
+              </animateMotion>
+              <circle r="5" />
+            </g>
+            <g class="route-packet packet-four">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.6;0.76;1" repeatCount="indefinite">
+                <mpath href="#indiaAustraliaRoute" xlink:href="#indiaAustraliaRoute" />
+              </animateMotion>
+              <circle r="5" />
+            </g>
+            <g class="route-packet packet-five">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.8;0.98;1" repeatCount="indefinite">
+                <mpath href="#indiaEuropeRoute" xlink:href="#indiaEuropeRoute" />
+              </animateMotion>
+              <circle r="5" />
+            </g>
+
+            <g class="route-ship ship-one" opacity="0">
+              <animateMotion dur="15s" keyPoints="0;1;1" keyTimes="0;0.16;1" repeatCount="indefinite" rotate="auto-reverse">
+                <mpath href="#indiaMiddleEastRoute" xlink:href="#indiaMiddleEastRoute" />
+              </animateMotion>
+              <use href="#cargoShipIcon" xlink:href="#cargoShipIcon" transform="translate(-22 -13) scale(0.72)" />
+            </g>
+            <g class="route-ship ship-two" opacity="0">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.2;0.36;1" repeatCount="indefinite" rotate="auto">
+                <mpath href="#indiaChinaRoute" xlink:href="#indiaChinaRoute" />
+              </animateMotion>
+              <use href="#cargoShipIcon" xlink:href="#cargoShipIcon" transform="translate(-22 -13) scale(0.72)" />
+            </g>
+            <g class="route-ship ship-three" opacity="0">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.4;0.56;1" repeatCount="indefinite" rotate="auto">
+                <mpath href="#indiaJapanRoute" xlink:href="#indiaJapanRoute" />
+              </animateMotion>
+              <use href="#cargoShipIcon" xlink:href="#cargoShipIcon" transform="translate(-22 -13) scale(0.72)" />
+            </g>
+            <g class="route-ship ship-four" opacity="0">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.6;0.76;1" repeatCount="indefinite" rotate="auto">
+                <mpath href="#indiaAustraliaRoute" xlink:href="#indiaAustraliaRoute" />
+              </animateMotion>
+              <use href="#cargoShipIcon" xlink:href="#cargoShipIcon" transform="translate(-22 -13) scale(0.72)" />
+            </g>
+            <g class="route-ship ship-five" opacity="0">
+              <animateMotion dur="15s" keyPoints="0;0;1;1" keyTimes="0;0.8;0.98;1" repeatCount="indefinite" rotate="auto-reverse">
+                <mpath href="#indiaEuropeRoute" xlink:href="#indiaEuropeRoute" />
+              </animateMotion>
+              <use href="#cargoShipIcon" xlink:href="#cargoShipIcon" transform="translate(-22 -13) scale(0.72)" />
+            </g>
+          </g>
+
+          <g class="trade-pin india-pin">
+            <circle [attr.cx]="projectedPoint(indiaLocation).x" [attr.cy]="projectedPoint(indiaLocation).y" r="8" />
+            <circle [attr.cx]="projectedPoint(indiaLocation).x" [attr.cy]="projectedPoint(indiaLocation).y" r="18" />
+            <text
+              [attr.x]="projectedPoint(indiaLocation).x + indiaLocation.labelDx"
+              [attr.y]="projectedPoint(indiaLocation).y + indiaLocation.labelDy"
+              [attr.opacity]="pointOpacity(indiaLocation)"
+            >
+              India
+            </text>
+          </g>
+          <g class="trade-pin europe-pin" [attr.opacity]="pointOpacity(europeLocation)">
+            <circle [attr.cx]="projectedPoint(europeLocation).x" [attr.cy]="projectedPoint(europeLocation).y" r="8" />
+            <circle [attr.cx]="projectedPoint(europeLocation).x" [attr.cy]="projectedPoint(europeLocation).y" r="18" />
+            <text [attr.x]="projectedPoint(europeLocation).x + europeLocation.labelDx" [attr.y]="projectedPoint(europeLocation).y + europeLocation.labelDy">
+              Europe
+            </text>
+          </g>
+          @for (location of regionalLocations; track location.key) {
+            <g class="trade-pin region-pin" [attr.opacity]="pointOpacity(location)">
+              <circle [attr.cx]="projectedPoint(location).x" [attr.cy]="projectedPoint(location).y" r="6" />
+              <circle [attr.cx]="projectedPoint(location).x" [attr.cy]="projectedPoint(location).y" r="15" />
+              <text [attr.x]="projectedPoint(location).x + location.labelDx" [attr.y]="projectedPoint(location).y + location.labelDy">
+                {{ location.label }}
+              </text>
+            </g>
+          }
+        </svg>
+        <div class="route-status">
+          <span>Live route</span>
+          <strong>5 active lanes</strong>
         </div>
       </div>
       <div class="compliance-strip">
