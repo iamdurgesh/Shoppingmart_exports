@@ -1,8 +1,29 @@
 .contact-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-top: 112px;
+  background: #071724;
+}
+
+.contact-page::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -2;
+  min-height: clamp(640px, 56.3vw, 900px);
+  background: url("/bg-02.png") center top / cover no-repeat;
+  content: "";
+  opacity: 0.9;
+}
+
+.contact-page::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background:
-    radial-gradient(circle at top left, rgba(13, 148, 136, 0.13), transparent 32rem),
-    linear-gradient(180deg, #f7f4ef 0%, #ffffff 58%);
+    linear-gradient(90deg, rgba(7, 17, 27, 0.5) 0%, rgba(7, 17, 27, 0.3) 46%, rgba(7, 17, 27, 0.12) 100%),
+    linear-gradient(180deg, rgba(7, 17, 27, 0.04) 0%, #ffffff clamp(640px, 56.3vw, 900px));
+  content: "";
 }
 
 .contact-hero,
@@ -22,7 +43,7 @@
 .contact-hero h1 {
   max-width: 780px;
   margin-bottom: 20px;
-  color: var(--ink);
+  color: #ffffff;
   font-size: 5.2rem;
   line-height: 0.95;
   letter-spacing: -0.055em;
@@ -33,12 +54,17 @@
   color: var(--muted);
 }
 
+.contact-hero p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .contact-card {
   padding: clamp(22px, 4vw, 34px);
-  border: 1px solid rgba(13, 76, 106, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius);
-  background: #ffffff;
-  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(20px) saturate(1.08);
 }
 
 .contact-card span {

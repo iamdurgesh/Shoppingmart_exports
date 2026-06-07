@@ -522,7 +522,33 @@ h3 {
 }
 
 .quote-section {
-  padding: 0 max(18px, calc((100vw - 1120px) / 2)) clamp(70px, 9vw, 118px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: clamp(640px, 56.3vw, 900px);
+  padding: clamp(54px, 7vw, 86px) max(18px, calc((100vw - 1120px) / 2)) clamp(70px, 9vw, 118px);
+  background: #071724;
+}
+
+.quote-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("/bg-02.png") center center / cover no-repeat;
+  content: "";
+  opacity: 0.9;
+}
+
+.quote-section::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(7, 17, 27, 0.48) 0%, rgba(7, 17, 27, 0.28) 44%, rgba(7, 17, 27, 0.12) 100%),
+    linear-gradient(180deg, rgba(7, 17, 27, 0.04), rgba(7, 17, 27, 0.2));
+  content: "";
 }
 
 .quote-panel {
@@ -532,8 +558,10 @@ h3 {
   align-items: stretch;
   padding: clamp(18px, 3vw, 28px);
   border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(20px) saturate(1.08);
 }
 
 .quote-copy,
