@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
     { label: 'Process', routerLink: '/', fragment: 'process' },
     { label: 'Compliance', routerLink: '/compliance' },
     { label: 'Request Quote', routerLink: '/', fragment: 'quote' },
+    { label: 'Contact', routerLink: '/contact' },
   ];
 
   protected isMenuOpen = false;

@@ -1,70 +1,162 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { computed, Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { NonNullableFormBuilder, ReactiveFormsModule, Validators, type AbstractControl } from '@angular/forms';
+import { debounceTime, map, startWith } from 'rxjs';
 
-interface EnquiryModel {
-  market: string;
-  category: string;
-  volume: string;
-}
+import {
+  QuoteEnquiryService,
+  type EnquiryResult,
+  type QuoteEnquiryDraft,
+  type QuoteSubmissionRecord,
+} from '../../services/quote-enquiry.service';
 
-interface EnquiryResult {
-  readonly title: string;
-  readonly description: string;
-}
-
-interface OptionItem {
-  readonly value: string;
-  readonly label: string;
+function noWhitespaceValidator(control: AbstractControl<string>): { whitespace: true } | null {
+  return control.value.trim().length > 0 ? null : { whitespace: true };
 }
 
 @Component({
   selector: 'app-quote-form',
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './quote-form.component.html',
   styleUrl: './quote-form.component.scss',
 })
 export class QuoteFormComponent {
-  protected readonly markets = ['European Union', 'United Kingdom', 'Middle East', 'North America', 'Other market'];
-  protected readonly categories = ['Consumer Goods', 'Food and Staples', 'Textiles', 'Custom Sourcing'];
-  protected readonly volumes: readonly OptionItem[] = [
-    { value: 'sample', label: 'Samples or trial order' },
-    { value: 'pallet', label: 'Pallet-level order' },
-    { value: 'container', label: 'Container load' },
-    { value: 'mixed', label: 'Mixed product shipment' },
-  ];
+  private readonly formBuilder = inject(NonNullableFormBuilder);
+  private readonly quoteEnquiryService = inject(QuoteEnquiryService);
+  private readonly initialSnapshot = this.quoteEnquiryService.loadDraftSnapshot();
+  private readonly submittedRecord = signal<QuoteSubmissionRecord | null>(null);
+  private readonly lastSavedAt = signal<string | null>(this.initialSnapshot.savedAt);
 
-  protected enquiry: EnquiryModel = {
-    market: 'European Union',
-    category: 'Consumer Goods',
-    volume: 'sample',
-  };
+  protected readonly markets = this.quoteEnquiryService.markets;
+  protected readonly categories = this.quoteEnquiryService.categories;
+  protected readonly volumes = this.quoteEnquiryService.volumes;
 
-  protected result: EnquiryResult = {
-    title: 'Define product specification and destination requirements.',
-    description: 'Choose your trade details to generate a practical enquiry summary for the next conversation.',
-  };
+  protected readonly quoteForm = this.formBuilder.group({
+    name: this.formBuilder.control(this.initialSnapshot.draft.name, {
+      validators: [Validators.required, Validators.minLength(2), noWhitespaceValidator],
+    }),
+    email: this.formBuilder.control(this.initialSnapshot.draft.email, {
+      validators: [Validators.required, Validators.email],
+    }),
+    company: this.formBuilder.control(this.initialSnapshot.draft.company),
+    contactDetails: this.formBuilder.control(this.initialSnapshot.draft.contactDetails),
+    market: this.formBuilder.control(this.initialSnapshot.draft.market, {
+      validators: [Validators.required],
+    }),
+    category: this.formBuilder.control(this.initialSnapshot.draft.category, {
+      validators: [Validators.required],
+    }),
+    volume: this.formBuilder.control(this.initialSnapshot.draft.volume, {
+      validators: [Validators.required],
+    }),
+    message: this.formBuilder.control(this.initialSnapshot.draft.message, {
+      validators: [Validators.required, Validators.minLength(24), noWhitespaceValidator],
+    }),
+    privacyAccepted: this.formBuilder.control(this.initialSnapshot.draft.privacyAccepted, {
+      validators: [Validators.requiredTrue],
+    }),
+  });
 
-  protected prepareEnquiry(): void {
-    const volumeLabel = this.getVolumeFocus(this.enquiry.volume);
-    const complianceFocus =
-      this.enquiry.market === 'European Union'
-        ? 'GDPR-minded communication, origin evidence, and importer document checks'
-        : 'destination-market document checks';
+  private readonly draftValue = toSignal(
+    this.quoteForm.valueChanges.pipe(
+      debounceTime(250),
+      map(() => {
+        const draft = this.quoteForm.getRawValue();
 
-    this.result = {
-      title: `${this.enquiry.category}: start with ${volumeLabel} for ${this.enquiry.market}.`,
-      description: `Next, confirm specifications, packaging, target quantity, certificates, and ${complianceFocus} before pricing.`,
-    };
+        if (this.quoteForm.dirty) {
+          const snapshot = this.quoteEnquiryService.persistDraft(draft);
+          this.lastSavedAt.set(snapshot.savedAt);
+          this.submittedRecord.set(null);
+        }
+
+        return draft;
+      }),
+      startWith(this.quoteForm.getRawValue()),
+    ),
+    { initialValue: this.quoteForm.getRawValue() },
+  );
+
+  private readonly formStatus = toSignal(
+    this.quoteForm.statusChanges.pipe(startWith(this.quoteForm.status)),
+    { initialValue: this.quoteForm.status },
+  );
+
+  protected readonly result = computed<EnquiryResult>(() => {
+    const submitted = this.submittedRecord();
+    return submitted
+      ? this.quoteEnquiryService.buildSubmissionResult(submitted)
+      : this.quoteEnquiryService.buildPreviewResult(this.draftValue());
+  });
+
+  protected readonly resultLabel = computed(() =>
+    this.submittedRecord() ? 'Payload queued' : 'Quotation preview',
+  );
+
+  protected readonly draftStatus = computed(() => {
+    const submitted = this.submittedRecord();
+
+    if (submitted) {
+      return `Prepared on ${this.formatTimestamp(submitted.savedAt)}. Request ID: ${submitted.payload.requestId}.`;
+    }
+
+    const savedAt = this.lastSavedAt();
+
+    return savedAt
+      ? `Draft autosaved on ${this.formatTimestamp(savedAt)}. The final submit creates the backend-ready JSON object.`
+      : 'The form currently keeps a browser draft. Submit creates the JSON contract for backend storage.';
+  });
+
+  protected readonly canSubmit = computed(() => this.formStatus() === 'VALID');
+
+  protected submitEnquiry(): void {
+    if (!this.canSubmit()) {
+      this.quoteForm.markAllAsTouched();
+      return;
+    }
+
+    const submission = this.quoteEnquiryService.queueSubmission(this.draftValue());
+
+    this.submittedRecord.set(submission);
+    this.lastSavedAt.set(submission.savedAt);
+    this.quoteForm.markAsPristine();
   }
 
-  private getVolumeFocus(volume: string): string {
-    const labels: Record<string, string> = {
-      sample: 'sample validation',
-      pallet: 'pallet packing plan',
-      container: 'container loading plan',
-      mixed: 'mixed shipment consolidation',
-    };
+  protected showError(field: keyof QuoteEnquiryDraft): boolean {
+    const control = this.quoteForm.controls[field];
+    return control.invalid && (control.dirty || control.touched);
+  }
 
-    return labels[volume] ?? 'shipment planning';
+  protected errorMessage(field: keyof QuoteEnquiryDraft): string | null {
+    const control = this.quoteForm.controls[field];
+
+    if (!this.showError(field)) {
+      return null;
+    }
+
+    if (control.hasError('required') || control.hasError('whitespace')) {
+      return 'This field is required.';
+    }
+
+    if (control.hasError('requiredTrue')) {
+      return 'Please confirm quotation follow-up permission.';
+    }
+
+    if (control.hasError('email')) {
+      return 'Enter a valid business email address.';
+    }
+
+    if (control.hasError('minlength')) {
+      const requiredLength = control.getError('minlength')['requiredLength'] as number;
+      return `Use at least ${requiredLength} characters.`;
+    }
+
+    return 'Please review this field.';
+  }
+
+  private formatTimestamp(value: string): string {
+    return new Intl.DateTimeFormat('en', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    }).format(new Date(value));
   }
 }

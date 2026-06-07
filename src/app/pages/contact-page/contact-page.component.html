@@ -1,0 +1,37 @@
+<main class="contact-page" id="top">
+  <section class="contact-hero" aria-labelledby="contact-title">
+    <div>
+      <p class="section-kicker">Sales contact</p>
+      <h1 id="contact-title">Talk to our export team.</h1>
+      <p>
+        Send your product, destination, quantity, and timeline. Our sales team will review the enquiry and contact you soon.
+      </p>
+    </div>
+    <aside class="contact-card" aria-label="Shoppingmart Exports sales contact">
+      <span>Primary sales email</span>
+      <a [href]="'mailto:' + salesEmail">{{ salesEmail }}</a>
+      <p>Use this address for quotation requests, buyer enquiries, supplier coordination, and shipment follow-up.</p>
+    </aside>
+  </section>
+
+  <section class="contact-info" aria-labelledby="contact-info-title">
+    <div>
+      <p class="section-kicker">What to include</p>
+      <h2 id="contact-info-title">Clear details make faster quotations.</h2>
+    </div>
+    <div class="contact-info-grid">
+      <article>
+        <h3>Product</h3>
+        <p>Category, specification, packaging, certification needs, and target quality level.</p>
+      </article>
+      <article>
+        <h3>Order</h3>
+        <p>Quantity, destination market, delivery timeline, and preferred shipment size.</p>
+      </article>
+      <article>
+        <h3>Contact</h3>
+        <p>Company name, buyer contact, email, phone or WhatsApp, and preferred response time.</p>
+      </article>
+    </div>
+  </section>
+</main>
