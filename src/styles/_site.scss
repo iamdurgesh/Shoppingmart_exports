@@ -522,7 +522,33 @@ h3 {
 }
 
 .quote-section {
-  padding: 0 max(18px, calc((100vw - 1120px) / 2)) clamp(70px, 9vw, 118px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: clamp(640px, 56.3vw, 900px);
+  padding: clamp(54px, 7vw, 86px) max(18px, calc((100vw - 1120px) / 2)) clamp(70px, 9vw, 118px);
+  background: #071724;
+}
+
+.quote-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("/bg-02.png") center center / cover no-repeat;
+  content: "";
+  opacity: 0.9;
+}
+
+.quote-section::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(7, 17, 27, 0.48) 0%, rgba(7, 17, 27, 0.28) 44%, rgba(7, 17, 27, 0.12) 100%),
+    linear-gradient(180deg, rgba(7, 17, 27, 0.04), rgba(7, 17, 27, 0.2));
+  content: "";
 }
 
 .quote-panel {
@@ -532,8 +558,10 @@ h3 {
   align-items: stretch;
   padding: clamp(18px, 3vw, 28px);
   border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(20px) saturate(1.08);
 }
 
 .quote-copy,
@@ -555,19 +583,84 @@ h3 {
   font-weight: 800;
 }
 
-.quote-form select {
+.quote-form .has-error {
+  color: var(--coral);
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
   width: 100%;
-  min-height: 48px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 0 14px;
   color: var(--ink);
   background: #fbfaf7;
 }
 
-.quote-form select:focus-visible {
+.quote-form input,
+.quote-form select {
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.quote-form textarea {
+  min-height: 112px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.quote-form input:focus-visible,
+.quote-form select:focus-visible,
+.quote-form textarea:focus-visible {
   border-color: var(--teal);
   outline: 3px solid rgba(13, 148, 136, 0.16);
+}
+
+.quote-form .has-error input,
+.quote-form .has-error select,
+.quote-form .has-error textarea {
+  border-color: rgba(232, 93, 63, 0.55);
+}
+
+.quote-form .full-field,
+.quote-form .full-width {
+  grid-column: 1 / -1;
+}
+
+.consent-field {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.consent-field input {
+  width: 18px;
+  min-height: 18px;
+  margin-top: 3px;
+  padding: 0;
+  accent-color: var(--teal);
+}
+
+.consent-field .field-error {
+  grid-column: 2;
+}
+
+.field-error,
+.form-note,
+.result-meta {
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.field-error {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+.form-note {
+  margin: -2px 0 0;
+  color: var(--muted);
 }
 
 .quote-result {
@@ -586,6 +679,10 @@ h3 {
 
 .quote-result p {
   color: rgba(255, 255, 255, 0.76);
+}
+
+.result-meta {
+  margin-top: 8px;
 }
 
 .result-label {
