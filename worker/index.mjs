@@ -69,11 +69,19 @@ function shouldServeSpaShell(request, response) {
     return false;
   }
 
-  if (request.method !== "GET") {
+  if (request.method !== "GET" && request.method !== "HEAD") {
     return false;
   }
 
-  return request.headers.get("accept")?.includes("text/html") ?? false;
+  const pathname = new URL(request.url).pathname;
+
+  if (pathname.includes(".")) {
+    return false;
+  }
+
+  const accept = request.headers.get("accept") ?? "";
+
+  return accept.includes("text/html") || accept.includes("*/*") || accept === "";
 }
 
 export default {
