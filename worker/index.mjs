@@ -28,6 +28,7 @@ function buildSecurityHeaders(request, assetPath) {
         "form-action 'self'",
         "frame-ancestors 'none'",
         "img-src 'self' data: blob:",
+        "media-src 'self'",
         "object-src 'none'",
         "script-src 'self'",
         "style-src 'self' 'unsafe-inline'",
