@@ -1,0 +1,321 @@
+{
+  "common": {
+    "brandAlt": "Shoppingmart Exports"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "german": "German",
+    "french": "French"
+  },
+  "meta": {
+    "home": {
+      "title": "Shoppingmart Exports | Global Sourcing Platform",
+      "description": "Shoppingmart Exports helps buyers source Indian products with documented export workflows, quality checks, and shipment coordination."
+    },
+    "compliance": {
+      "title": "Compliance | Shoppingmart Exports",
+      "description": "Compliance-aware export readiness for India to Europe sourcing, including GDPR, origin records, customs documents, and EU product expectations."
+    },
+    "contact": {
+      "title": "Contact | Shoppingmart Exports",
+      "description": "Contact Shoppingmart Exports for quotation requests, buyer enquiries, supplier coordination, and shipment follow-up."
+    }
+  },
+  "nav": {
+    "homeAria": "Shoppingmart Exports home",
+    "open": "Open navigation",
+    "products": "Products",
+    "process": "Process",
+    "compliance": "Compliance",
+    "quote": "Request Quote",
+    "contact": "Contact"
+  },
+  "hero": {
+    "videoUnsupported": "Your browser does not support the video tag.",
+    "eyebrow": "Global trade, simplified",
+    "title": "Global sourcing. Clearly handled.",
+    "copy": "Products, documents, and logistics handled with clarity.",
+    "primaryCta": "Start an enquiry",
+    "secondaryCta": "Explore categories",
+    "metricsAria": "Export service highlights",
+    "metrics": {
+      "endToEnd": {
+        "label": "End-to-end",
+        "value": "Sourcing support"
+      },
+      "euAware": {
+        "label": "EU-aware",
+        "value": "Trade readiness"
+      },
+      "fast": {
+        "label": "Fast",
+        "value": "Quote preparation"
+      }
+    }
+  },
+  "intro": {
+    "kicker": "Trade built for repeat buyers",
+    "title": "Source products with fewer handoffs and cleaner export paperwork.",
+    "copy": "Shoppingmart Exports connects product discovery, supplier coordination, quality checkpoints, packing, and freight readiness into one transparent workflow for overseas buyers."
+  },
+  "products": {
+    "kicker": "Export categories",
+    "title": "Built around products buyers can reorder.",
+    "copy": "Start with priority product lines, then expand into custom sourcing once the documentation and quality expectations are aligned.",
+    "cards": {
+      "consumerGoods": {
+        "title": "Consumer Goods",
+        "description": "Home, lifestyle, daily-use, and retail-ready products with packaging coordination."
+      },
+      "foodStaples": {
+        "title": "Food and Staples",
+        "description": "Packaged food, grains, spices, and shelf-stable categories with document checks."
+      },
+      "textiles": {
+        "title": "Textiles",
+        "description": "Garments, fabrics, and made-ups sourced around samples, sizing, and repeat lots."
+      },
+      "customSourcing": {
+        "title": "Custom Sourcing",
+        "description": "Buyer-led product discovery for private label, bulk purchase, or mixed container needs."
+      }
+    }
+  },
+  "process": {
+    "kicker": "Operating flow",
+    "title": "A clear path from enquiry to shipment readiness.",
+    "copy": "Every order moves through visible checkpoints, so importers know what is being sourced, checked, documented, and prepared for dispatch.",
+    "steps": {
+      "requirements": {
+        "title": "Requirement capture",
+        "description": "Product, target market, packaging, certificates, and quantity expectations are documented first."
+      },
+      "supplier": {
+        "title": "Supplier and sample check",
+        "description": "Shortlisted supply options are compared on specification fit, pricing, lead time, and repeatability."
+      },
+      "export": {
+        "title": "Export preparation",
+        "description": "Packing, invoices, shipment coordination, and required trade documents are prepared for review."
+      }
+    }
+  },
+  "compliance": {
+    "kicker": "EU trade awareness",
+    "title": "Compliance-aware sourcing for EU-facing exports.",
+    "copy": "The EU and India concluded Free Trade Agreement negotiations on 27 January 2026. We track this development without overclaiming: the published text is still subject to legal revision, signature, and each side's internal entry-into-force procedures.",
+    "hideStatus": "Hide trade status",
+    "viewStatus": "View trade status",
+    "euSource": "EU source",
+    "statusLabel": "Current trade deal status",
+    "statusTitle": "Negotiations concluded, legal entry into force still matters.",
+    "statusCopy": "The agreement is positioned as the largest trade agreement concluded by either side and is expected to reduce tariffs on more than 96% of EU goods exports. For import and export planning, we still treat rules of origin, customs facilitation, SPS, technical barriers to trade, and product-specific obligations as mandatory checks.",
+    "statusItems": {
+      "concluded": "FTA negotiations concluded on 27 January 2026 after the 2022 relaunch.",
+      "informational": "Commission-published legal texts remain informational until signature and internal procedures are complete.",
+      "indiaRelease": "India's official release highlights preferential access for more than 99% of Indian exports by trade value to the EU."
+    },
+    "reviewText": "Review published agreement text",
+    "cards": {
+      "gdpr": {
+        "title": "GDPR-minded enquiry handling",
+        "description": "We collect only the trade details needed for quotation, shipment planning, and importer communication."
+      },
+      "origin": {
+        "title": "Origin and customs discipline",
+        "description": "Product classification, invoice data, packing records, and origin evidence are treated as order-critical records."
+      },
+      "readiness": {
+        "title": "EU product readiness",
+        "description": "We prepare buyer discussions around applicable documentation, labelling, SPS, technical standards, and market-specific checks."
+      }
+    }
+  },
+  "quote": {
+    "kicker": "Request quotation",
+    "title": "Tell us what you need. We will prepare the next step.",
+    "copy": "Share the essentials for product sourcing, documentation, and shipment planning. We keep enquiry details focused on quotation follow-up.",
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "company": "Company / buyer name",
+      "market": "Destination market",
+      "category": "Product category",
+      "volume": "Shipment size",
+      "contactDetails": "Contact details",
+      "message": "Enquiry message",
+      "privacy": "I agree to be contacted about this quotation request and understand the details are used for enquiry follow-up."
+    },
+    "placeholders": {
+      "contactDetails": "Phone, WhatsApp, or preferred contact time",
+      "message": "Product details, target quantity, packaging, destination, certificates, or timeline."
+    },
+    "note": "The form creates a structured quotation JSON payload. For now it is queued locally; next we can post the same payload to the backend.",
+    "submit": "Request quotation",
+    "result": {
+      "queuedLabel": "Payload queued",
+      "previewLabel": "Quotation preview",
+      "prepared": "Prepared on {{ date }}. Request ID: {{ requestId }}.",
+      "draftSaved": "Draft autosaved on {{ date }}. The final submit creates the backend-ready JSON object.",
+      "draftEmpty": "The form currently keeps a browser draft. Submit creates the JSON contract for backend storage.",
+      "emptyTitle": "Send the essentials. We will handle the next step.",
+      "emptyDescription": "Share your product, destination, quantity, and contact details. Your draft is kept locally for now and can later be posted to your database with the same payload shape.",
+      "readyTitle": "{{ name }}, this enquiry is ready for review.",
+      "readyDescription": "We will prepare {{ volumeFocus }} for {{ category }} into {{ market }}, plus product specifications, packaging, certificates, and {{ complianceFocus }}.",
+      "submissionTitle": "Quotation JSON prepared and queued.",
+      "submissionDescription": "{{ contactName }}, request {{ requestId }} is ready for backend storage and sales follow-up at {{ email }}.",
+      "fallbackTeam": "Your team"
+    },
+    "options": {
+      "markets": {
+        "europeanUnion": "European Union",
+        "unitedKingdom": "United Kingdom",
+        "middleEast": "Middle East",
+        "northAmerica": "North America",
+        "otherMarket": "Other market"
+      },
+      "categories": {
+        "consumerGoods": "Consumer Goods",
+        "foodStaples": "Food and Staples",
+        "textiles": "Textiles",
+        "customSourcing": "Custom Sourcing"
+      },
+      "volumes": {
+        "sample": "Samples or trial order",
+        "pallet": "Pallet-level order",
+        "container": "Container load",
+        "mixed": "Mixed product shipment"
+      }
+    },
+    "volumeFocus": {
+      "sample": "sample validation",
+      "pallet": "pallet packing plan",
+      "container": "container loading plan",
+      "mixed": "mixed shipment consolidation"
+    },
+    "complianceFocus": {
+      "eu": "GDPR-minded communication, origin evidence, and importer document checks",
+      "standard": "destination-market document checks"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "privacy": "Please confirm quotation follow-up permission.",
+      "email": "Enter a valid business email address.",
+      "minlength": "Use at least {{ requiredLength }} characters.",
+      "review": "Please review this field."
+    }
+  },
+  "footer": {
+    "copy": "Global sourcing platform for export-ready product supply."
+  },
+  "compliancePage": {
+    "hero": {
+      "kicker": "EU trade readiness",
+      "title": "Compliance-aware exports from India to Europe.",
+      "copy": "Shoppingmart Exports prepares sourcing conversations with EU buyer expectations in mind: data protection, origin records, customs documents, product standards, and transparent shipment files.",
+      "primaryCta": "View readiness model",
+      "hideChecklist": "Hide checklist",
+      "openChecklist": "Open checklist"
+    },
+    "globe": {
+      "aria": "Animated trade route from India to Europe",
+      "title": "India to Europe shipping route",
+      "description": "A cargo ship animates from India through multiple trade destinations before reaching Europe.",
+      "india": "India",
+      "europe": "Europe",
+      "middleEast": "Middle East",
+      "china": "China",
+      "japan": "Japan",
+      "australia": "Australia",
+      "liveRoute": "Live route",
+      "activeLanes": "5 active lanes",
+      "origin": "Origin",
+      "customs": "Customs",
+      "gdpr": "GDPR",
+      "standards": "Standards"
+    },
+    "agreement": {
+      "kicker": "Current agreement status",
+      "title": "EU-India FTA negotiations are concluded, but legal finalization still matters.",
+      "copy": "The European Commission states that FTA negotiations concluded on 27 January 2026. The published text is informational, may still be legally revised, and becomes binding only after signature and each side completes the required internal procedures. We use that status as a planning signal, not as a shortcut around compliance."
+    },
+    "readiness": {
+      "kicker": "How we work",
+      "title": "A practical compliance model for export enquiries.",
+      "copy": "We do not treat compliance as a final paperwork step. It starts at product selection, supplier qualification, market fit, and order documentation.",
+      "pillars": {
+        "gdpr": {
+          "title": "GDPR and DSGVO respect",
+          "description": "We design enquiry flows around data minimization, purpose limitation, access control, and clear buyer communication."
+        },
+        "origin": {
+          "title": "Rules of origin readiness",
+          "description": "Supplier declarations, product origin evidence, HS classification, and invoice records are treated as core export inputs."
+        },
+        "documentation": {
+          "title": "EU market documentation",
+          "description": "We prepare product discussions around labelling, safety documentation, SPS needs, technical standards, and importer review."
+        },
+        "records": {
+          "title": "Responsible trade records",
+          "description": "Commercial invoices, packing lists, certificates, and shipment milestones are structured for repeat orders and auditability."
+        }
+      }
+    },
+    "checklist": {
+      "kicker": "Interactive checkpoint",
+      "title": "Buyer-ready compliance checklist.",
+      "copy": "Expand this checklist during an enquiry call to keep the discussion concrete and evidence-led.",
+      "collapse": "Collapse checklist",
+      "expand": "Expand checklist",
+      "items": {
+        "fta": {
+          "label": "FTA status check",
+          "details": "EU-India FTA negotiations concluded on 27 January 2026, but product planning must still respect final legal text, signature, and entry-into-force status."
+        },
+        "product": {
+          "label": "Product-specific compliance",
+          "details": "Food, textiles, consumer goods, and regulated products can trigger different EU documentation, labelling, safety, or sanitary requirements."
+        },
+        "customs": {
+          "label": "Customs and origin file",
+          "details": "Each order should maintain classification, origin evidence, supplier records, commercial invoice, packing list, and shipment terms."
+        },
+        "data": {
+          "label": "Data handling",
+          "details": "Buyer and supplier contact details should be collected only when needed and handled under GDPR-minded retention and access practices."
+        }
+      }
+    },
+    "sources": {
+      "kicker": "Official references",
+      "title": "Trade status checked against official sources.",
+      "links": {
+        "agreements": "EU-India agreements",
+        "texts": "Published agreement texts",
+        "factsheet": "FTA benefits factsheet"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "kicker": "Sales contact",
+      "title": "Talk to our export team.",
+      "copy": "Send your product, destination, quantity, and timeline. Our sales team will review the enquiry and contact you soon.",
+      "cardAria": "Shoppingmart Exports sales contact",
+      "primaryEmail": "Primary sales email",
+      "cardCopy": "Use this address for quotation requests, buyer enquiries, supplier coordination, and shipment follow-up."
+    },
+    "info": {
+      "kicker": "What to include",
+      "title": "Clear details make faster quotations.",
+      "productTitle": "Product",
+      "productCopy": "Category, specification, packaging, certification needs, and target quality level.",
+      "orderTitle": "Order",
+      "orderCopy": "Quantity, destination market, delivery timeline, and preferred shipment size.",
+      "contactTitle": "Contact",
+      "contactCopy": "Company name, buyer contact, email, phone or WhatsApp, and preferred response time."
+    }
+  }
+}

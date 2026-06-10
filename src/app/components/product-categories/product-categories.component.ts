@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 interface ProductCategory {
   readonly number: string;
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
 }
 
 @Component({
   selector: 'app-product-categories',
+  imports: [TranslocoPipe],
   templateUrl: './product-categories.component.html',
   styleUrl: './product-categories.component.scss',
 })
@@ -15,23 +17,23 @@ export class ProductCategoriesComponent {
   protected readonly productCategories: readonly ProductCategory[] = [
     {
       number: '01',
-      title: 'Consumer Goods',
-      description: 'Home, lifestyle, daily-use, and retail-ready products with packaging coordination.',
+      titleKey: 'products.cards.consumerGoods.title',
+      descriptionKey: 'products.cards.consumerGoods.description',
     },
     {
       number: '02',
-      title: 'Food and Staples',
-      description: 'Packaged food, grains, spices, and shelf-stable categories with document checks.',
+      titleKey: 'products.cards.foodStaples.title',
+      descriptionKey: 'products.cards.foodStaples.description',
     },
     {
       number: '03',
-      title: 'Textiles',
-      description: 'Garments, fabrics, and made-ups sourced around samples, sizing, and repeat lots.',
+      titleKey: 'products.cards.textiles.title',
+      descriptionKey: 'products.cards.textiles.description',
     },
     {
       number: '04',
-      title: 'Custom Sourcing',
-      description: 'Buyer-led product discovery for private label, bulk purchase, or mixed container needs.',
+      titleKey: 'products.cards.customSourcing.title',
+      descriptionKey: 'products.cards.customSourcing.description',
     },
   ];
 }

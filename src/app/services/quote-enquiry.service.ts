@@ -1,13 +1,8 @@
 import { Injectable } from '@angular/core';
 
-export interface EnquiryResult {
-  readonly title: string;
-  readonly description: string;
-}
-
 export interface OptionItem<TValue extends string = string> {
   readonly value: TValue;
-  readonly label: string;
+  readonly labelKey: string;
 }
 
 export const MARKETS = [
@@ -28,6 +23,35 @@ export const CATEGORIES = [
 export type Market = (typeof MARKETS)[number];
 export type Category = (typeof CATEGORIES)[number];
 export type Volume = 'sample' | 'pallet' | 'container' | 'mixed';
+
+export const MARKET_OPTIONS: readonly OptionItem<Market>[] = [
+  { value: 'European Union', labelKey: 'quote.options.markets.europeanUnion' },
+  { value: 'United Kingdom', labelKey: 'quote.options.markets.unitedKingdom' },
+  { value: 'Middle East', labelKey: 'quote.options.markets.middleEast' },
+  { value: 'North America', labelKey: 'quote.options.markets.northAmerica' },
+  { value: 'Other market', labelKey: 'quote.options.markets.otherMarket' },
+];
+
+export const CATEGORY_OPTIONS: readonly OptionItem<Category>[] = [
+  { value: 'Consumer Goods', labelKey: 'quote.options.categories.consumerGoods' },
+  { value: 'Food and Staples', labelKey: 'quote.options.categories.foodStaples' },
+  { value: 'Textiles', labelKey: 'quote.options.categories.textiles' },
+  { value: 'Custom Sourcing', labelKey: 'quote.options.categories.customSourcing' },
+];
+
+export const VOLUME_OPTIONS: readonly OptionItem<Volume>[] = [
+  { value: 'sample', labelKey: 'quote.options.volumes.sample' },
+  { value: 'pallet', labelKey: 'quote.options.volumes.pallet' },
+  { value: 'container', labelKey: 'quote.options.volumes.container' },
+  { value: 'mixed', labelKey: 'quote.options.volumes.mixed' },
+];
+
+const VOLUME_PAYLOAD_LABELS: Record<Volume, string> = {
+  sample: 'Samples or trial order',
+  pallet: 'Pallet-level order',
+  container: 'Container load',
+  mixed: 'Mixed product shipment',
+};
 
 export interface QuoteEnquiryDraft {
   readonly name: string;
@@ -91,12 +115,10 @@ export class QuoteEnquiryService {
   readonly salesEmail = 'global.sales@shoppingmartexports.com';
   readonly markets = MARKETS;
   readonly categories = CATEGORIES;
-  readonly volumes: readonly OptionItem<Volume>[] = [
-    { value: 'sample', label: 'Samples or trial order' },
-    { value: 'pallet', label: 'Pallet-level order' },
-    { value: 'container', label: 'Container load' },
-    { value: 'mixed', label: 'Mixed product shipment' },
-  ];
+  readonly marketOptions = MARKET_OPTIONS;
+  readonly categoryOptions = CATEGORY_OPTIONS;
+  readonly volumeOptions = VOLUME_OPTIONS;
+  readonly volumes = VOLUME_OPTIONS;
 
   private readonly draftStorageKey = 'shoppingmart-exports.quote-enquiry.draft';
   private readonly submissionStorageKey = 'shoppingmart-exports.quote-enquiry.queue';
@@ -168,8 +190,7 @@ export class QuoteEnquiryService {
 
   buildQuoteRequestPayload(draft: QuoteEnquiryDraft, submittedAt = new Date().toISOString()): QuoteRequestPayload {
     const sanitized = this.sanitizeDraft(draft);
-    const shipmentSizeLabel =
-      this.volumes.find((volume) => volume.value === sanitized.volume)?.label ?? 'Shipment planning';
+    const shipmentSizeLabel = this.getShipmentSizeLabel(sanitized.volume);
 
     return {
       requestId: this.createRequestId(),
@@ -202,33 +223,6 @@ export class QuoteEnquiryService {
         locale: globalThis.navigator?.language ?? 'en',
         userAgent: globalThis.navigator?.userAgent ?? null,
       },
-    };
-  }
-
-  buildPreviewResult(draft: QuoteEnquiryDraft): EnquiryResult {
-    const name = draft.name.trim();
-    const message = draft.message.trim();
-
-    if (!name && !message) {
-      return {
-        title: 'Send the essentials. We will handle the next step.',
-        description:
-          'Share your product, destination, quantity, and contact details. Your draft is kept locally for now and can later be posted to your database with the same payload shape.',
-      };
-    }
-
-    return {
-      title: `${name || 'Your team'}, this enquiry is ready for review.`,
-      description: `We will prepare ${this.getVolumeFocus(draft.volume)} for ${draft.category.toLowerCase()} into ${draft.market}, plus product specifications, packaging, certificates, and ${this.getComplianceFocus(draft.market)}.`,
-    };
-  }
-
-  buildSubmissionResult(submission: QuoteSubmissionRecord): EnquiryResult {
-    const contactName = submission.payload.contact.fullName.trim() || 'your team';
-
-    return {
-      title: 'Quotation JSON prepared and queued.',
-      description: `${contactName}, request ${submission.payload.requestId} is ready for backend storage and sales follow-up at ${submission.payload.contact.email}.`,
     };
   }
 
@@ -326,25 +320,8 @@ export class QuoteEnquiryService {
     };
   }
 
-  private getComplianceFocus(market: Market): string {
-    return market === 'European Union'
-      ? 'GDPR-minded communication, origin evidence, and importer document checks'
-      : 'destination-market document checks';
-  }
-
-  private getVolumeFocus(volume: Volume): string {
-    const labels: Record<Volume, string> = {
-      sample: 'sample validation',
-      pallet: 'pallet packing plan',
-      container: 'container loading plan',
-      mixed: 'mixed shipment consolidation',
-    };
-
-    return labels[volume];
-  }
-
   private getShipmentSizeLabel(volume: Volume): string {
-    return this.volumes.find((item) => item.value === volume)?.label ?? 'Shipment planning';
+    return VOLUME_PAYLOAD_LABELS[volume] ?? 'Shipment planning';
   }
 
   private createRequestId(): string {

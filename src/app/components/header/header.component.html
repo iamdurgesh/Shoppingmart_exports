@@ -1,5 +1,5 @@
 <header class="site-header" [class.is-scrolled]="isScrolled" [class.is-open]="isMenuOpen">
-  <a class="brand" routerLink="/" aria-label="Shoppingmart Exports home" (click)="closeMenu()">
+  <a class="brand" routerLink="/" [attr.aria-label]="'nav.homeAria' | transloco" (click)="closeMenu()">
     <app-brand-logo [background]="isScrolled || isMenuOpen ? 'light' : 'dark'" />
   </a>
 
@@ -13,11 +13,11 @@
     <span></span>
     <span></span>
     <span></span>
-    <span class="sr-only">Open navigation</span>
+    <span class="sr-only">{{ 'nav.open' | transloco }}</span>
   </button>
 
   <nav class="site-nav" id="site-nav" [class.is-open]="isMenuOpen">
-    @for (item of navItems; track item.label) {
+    @for (item of navItems; track item.labelKey) {
       <a
         [routerLink]="item.routerLink"
         [fragment]="item.fragment"
@@ -25,8 +25,21 @@
         [routerLinkActiveOptions]="{ exact: item.routerLink === '/compliance' }"
         (click)="closeMenu()"
       >
-        {{ item.label }}
+        {{ item.labelKey | transloco }}
       </a>
     }
+    <div class="language-switcher" [attr.aria-label]="'language.label' | transloco">
+      @for (language of languages; track language.code) {
+        <button
+          type="button"
+          [class.is-active]="activeLanguage() === language.code"
+          [attr.aria-pressed]="activeLanguage() === language.code"
+          [attr.aria-label]="(language.labelKey | transloco)"
+          (click)="selectLanguage(language.code)"
+        >
+          {{ language.shortLabel }}
+        </button>
+      }
+    </div>
   </nav>
 </header>

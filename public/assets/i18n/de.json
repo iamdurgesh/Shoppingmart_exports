@@ -1,0 +1,321 @@
+{
+  "common": {
+    "brandAlt": "Shoppingmart Exports"
+  },
+  "language": {
+    "label": "Sprache",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "french": "Französisch"
+  },
+  "meta": {
+    "home": {
+      "title": "Shoppingmart Exports | Globale Beschaffungsplattform",
+      "description": "Shoppingmart Exports unterstützt Käufer bei der Beschaffung indischer Produkte mit dokumentierten Exportabläufen, Qualitätsprüfungen und Versandkoordination."
+    },
+    "compliance": {
+      "title": "Compliance | Shoppingmart Exports",
+      "description": "Compliance-orientierte Exportbereitschaft für die Beschaffung von Indien nach Europa, einschließlich DSGVO, Ursprungsnachweisen, Zolldokumenten und EU-Produktanforderungen."
+    },
+    "contact": {
+      "title": "Kontakt | Shoppingmart Exports",
+      "description": "Kontaktieren Sie Shoppingmart Exports für Angebotsanfragen, Käuferanfragen, Lieferantenkoordination und Versandnachverfolgung."
+    }
+  },
+  "nav": {
+    "homeAria": "Startseite von Shoppingmart Exports",
+    "open": "Navigation öffnen",
+    "products": "Produkte",
+    "process": "Prozess",
+    "compliance": "Compliance",
+    "quote": "Angebot anfragen",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "videoUnsupported": "Ihr Browser unterstützt das Video-Tag nicht.",
+    "eyebrow": "Globaler Handel, vereinfacht",
+    "title": "Globale Beschaffung. Klar gesteuert.",
+    "copy": "Produkte, Dokumente und Logistik werden transparent koordiniert.",
+    "primaryCta": "Anfrage starten",
+    "secondaryCta": "Kategorien ansehen",
+    "metricsAria": "Highlights des Exportservices",
+    "metrics": {
+      "endToEnd": {
+        "label": "End-to-End",
+        "value": "Beschaffungsunterstützung"
+      },
+      "euAware": {
+        "label": "EU-bewusst",
+        "value": "Handelsbereitschaft"
+      },
+      "fast": {
+        "label": "Schnell",
+        "value": "Angebotsvorbereitung"
+      }
+    }
+  },
+  "intro": {
+    "kicker": "Handel für wiederkehrende Käufer",
+    "title": "Produkte mit weniger Übergaben und saubereren Exportunterlagen beschaffen.",
+    "copy": "Shoppingmart Exports verbindet Produktsuche, Lieferantenkoordination, Qualitätskontrollen, Verpackung und Versandbereitschaft zu einem transparenten Ablauf für internationale Käufer."
+  },
+  "products": {
+    "kicker": "Exportkategorien",
+    "title": "Ausgerichtet auf Produkte, die Käufer wiederbestellen können.",
+    "copy": "Beginnen Sie mit priorisierten Produktlinien und erweitern Sie danach in die individuelle Beschaffung, sobald Dokumentation und Qualitätserwartungen abgestimmt sind.",
+    "cards": {
+      "consumerGoods": {
+        "title": "Konsumgüter",
+        "description": "Haushalts-, Lifestyle-, Alltags- und verkaufsfertige Produkte mit Verpackungskoordination."
+      },
+      "foodStaples": {
+        "title": "Lebensmittel und Grundwaren",
+        "description": "Verpackte Lebensmittel, Getreide, Gewürze und haltbare Kategorien mit Dokumentenprüfung."
+      },
+      "textiles": {
+        "title": "Textilien",
+        "description": "Bekleidung, Stoffe und Heimtextilien, beschafft rund um Muster, Größen und Wiederholungschargen."
+      },
+      "customSourcing": {
+        "title": "Individuelle Beschaffung",
+        "description": "Käufergeführte Produktsuche für Eigenmarken, Großeinkäufe oder gemischte Containerbedarfe."
+      }
+    }
+  },
+  "process": {
+    "kicker": "Ablauf",
+    "title": "Ein klarer Weg von der Anfrage bis zur Versandbereitschaft.",
+    "copy": "Jede Bestellung durchläuft sichtbare Prüfpunkte, damit Importeure wissen, was beschafft, geprüft, dokumentiert und für den Versand vorbereitet wird.",
+    "steps": {
+      "requirements": {
+        "title": "Anforderungen erfassen",
+        "description": "Produkt, Zielmarkt, Verpackung, Zertifikate und Mengenerwartungen werden zuerst dokumentiert."
+      },
+      "supplier": {
+        "title": "Lieferanten- und Musterprüfung",
+        "description": "Ausgewählte Lieferoptionen werden nach Spezifikationsfit, Preis, Vorlaufzeit und Wiederholbarkeit verglichen."
+      },
+      "export": {
+        "title": "Exportvorbereitung",
+        "description": "Verpackung, Rechnungen, Versandkoordination und erforderliche Handelsdokumente werden zur Prüfung vorbereitet."
+      }
+    }
+  },
+  "compliance": {
+    "kicker": "EU-Handelsbewusstsein",
+    "title": "Compliance-orientierte Beschaffung für Exporte mit EU-Bezug.",
+    "copy": "Die EU und Indien haben die Verhandlungen über ein Freihandelsabkommen am 27. Januar 2026 abgeschlossen. Wir verfolgen diese Entwicklung ohne Übertreibung: Der veröffentlichte Text unterliegt weiterhin rechtlicher Überarbeitung, Unterzeichnung und den internen Verfahren beider Seiten zum Inkrafttreten.",
+    "hideStatus": "Handelsstatus ausblenden",
+    "viewStatus": "Handelsstatus anzeigen",
+    "euSource": "EU-Quelle",
+    "statusLabel": "Aktueller Status des Handelsabkommens",
+    "statusTitle": "Verhandlungen abgeschlossen, rechtliches Inkrafttreten bleibt entscheidend.",
+    "statusCopy": "Das Abkommen wird als das größte Handelsabkommen positioniert, das eine der beiden Seiten abgeschlossen hat, und soll Zölle auf mehr als 96 % der EU-Warenausfuhren senken. Für Import- und Exportplanung behandeln wir Ursprungsregeln, Zollvereinfachungen, SPS, technische Handelshemmnisse und produktspezifische Pflichten weiterhin als verpflichtende Prüfungen.",
+    "statusItems": {
+      "concluded": "Die FTA-Verhandlungen wurden am 27. Januar 2026 nach dem Neustart 2022 abgeschlossen.",
+      "informational": "Von der Kommission veröffentlichte Rechtstexte bleiben informativ, bis Unterzeichnung und interne Verfahren abgeschlossen sind.",
+      "indiaRelease": "Indiens offizielle Mitteilung hebt bevorzugten Zugang für mehr als 99 % der indischen Ausfuhren nach Handelswert in die EU hervor."
+    },
+    "reviewText": "Veröffentlichten Abkommenstext prüfen",
+    "cards": {
+      "gdpr": {
+        "title": "DSGVO-bewusste Anfragebearbeitung",
+        "description": "Wir erfassen nur die Handelsdaten, die für Angebot, Versandplanung und Importeurkommunikation benötigt werden."
+      },
+      "origin": {
+        "title": "Disziplin bei Ursprung und Zoll",
+        "description": "Produktklassifizierung, Rechnungsdaten, Verpackungsnachweise und Ursprungsbelege werden als bestellkritische Unterlagen behandelt."
+      },
+      "readiness": {
+        "title": "EU-Produktbereitschaft",
+        "description": "Wir bereiten Käufergespräche anhand anwendbarer Dokumentation, Kennzeichnung, SPS, technischer Standards und marktspezifischer Prüfungen vor."
+      }
+    }
+  },
+  "quote": {
+    "kicker": "Angebot anfragen",
+    "title": "Sagen Sie uns, was Sie benötigen. Wir bereiten den nächsten Schritt vor.",
+    "copy": "Teilen Sie die wesentlichen Informationen für Produktbeschaffung, Dokumentation und Versandplanung. Wir halten Anfragedaten auf die Angebotsnachverfolgung begrenzt.",
+    "fields": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "company": "Unternehmen / Käufername",
+      "market": "Zielmarkt",
+      "category": "Produktkategorie",
+      "volume": "Sendungsgröße",
+      "contactDetails": "Kontaktdaten",
+      "message": "Anfragenachricht",
+      "privacy": "Ich stimme zu, zu dieser Angebotsanfrage kontaktiert zu werden, und verstehe, dass die Angaben für die Nachverfolgung der Anfrage verwendet werden."
+    },
+    "placeholders": {
+      "contactDetails": "Telefon, WhatsApp oder bevorzugte Kontaktzeit",
+      "message": "Produktdetails, Zielmenge, Verpackung, Bestimmungsort, Zertifikate oder Zeitplan."
+    },
+    "note": "Das Formular erstellt eine strukturierte Angebotsanfrage als JSON-Payload. Derzeit wird sie lokal in die Warteschlange gestellt; später können wir dieselbe Payload an das Backend senden.",
+    "submit": "Angebot anfragen",
+    "result": {
+      "queuedLabel": "Payload eingereiht",
+      "previewLabel": "Angebotsvorschau",
+      "prepared": "Vorbereitet am {{ date }}. Anfrage-ID: {{ requestId }}.",
+      "draftSaved": "Entwurf automatisch gespeichert am {{ date }}. Die finale Übermittlung erstellt das backendfähige JSON-Objekt.",
+      "draftEmpty": "Das Formular speichert derzeit einen Browser-Entwurf. Die Übermittlung erstellt den JSON-Vertrag für die Backend-Speicherung.",
+      "emptyTitle": "Senden Sie die wichtigsten Angaben. Wir übernehmen den nächsten Schritt.",
+      "emptyDescription": "Teilen Sie Produkt, Bestimmungsort, Menge und Kontaktdaten. Ihr Entwurf wird vorerst lokal gespeichert und kann später mit derselben Payload-Struktur in Ihre Datenbank übertragen werden.",
+      "readyTitle": "{{ name }}, diese Anfrage ist prüfbereit.",
+      "readyDescription": "Wir bereiten {{ volumeFocus }} für {{ category }} nach {{ market }} vor, einschließlich Produktspezifikationen, Verpackung, Zertifikaten und {{ complianceFocus }}.",
+      "submissionTitle": "Angebots-JSON vorbereitet und eingereiht.",
+      "submissionDescription": "{{ contactName }}, Anfrage {{ requestId }} ist bereit für Backend-Speicherung und Sales-Follow-up unter {{ email }}.",
+      "fallbackTeam": "Ihr Team"
+    },
+    "options": {
+      "markets": {
+        "europeanUnion": "Europäische Union",
+        "unitedKingdom": "Vereinigtes Königreich",
+        "middleEast": "Naher Osten",
+        "northAmerica": "Nordamerika",
+        "otherMarket": "Anderer Markt"
+      },
+      "categories": {
+        "consumerGoods": "Konsumgüter",
+        "foodStaples": "Lebensmittel und Grundwaren",
+        "textiles": "Textilien",
+        "customSourcing": "Individuelle Beschaffung"
+      },
+      "volumes": {
+        "sample": "Muster oder Testbestellung",
+        "pallet": "Palettenbestellung",
+        "container": "Containerladung",
+        "mixed": "Gemischte Produktsendung"
+      }
+    },
+    "volumeFocus": {
+      "sample": "Musterprüfung",
+      "pallet": "Paletten-Verpackungsplanung",
+      "container": "Container-Ladeplanung",
+      "mixed": "Konsolidierung gemischter Sendungen"
+    },
+    "complianceFocus": {
+      "eu": "DSGVO-bewusster Kommunikation, Ursprungsnachweisen und Importeur-Dokumentenprüfungen",
+      "standard": "Dokumentenprüfungen für den Zielmarkt"
+    },
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "privacy": "Bitte bestätigen Sie die Erlaubnis zur Angebotsnachverfolgung.",
+      "email": "Geben Sie eine gültige geschäftliche E-Mail-Adresse ein.",
+      "minlength": "Verwenden Sie mindestens {{ requiredLength }} Zeichen.",
+      "review": "Bitte prüfen Sie dieses Feld."
+    }
+  },
+  "footer": {
+    "copy": "Globale Beschaffungsplattform für exportbereite Produktversorgung."
+  },
+  "compliancePage": {
+    "hero": {
+      "kicker": "EU-Handelsbereitschaft",
+      "title": "Compliance-orientierte Exporte von Indien nach Europa.",
+      "copy": "Shoppingmart Exports bereitet Beschaffungsgespräche mit Blick auf EU-Käufererwartungen vor: Datenschutz, Ursprungsnachweise, Zolldokumente, Produktstandards und transparente Versandakten.",
+      "primaryCta": "Bereitschaftsmodell ansehen",
+      "hideChecklist": "Checkliste ausblenden",
+      "openChecklist": "Checkliste öffnen"
+    },
+    "globe": {
+      "aria": "Animierte Handelsroute von Indien nach Europa",
+      "title": "Schifffahrtsroute von Indien nach Europa",
+      "description": "Ein Frachtschiff bewegt sich von Indien über mehrere Handelsziele bis nach Europa.",
+      "india": "Indien",
+      "europe": "Europa",
+      "middleEast": "Naher Osten",
+      "china": "China",
+      "japan": "Japan",
+      "australia": "Australien",
+      "liveRoute": "Live-Route",
+      "activeLanes": "5 aktive Routen",
+      "origin": "Ursprung",
+      "customs": "Zoll",
+      "gdpr": "DSGVO",
+      "standards": "Standards"
+    },
+    "agreement": {
+      "kicker": "Aktueller Abkommensstatus",
+      "title": "Die EU-Indien-FTA-Verhandlungen sind abgeschlossen, doch die rechtliche Finalisierung bleibt entscheidend.",
+      "copy": "Die Europäische Kommission erklärt, dass die FTA-Verhandlungen am 27. Januar 2026 abgeschlossen wurden. Der veröffentlichte Text ist informativ, kann noch rechtlich überarbeitet werden und wird erst verbindlich, wenn Unterzeichnung und die erforderlichen internen Verfahren beider Seiten abgeschlossen sind. Wir nutzen diesen Status als Planungssignal, nicht als Abkürzung um Compliance herum."
+    },
+    "readiness": {
+      "kicker": "Unsere Arbeitsweise",
+      "title": "Ein praktisches Compliance-Modell für Exportanfragen.",
+      "copy": "Wir behandeln Compliance nicht als letzten Papierarbeitschritt. Sie beginnt bei Produktauswahl, Lieferantenqualifizierung, Markteignung und Auftragsdokumentation.",
+      "pillars": {
+        "gdpr": {
+          "title": "Respekt für GDPR und DSGVO",
+          "description": "Wir gestalten Anfrageprozesse rund um Datenminimierung, Zweckbindung, Zugriffskontrolle und klare Käuferkommunikation."
+        },
+        "origin": {
+          "title": "Bereitschaft für Ursprungsregeln",
+          "description": "Lieferantenerklärungen, Produktursprungsnachweise, HS-Klassifizierung und Rechnungsunterlagen werden als zentrale Exportgrundlagen behandelt."
+        },
+        "documentation": {
+          "title": "Dokumentation für den EU-Markt",
+          "description": "Wir bereiten Produktgespräche rund um Kennzeichnung, Sicherheitsdokumentation, SPS-Anforderungen, technische Standards und Importeurprüfung vor."
+        },
+        "records": {
+          "title": "Verantwortungsvolle Handelsunterlagen",
+          "description": "Handelsrechnungen, Packlisten, Zertifikate und Versandmeilensteine werden für Wiederholungsaufträge und Nachvollziehbarkeit strukturiert."
+        }
+      }
+    },
+    "checklist": {
+      "kicker": "Interaktiver Prüfpunkt",
+      "title": "Käuferbereite Compliance-Checkliste.",
+      "copy": "Öffnen Sie diese Checkliste während eines Anfragegesprächs, um die Diskussion konkret und nachweisorientiert zu halten.",
+      "collapse": "Checkliste einklappen",
+      "expand": "Checkliste erweitern",
+      "items": {
+        "fta": {
+          "label": "FTA-Statusprüfung",
+          "details": "Die EU-Indien-FTA-Verhandlungen wurden am 27. Januar 2026 abgeschlossen, doch die Produktplanung muss weiterhin den finalen Rechtstext, die Unterzeichnung und den Status des Inkrafttretens beachten."
+        },
+        "product": {
+          "label": "Produktspezifische Compliance",
+          "details": "Lebensmittel, Textilien, Konsumgüter und regulierte Produkte können unterschiedliche EU-Dokumentations-, Kennzeichnungs-, Sicherheits- oder Sanitäranforderungen auslösen."
+        },
+        "customs": {
+          "label": "Zoll- und Ursprungsakte",
+          "details": "Jede Bestellung sollte Klassifizierung, Ursprungsnachweise, Lieferantenunterlagen, Handelsrechnung, Packliste und Lieferbedingungen enthalten."
+        },
+        "data": {
+          "label": "Datenverarbeitung",
+          "details": "Kontaktangaben von Käufern und Lieferanten sollten nur bei Bedarf erhoben und nach DSGVO-bewussten Aufbewahrungs- und Zugriffspraktiken behandelt werden."
+        }
+      }
+    },
+    "sources": {
+      "kicker": "Offizielle Referenzen",
+      "title": "Handelsstatus anhand offizieller Quellen geprüft.",
+      "links": {
+        "agreements": "EU-Indien-Abkommen",
+        "texts": "Veröffentlichte Abkommenstexte",
+        "factsheet": "FTA-Nutzen-Factsheet"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "kicker": "Sales-Kontakt",
+      "title": "Sprechen Sie mit unserem Exportteam.",
+      "copy": "Senden Sie Produkt, Bestimmungsort, Menge und Zeitplan. Unser Sales-Team prüft die Anfrage und meldet sich zeitnah bei Ihnen.",
+      "cardAria": "Sales-Kontakt von Shoppingmart Exports",
+      "primaryEmail": "Primäre Sales-E-Mail",
+      "cardCopy": "Nutzen Sie diese Adresse für Angebotsanfragen, Käuferanfragen, Lieferantenkoordination und Versandnachverfolgung."
+    },
+    "info": {
+      "kicker": "Was Sie angeben sollten",
+      "title": "Klare Angaben ermöglichen schnellere Angebote.",
+      "productTitle": "Produkt",
+      "productCopy": "Kategorie, Spezifikation, Verpackung, Zertifizierungsbedarf und gewünschtes Qualitätsniveau.",
+      "orderTitle": "Bestellung",
+      "orderCopy": "Menge, Zielmarkt, Lieferzeitplan und bevorzugte Sendungsgröße.",
+      "contactTitle": "Kontakt",
+      "contactCopy": "Unternehmensname, Käuferkontakt, E-Mail, Telefon oder WhatsApp und bevorzugte Antwortzeit."
+    }
+  }
+}

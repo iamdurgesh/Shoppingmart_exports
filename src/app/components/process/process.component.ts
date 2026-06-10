@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 interface ProcessStep {
   readonly number: string;
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
 }
 
 @Component({
   selector: 'app-process',
+  imports: [TranslocoPipe],
   templateUrl: './process.component.html',
   styleUrl: './process.component.scss',
 })
@@ -15,18 +17,18 @@ export class ProcessComponent {
   protected readonly steps: readonly ProcessStep[] = [
     {
       number: '1',
-      title: 'Requirement capture',
-      description: 'Product, target market, packaging, certificates, and quantity expectations are documented first.',
+      titleKey: 'process.steps.requirements.title',
+      descriptionKey: 'process.steps.requirements.description',
     },
     {
       number: '2',
-      title: 'Supplier and sample check',
-      description: 'Shortlisted supply options are compared on specification fit, pricing, lead time, and repeatability.',
+      titleKey: 'process.steps.supplier.title',
+      descriptionKey: 'process.steps.supplier.description',
     },
     {
       number: '3',
-      title: 'Export preparation',
-      description: 'Packing, invoices, shipment coordination, and required trade documents are prepared for review.',
+      titleKey: 'process.steps.export.title',
+      descriptionKey: 'process.steps.export.description',
     },
   ];
 }

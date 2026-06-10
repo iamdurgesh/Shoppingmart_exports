@@ -12,24 +12,24 @@
   >
     <source src="upscaled-bg-4k.webm" type="video/webm">
     <source src="background-dynamic.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    {{ 'hero.videoUnsupported' | transloco }}
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="eyebrow">Global trade, simplified</p>
-    <h1 id="hero-title">Global sourcing. Clearly handled.</h1>
+    <p class="eyebrow">{{ 'hero.eyebrow' | transloco }}</p>
+    <h1 id="hero-title">{{ 'hero.title' | transloco }}</h1>
     <p class="hero-copy">
-      Products, documents, and logistics handled with clarity.
+      {{ 'hero.copy' | transloco }}
     </p>
     <div class="hero-actions">
-      <a class="button primary" href="#quote">Start an enquiry</a>
-      <a class="button secondary" href="#products">Explore categories</a>
+      <a class="button primary" href="#quote">{{ 'hero.primaryCta' | transloco }}</a>
+      <a class="button secondary" href="#products">{{ 'hero.secondaryCta' | transloco }}</a>
     </div>
-    <dl class="hero-metrics" aria-label="Export service highlights">
-      @for (metric of metrics; track metric.label) {
+    <dl class="hero-metrics" [attr.aria-label]="'hero.metricsAria' | transloco">
+      @for (metric of metrics; track metric.labelKey) {
         <div>
-          <dt>{{ metric.label }}</dt>
-          <dd>{{ metric.value }}</dd>
+          <dt>{{ metric.labelKey | transloco }}</dt>
+          <dd>{{ metric.valueKey | transloco }}</dd>
         </div>
       }
     </dl>

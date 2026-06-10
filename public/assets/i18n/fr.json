@@ -1,0 +1,321 @@
+{
+  "common": {
+    "brandAlt": "Shoppingmart Exports"
+  },
+  "language": {
+    "label": "Langue",
+    "english": "Anglais",
+    "german": "Allemand",
+    "french": "Français"
+  },
+  "meta": {
+    "home": {
+      "title": "Shoppingmart Exports | Plateforme mondiale de sourcing",
+      "description": "Shoppingmart Exports aide les acheteurs à sourcer des produits indiens avec des processus d'exportation documentés, des contrôles qualité et une coordination d'expédition."
+    },
+    "compliance": {
+      "title": "Conformité | Shoppingmart Exports",
+      "description": "Préparation export orientée conformité pour le sourcing de l'Inde vers l'Europe, incluant RGPD, preuves d'origine, documents douaniers et attentes produit de l'UE."
+    },
+    "contact": {
+      "title": "Contact | Shoppingmart Exports",
+      "description": "Contactez Shoppingmart Exports pour les demandes de devis, demandes acheteurs, coordination fournisseurs et suivi d'expédition."
+    }
+  },
+  "nav": {
+    "homeAria": "Accueil Shoppingmart Exports",
+    "open": "Ouvrir la navigation",
+    "products": "Produits",
+    "process": "Processus",
+    "compliance": "Conformité",
+    "quote": "Demander un devis",
+    "contact": "Contact"
+  },
+  "hero": {
+    "videoUnsupported": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "eyebrow": "Commerce mondial, simplifié",
+    "title": "Sourcing mondial. Gestion claire.",
+    "copy": "Produits, documents et logistique gérés avec clarté.",
+    "primaryCta": "Démarrer une demande",
+    "secondaryCta": "Explorer les catégories",
+    "metricsAria": "Points forts du service export",
+    "metrics": {
+      "endToEnd": {
+        "label": "De bout en bout",
+        "value": "Support sourcing"
+      },
+      "euAware": {
+        "label": "Orienté UE",
+        "value": "Préparation commerciale"
+      },
+      "fast": {
+        "label": "Rapide",
+        "value": "Préparation du devis"
+      }
+    }
+  },
+  "intro": {
+    "kicker": "Commerce conçu pour les acheteurs récurrents",
+    "title": "Sourcer des produits avec moins d'intermédiaires et des dossiers export plus propres.",
+    "copy": "Shoppingmart Exports relie découverte produit, coordination fournisseurs, points de contrôle qualité, emballage et préparation fret dans un flux transparent pour les acheteurs internationaux."
+  },
+  "products": {
+    "kicker": "Catégories export",
+    "title": "Construit autour de produits que les acheteurs peuvent recommander.",
+    "copy": "Commencez par les lignes de produits prioritaires, puis élargissez vers du sourcing sur mesure lorsque la documentation et les attentes qualité sont alignées.",
+    "cards": {
+      "consumerGoods": {
+        "title": "Biens de consommation",
+        "description": "Produits maison, lifestyle, d'usage quotidien et prêts pour la vente, avec coordination de l'emballage."
+      },
+      "foodStaples": {
+        "title": "Alimentaire et produits de base",
+        "description": "Aliments emballés, céréales, épices et catégories longue conservation avec contrôles documentaires."
+      },
+      "textiles": {
+        "title": "Textiles",
+        "description": "Vêtements, tissus et articles confectionnés sourcés autour d'échantillons, tailles et lots récurrents."
+      },
+      "customSourcing": {
+        "title": "Sourcing sur mesure",
+        "description": "Recherche produit pilotée par l'acheteur pour marque privée, achat en volume ou besoins de conteneur mixte."
+      }
+    }
+  },
+  "process": {
+    "kicker": "Flux opérationnel",
+    "title": "Un chemin clair de la demande à la préparation d'expédition.",
+    "copy": "Chaque commande passe par des points de contrôle visibles, afin que les importateurs sachent ce qui est sourcé, vérifié, documenté et préparé pour l'envoi.",
+    "steps": {
+      "requirements": {
+        "title": "Collecte des exigences",
+        "description": "Produit, marché cible, emballage, certificats et attentes de quantité sont d'abord documentés."
+      },
+      "supplier": {
+        "title": "Contrôle fournisseur et échantillon",
+        "description": "Les options d'approvisionnement présélectionnées sont comparées selon l'adéquation technique, le prix, le délai et la répétabilité."
+      },
+      "export": {
+        "title": "Préparation export",
+        "description": "Emballage, factures, coordination d'expédition et documents commerciaux requis sont préparés pour revue."
+      }
+    }
+  },
+  "compliance": {
+    "kicker": "Veille commerciale UE",
+    "title": "Sourcing orienté conformité pour les exports vers l'UE.",
+    "copy": "L'UE et l'Inde ont conclu les négociations de l'accord de libre-échange le 27 janvier 2026. Nous suivons cette évolution sans surpromesse : le texte publié reste soumis à révision juridique, signature et procédures internes d'entrée en vigueur de chaque partie.",
+    "hideStatus": "Masquer le statut commercial",
+    "viewStatus": "Voir le statut commercial",
+    "euSource": "Source UE",
+    "statusLabel": "Statut actuel de l'accord commercial",
+    "statusTitle": "Négociations conclues, l'entrée en vigueur juridique reste déterminante.",
+    "statusCopy": "L'accord est présenté comme le plus grand accord commercial conclu par l'une ou l'autre partie et devrait réduire les droits de douane sur plus de 96 % des exportations de biens de l'UE. Pour la planification import-export, nous considérons toujours les règles d'origine, la facilitation douanière, les mesures SPS, les obstacles techniques au commerce et les obligations propres aux produits comme des contrôles obligatoires.",
+    "statusItems": {
+      "concluded": "Les négociations de l'ALE ont été conclues le 27 janvier 2026 après la relance de 2022.",
+      "informational": "Les textes juridiques publiés par la Commission restent informatifs jusqu'à la signature et l'achèvement des procédures internes.",
+      "indiaRelease": "Le communiqué officiel de l'Inde souligne un accès préférentiel pour plus de 99 % des exportations indiennes vers l'UE en valeur commerciale."
+    },
+    "reviewText": "Consulter le texte publié de l'accord",
+    "cards": {
+      "gdpr": {
+        "title": "Gestion des demandes orientée RGPD",
+        "description": "Nous collectons uniquement les informations commerciales nécessaires au devis, à la planification d'expédition et à la communication avec l'importateur."
+      },
+      "origin": {
+        "title": "Rigueur origine et douane",
+        "description": "Classification produit, données de facture, dossiers d'emballage et preuves d'origine sont traités comme des documents critiques de commande."
+      },
+      "readiness": {
+        "title": "Préparation produit pour l'UE",
+        "description": "Nous préparons les échanges acheteurs autour de la documentation applicable, de l'étiquetage, des SPS, des normes techniques et des contrôles propres au marché."
+      }
+    }
+  },
+  "quote": {
+    "kicker": "Demande de devis",
+    "title": "Dites-nous ce dont vous avez besoin. Nous préparerons la prochaine étape.",
+    "copy": "Partagez les éléments essentiels pour le sourcing produit, la documentation et la planification d'expédition. Nous limitons les données de demande au suivi du devis.",
+    "fields": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "company": "Entreprise / nom de l'acheteur",
+      "market": "Marché de destination",
+      "category": "Catégorie produit",
+      "volume": "Taille d'expédition",
+      "contactDetails": "Coordonnées",
+      "message": "Message de demande",
+      "privacy": "J'accepte d'être contacté au sujet de cette demande de devis et je comprends que les informations sont utilisées pour le suivi de la demande."
+    },
+    "placeholders": {
+      "contactDetails": "Téléphone, WhatsApp ou créneau de contact préféré",
+      "message": "Détails produit, quantité cible, emballage, destination, certificats ou calendrier."
+    },
+    "note": "Le formulaire crée une demande de devis structurée en payload JSON. Pour l'instant, elle est mise en file localement ; nous pourrons ensuite envoyer le même payload au backend.",
+    "submit": "Demander un devis",
+    "result": {
+      "queuedLabel": "Payload en file",
+      "previewLabel": "Aperçu du devis",
+      "prepared": "Préparé le {{ date }}. ID de demande : {{ requestId }}.",
+      "draftSaved": "Brouillon enregistré automatiquement le {{ date }}. L'envoi final crée l'objet JSON prêt pour le backend.",
+      "draftEmpty": "Le formulaire conserve actuellement un brouillon navigateur. L'envoi crée le contrat JSON pour le stockage backend.",
+      "emptyTitle": "Envoyez les éléments essentiels. Nous gérerons la prochaine étape.",
+      "emptyDescription": "Partagez votre produit, destination, quantité et coordonnées. Votre brouillon est conservé localement pour l'instant et pourra ensuite être envoyé à votre base de données avec la même structure de payload.",
+      "readyTitle": "{{ name }}, cette demande est prête pour revue.",
+      "readyDescription": "Nous préparerons {{ volumeFocus }} pour {{ category }} vers {{ market }}, ainsi que les spécifications produit, l'emballage, les certificats et {{ complianceFocus }}.",
+      "submissionTitle": "JSON de devis préparé et mis en file.",
+      "submissionDescription": "{{ contactName }}, la demande {{ requestId }} est prête pour stockage backend et suivi commercial à {{ email }}.",
+      "fallbackTeam": "Votre équipe"
+    },
+    "options": {
+      "markets": {
+        "europeanUnion": "Union européenne",
+        "unitedKingdom": "Royaume-Uni",
+        "middleEast": "Moyen-Orient",
+        "northAmerica": "Amérique du Nord",
+        "otherMarket": "Autre marché"
+      },
+      "categories": {
+        "consumerGoods": "Biens de consommation",
+        "foodStaples": "Alimentaire et produits de base",
+        "textiles": "Textiles",
+        "customSourcing": "Sourcing sur mesure"
+      },
+      "volumes": {
+        "sample": "Échantillons ou commande d'essai",
+        "pallet": "Commande au niveau palette",
+        "container": "Chargement conteneur",
+        "mixed": "Expédition de produits mixtes"
+      }
+    },
+    "volumeFocus": {
+      "sample": "la validation d'échantillons",
+      "pallet": "le plan d'emballage palette",
+      "container": "le plan de chargement conteneur",
+      "mixed": "la consolidation d'expédition mixte"
+    },
+    "complianceFocus": {
+      "eu": "la communication orientée RGPD, les preuves d'origine et les contrôles documentaires importateur",
+      "standard": "les contrôles documentaires du marché de destination"
+    },
+    "errors": {
+      "required": "Ce champ est obligatoire.",
+      "privacy": "Veuillez confirmer l'autorisation de suivi du devis.",
+      "email": "Saisissez une adresse e-mail professionnelle valide.",
+      "minlength": "Utilisez au moins {{ requiredLength }} caractères.",
+      "review": "Veuillez vérifier ce champ."
+    }
+  },
+  "footer": {
+    "copy": "Plateforme mondiale de sourcing pour un approvisionnement produit prêt à l'export."
+  },
+  "compliancePage": {
+    "hero": {
+      "kicker": "Préparation commerciale UE",
+      "title": "Exports orientés conformité de l'Inde vers l'Europe.",
+      "copy": "Shoppingmart Exports prépare les conversations de sourcing en tenant compte des attentes des acheteurs UE : protection des données, preuves d'origine, documents douaniers, normes produit et dossiers d'expédition transparents.",
+      "primaryCta": "Voir le modèle de préparation",
+      "hideChecklist": "Masquer la checklist",
+      "openChecklist": "Ouvrir la checklist"
+    },
+    "globe": {
+      "aria": "Route commerciale animée de l'Inde vers l'Europe",
+      "title": "Route maritime de l'Inde vers l'Europe",
+      "description": "Un cargo s'anime depuis l'Inde via plusieurs destinations commerciales avant d'atteindre l'Europe.",
+      "india": "Inde",
+      "europe": "Europe",
+      "middleEast": "Moyen-Orient",
+      "china": "Chine",
+      "japan": "Japon",
+      "australia": "Australie",
+      "liveRoute": "Route active",
+      "activeLanes": "5 lignes actives",
+      "origin": "Origine",
+      "customs": "Douane",
+      "gdpr": "RGPD",
+      "standards": "Normes"
+    },
+    "agreement": {
+      "kicker": "Statut actuel de l'accord",
+      "title": "Les négociations de l'ALE UE-Inde sont conclues, mais la finalisation juridique reste déterminante.",
+      "copy": "La Commission européenne indique que les négociations de l'ALE ont été conclues le 27 janvier 2026. Le texte publié est informatif, peut encore faire l'objet d'une révision juridique et ne devient contraignant qu'après signature et achèvement des procédures internes requises de chaque partie. Nous utilisons ce statut comme signal de planification, non comme raccourci autour de la conformité."
+    },
+    "readiness": {
+      "kicker": "Notre méthode",
+      "title": "Un modèle de conformité pratique pour les demandes export.",
+      "copy": "Nous ne traitons pas la conformité comme une dernière étape administrative. Elle commence dès la sélection produit, la qualification fournisseur, l'adéquation marché et la documentation de commande.",
+      "pillars": {
+        "gdpr": {
+          "title": "Respect RGPD et DSGVO",
+          "description": "Nous concevons les flux de demande autour de la minimisation des données, de la limitation des finalités, du contrôle d'accès et d'une communication claire avec l'acheteur."
+        },
+        "origin": {
+          "title": "Préparation aux règles d'origine",
+          "description": "Déclarations fournisseurs, preuves d'origine produit, classification SH et dossiers de facture sont traités comme des éléments export essentiels."
+        },
+        "documentation": {
+          "title": "Documentation marché UE",
+          "description": "Nous préparons les échanges produit autour de l'étiquetage, de la documentation de sécurité, des besoins SPS, des normes techniques et de la revue importateur."
+        },
+        "records": {
+          "title": "Dossiers commerciaux responsables",
+          "description": "Factures commerciales, listes de colisage, certificats et jalons d'expédition sont structurés pour les commandes répétées et l'auditabilité."
+        }
+      }
+    },
+    "checklist": {
+      "kicker": "Point de contrôle interactif",
+      "title": "Checklist conformité prête pour l'acheteur.",
+      "copy": "Déployez cette checklist pendant un appel de demande afin de garder la discussion concrète et fondée sur des preuves.",
+      "collapse": "Réduire la checklist",
+      "expand": "Déployer la checklist",
+      "items": {
+        "fta": {
+          "label": "Vérification du statut ALE",
+          "details": "Les négociations de l'ALE UE-Inde ont été conclues le 27 janvier 2026, mais la planification produit doit toujours respecter le texte juridique final, la signature et le statut d'entrée en vigueur."
+        },
+        "product": {
+          "label": "Conformité propre au produit",
+          "details": "Aliments, textiles, biens de consommation et produits réglementés peuvent déclencher différentes exigences UE en matière de documentation, étiquetage, sécurité ou sanitaire."
+        },
+        "customs": {
+          "label": "Dossier douane et origine",
+          "details": "Chaque commande devrait conserver classification, preuves d'origine, dossiers fournisseurs, facture commerciale, liste de colisage et conditions d'expédition."
+        },
+        "data": {
+          "label": "Traitement des données",
+          "details": "Les coordonnées acheteurs et fournisseurs ne doivent être collectées qu'en cas de besoin et traitées selon des pratiques de conservation et d'accès alignées sur le RGPD."
+        }
+      }
+    },
+    "sources": {
+      "kicker": "Références officielles",
+      "title": "Statut commercial vérifié auprès de sources officielles.",
+      "links": {
+        "agreements": "Accords UE-Inde",
+        "texts": "Textes d'accord publiés",
+        "factsheet": "Fiche bénéfices de l'ALE"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "kicker": "Contact commercial",
+      "title": "Parlez à notre équipe export.",
+      "copy": "Envoyez votre produit, destination, quantité et calendrier. Notre équipe commerciale examinera la demande et vous contactera rapidement.",
+      "cardAria": "Contact commercial Shoppingmart Exports",
+      "primaryEmail": "E-mail commercial principal",
+      "cardCopy": "Utilisez cette adresse pour les demandes de devis, demandes acheteurs, coordination fournisseurs et suivi d'expédition."
+    },
+    "info": {
+      "kicker": "Ce qu'il faut inclure",
+      "title": "Des détails clairs accélèrent les devis.",
+      "productTitle": "Produit",
+      "productCopy": "Catégorie, spécification, emballage, besoins de certification et niveau de qualité cible.",
+      "orderTitle": "Commande",
+      "orderCopy": "Quantité, marché de destination, calendrier de livraison et taille d'expédition préférée.",
+      "contactTitle": "Contact",
+      "contactCopy": "Nom de l'entreprise, contact acheteur, e-mail, téléphone ou WhatsApp et créneau de réponse préféré."
+    }
+  }
+}

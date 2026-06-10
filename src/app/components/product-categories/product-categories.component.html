@@ -1,12 +1,11 @@
 <section class="section products-section" id="products" aria-labelledby="products-title">
   <div class="section-heading">
     <div>
-      <p class="section-kicker">Export categories</p>
-      <h2 id="products-title">Built around products buyers can reorder.</h2>
+      <p class="section-kicker">{{ 'products.kicker' | transloco }}</p>
+      <h2 id="products-title">{{ 'products.title' | transloco }}</h2>
     </div>
     <p>
-      Start with priority product lines, then expand into custom sourcing once the documentation and quality
-      expectations are aligned.
+      {{ 'products.copy' | transloco }}
     </p>
   </div>
 
@@ -14,8 +13,8 @@
     @for (category of productCategories; track category.number) {
       <article class="product-card">
         <span class="product-icon">{{ category.number }}</span>
-        <h3>{{ category.title }}</h3>
-        <p>{{ category.description }}</p>
+        <h3>{{ category.titleKey | transloco }}</h3>
+        <p>{{ category.descriptionKey | transloco }}</p>
       </article>
     }
   </div>

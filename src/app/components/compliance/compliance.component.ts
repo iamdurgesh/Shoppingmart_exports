@@ -1,31 +1,30 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 interface ComplianceCard {
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
 }
 
 @Component({
   selector: 'app-compliance',
+  imports: [TranslocoPipe],
   templateUrl: './compliance.component.html',
   styleUrl: './compliance.component.scss',
 })
 export class ComplianceComponent {
   protected readonly complianceCards: readonly ComplianceCard[] = [
     {
-      title: 'GDPR-minded enquiry handling',
-      description:
-        'We collect only the trade details needed for quotation, shipment planning, and importer communication.',
+      titleKey: 'compliance.cards.gdpr.title',
+      descriptionKey: 'compliance.cards.gdpr.description',
     },
     {
-      title: 'Origin and customs discipline',
-      description:
-        'Product classification, invoice data, packing records, and origin evidence are treated as order-critical records.',
+      titleKey: 'compliance.cards.origin.title',
+      descriptionKey: 'compliance.cards.origin.description',
     },
     {
-      title: 'EU product readiness',
-      description:
-        'We prepare buyer discussions around applicable documentation, labelling, SPS, technical standards, and market-specific checks.',
+      titleKey: 'compliance.cards.readiness.title',
+      descriptionKey: 'compliance.cards.readiness.description',
     },
   ];
 

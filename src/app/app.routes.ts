@@ -5,8 +5,29 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent, title: 'Shoppingmart Exports | Global Sourcing Platform' },
-  { path: 'compliance', component: CompliancePageComponent, title: 'Compliance | Shoppingmart Exports' },
-  { path: 'contact', component: ContactPageComponent, title: 'Contact | Shoppingmart Exports' },
+  {
+    path: '',
+    component: HomePageComponent,
+    data: {
+      titleKey: 'meta.home.title',
+      descriptionKey: 'meta.home.description',
+    },
+  },
+  {
+    path: 'compliance',
+    component: CompliancePageComponent,
+    data: {
+      titleKey: 'meta.compliance.title',
+      descriptionKey: 'meta.compliance.description',
+    },
+  },
+  {
+    path: 'contact',
+    component: ContactPageComponent,
+    data: {
+      titleKey: 'meta.contact.title',
+      descriptionKey: 'meta.contact.description',
+    },
+  },
   { path: '**', redirectTo: '' },
 ];
