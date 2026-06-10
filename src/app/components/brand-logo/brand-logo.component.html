@@ -2,7 +2,7 @@
   <img
     class="brand-logo__image"
     [src]="background() === 'dark' ? 'shoppingmart-logo-light.png' : 'shoppingmart-logo.png'"
-    alt="Shoppingmart Exports"
+    [alt]="'common.brandAlt' | transloco"
     decoding="async"
   >
 </span>

@@ -1,38 +1,38 @@
 <section class="quote-section" id="quote" aria-labelledby="quote-title">
   <div class="quote-panel">
     <div class="quote-copy">
-      <p class="section-kicker">Request quotation</p>
-      <h2 id="quote-title">Tell us what you need. We will prepare the next step.</h2>
+      <p class="section-kicker">{{ 'quote.kicker' | transloco }}</p>
+      <h2 id="quote-title">{{ 'quote.title' | transloco }}</h2>
       <p>
-        Share the essentials for product sourcing, documentation, and shipment planning. We keep enquiry details focused on quotation follow-up.
+        {{ 'quote.copy' | transloco }}
       </p>
     </div>
 
     <form class="quote-form" [formGroup]="quoteForm" (ngSubmit)="submitEnquiry()" novalidate>
       <label [class.has-error]="showError('name')">
-        Full name
+        {{ 'quote.fields.name' | transloco }}
         <input
           type="text"
           autocomplete="name"
           formControlName="name"
         >
-        @if (errorMessage('name'); as message) {
-          <span class="field-error">{{ message }}</span>
+        @if (errorMessage('name'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <label [class.has-error]="showError('email')">
-        Email address
+        {{ 'quote.fields.email' | transloco }}
         <input
           type="email"
           autocomplete="email"
           formControlName="email"
         >
-        @if (errorMessage('email'); as message) {
-          <span class="field-error">{{ message }}</span>
+        @if (errorMessage('email'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <label>
-        Company / buyer name
+        {{ 'quote.fields.company' | transloco }}
         <input
           type="text"
           autocomplete="organization"
@@ -40,70 +40,70 @@
         >
       </label>
       <label [class.has-error]="showError('market')">
-        Destination market
+        {{ 'quote.fields.market' | transloco }}
         <select formControlName="market">
-          @for (market of markets; track market) {
-            <option [value]="market">{{ market }}</option>
+          @for (market of markets; track market.value) {
+            <option [value]="market.value">{{ market.labelKey | transloco }}</option>
           }
         </select>
-        @if (errorMessage('market'); as message) {
-          <span class="field-error">{{ message }}</span>
+        @if (errorMessage('market'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <label [class.has-error]="showError('category')">
-        Product category
+        {{ 'quote.fields.category' | transloco }}
         <select formControlName="category">
-          @for (category of categories; track category) {
-            <option [value]="category">{{ category }}</option>
+          @for (category of categories; track category.value) {
+            <option [value]="category.value">{{ category.labelKey | transloco }}</option>
           }
         </select>
-        @if (errorMessage('category'); as message) {
-          <span class="field-error">{{ message }}</span>
+        @if (errorMessage('category'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <label [class.has-error]="showError('volume')">
-        Shipment size
+        {{ 'quote.fields.volume' | transloco }}
         <select formControlName="volume">
           @for (volume of volumes; track volume.value) {
-            <option [value]="volume.value">{{ volume.label }}</option>
+            <option [value]="volume.value">{{ volume.labelKey | transloco }}</option>
           }
         </select>
-        @if (errorMessage('volume'); as message) {
-          <span class="field-error">{{ message }}</span>
+        @if (errorMessage('volume'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <label>
-        Contact details
+        {{ 'quote.fields.contactDetails' | transloco }}
         <input
           type="text"
           autocomplete="tel"
-          placeholder="Phone, WhatsApp, or preferred contact time"
+          [placeholder]="'quote.placeholders.contactDetails' | transloco"
           formControlName="contactDetails"
         >
       </label>
       <label class="full-field" [class.has-error]="showError('message')">
-        Enquiry message
+        {{ 'quote.fields.message' | transloco }}
         <textarea
           rows="4"
-          placeholder="Product details, target quantity, packaging, destination, certificates, or timeline."
+          [placeholder]="'quote.placeholders.message' | transloco"
           formControlName="message"
         ></textarea>
-        @if (errorMessage('message'); as message) {
-          <span class="field-error">{{ message }}</span>
+        @if (errorMessage('message'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <label class="consent-field full-field" [class.has-error]="showError('privacyAccepted')">
         <input type="checkbox" formControlName="privacyAccepted">
-        <span>I agree to be contacted about this quotation request and understand the details are used for enquiry follow-up.</span>
-        @if (errorMessage('privacyAccepted'); as message) {
-          <span class="field-error">{{ message }}</span>
+        <span>{{ 'quote.fields.privacy' | transloco }}</span>
+        @if (errorMessage('privacyAccepted'); as error) {
+          <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
       <p class="form-note full-field">
-        The form creates a structured quotation JSON payload. For now it is queued locally; next we can post the same payload to the backend.
+        {{ 'quote.note' | transloco }}
       </p>
       <button class="button primary full-width" type="submit" [disabled]="!canSubmit()">
-        Request quotation
+        {{ 'quote.submit' | transloco }}
       </button>
     </form>
 

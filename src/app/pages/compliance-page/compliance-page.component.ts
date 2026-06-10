@@ -1,23 +1,24 @@
 import { Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 interface CompliancePillar {
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
 }
 
 interface ReadinessItem {
-  readonly label: string;
-  readonly details: string;
+  readonly labelKey: string;
+  readonly detailsKey: string;
 }
 
 interface SourceLink {
-  readonly label: string;
+  readonly labelKey: string;
   readonly href: string;
 }
 
 interface TradeLocation {
   readonly key: string;
-  readonly label: string;
+  readonly labelKey: string;
   readonly routeId: string;
   readonly latitude: number;
   readonly longitude: number;
@@ -34,6 +35,7 @@ interface SpherePoint {
 
 @Component({
   selector: 'app-compliance-page',
+  imports: [TranslocoPipe],
   templateUrl: './compliance-page.component.html',
   styleUrl: './compliance-page.component.scss',
 })
@@ -50,68 +52,60 @@ export class CompliancePageComponent {
 
   protected readonly pillars: readonly CompliancePillar[] = [
     {
-      title: 'GDPR and DSGVO respect',
-      description:
-        'We design enquiry flows around data minimization, purpose limitation, access control, and clear buyer communication.',
+      titleKey: 'compliancePage.readiness.pillars.gdpr.title',
+      descriptionKey: 'compliancePage.readiness.pillars.gdpr.description',
     },
     {
-      title: 'Rules of origin readiness',
-      description:
-        'Supplier declarations, product origin evidence, HS classification, and invoice records are treated as core export inputs.',
+      titleKey: 'compliancePage.readiness.pillars.origin.title',
+      descriptionKey: 'compliancePage.readiness.pillars.origin.description',
     },
     {
-      title: 'EU market documentation',
-      description:
-        'We prepare product discussions around labelling, safety documentation, SPS needs, technical standards, and importer review.',
+      titleKey: 'compliancePage.readiness.pillars.documentation.title',
+      descriptionKey: 'compliancePage.readiness.pillars.documentation.description',
     },
     {
-      title: 'Responsible trade records',
-      description:
-        'Commercial invoices, packing lists, certificates, and shipment milestones are structured for repeat orders and auditability.',
+      titleKey: 'compliancePage.readiness.pillars.records.title',
+      descriptionKey: 'compliancePage.readiness.pillars.records.description',
     },
   ];
 
   protected readonly readinessItems: readonly ReadinessItem[] = [
     {
-      label: 'FTA status check',
-      details:
-        'EU-India FTA negotiations concluded on 27 January 2026, but product planning must still respect final legal text, signature, and entry-into-force status.',
+      labelKey: 'compliancePage.checklist.items.fta.label',
+      detailsKey: 'compliancePage.checklist.items.fta.details',
     },
     {
-      label: 'Product-specific compliance',
-      details:
-        'Food, textiles, consumer goods, and regulated products can trigger different EU documentation, labelling, safety, or sanitary requirements.',
+      labelKey: 'compliancePage.checklist.items.product.label',
+      detailsKey: 'compliancePage.checklist.items.product.details',
     },
     {
-      label: 'Customs and origin file',
-      details:
-        'Each order should maintain classification, origin evidence, supplier records, commercial invoice, packing list, and shipment terms.',
+      labelKey: 'compliancePage.checklist.items.customs.label',
+      detailsKey: 'compliancePage.checklist.items.customs.details',
     },
     {
-      label: 'Data handling',
-      details:
-        'Buyer and supplier contact details should be collected only when needed and handled under GDPR-minded retention and access practices.',
+      labelKey: 'compliancePage.checklist.items.data.label',
+      detailsKey: 'compliancePage.checklist.items.data.details',
     },
   ];
 
   protected readonly sourceLinks: readonly SourceLink[] = [
     {
-      label: 'EU-India agreements',
+      labelKey: 'compliancePage.sources.links.agreements',
       href: 'https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/india/eu-india-agreements_en',
     },
     {
-      label: 'Published agreement texts',
+      labelKey: 'compliancePage.sources.links.texts',
       href: 'https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/india/eu-india-agreements/text-agreements_en',
     },
     {
-      label: 'FTA benefits factsheet',
+      labelKey: 'compliancePage.sources.links.factsheet',
       href: 'https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/india/eu-india-agreements/factsheet-eu-india-free-trade-agreement-main-benefits_en',
     },
   ];
 
   protected readonly indiaLocation: TradeLocation = {
     key: 'india',
-    label: 'India',
+    labelKey: 'compliancePage.globe.india',
     routeId: 'indiaHub',
     latitude: -14,
     longitude: 22,
@@ -122,7 +116,7 @@ export class CompliancePageComponent {
 
   protected readonly middleEastLocation: TradeLocation = {
     key: 'middle-east',
-    label: 'Middle East',
+    labelKey: 'compliancePage.globe.middleEast',
     routeId: 'indiaMiddleEastRoute',
     latitude: 3,
     longitude: -4,
@@ -133,7 +127,7 @@ export class CompliancePageComponent {
 
   protected readonly chinaLocation: TradeLocation = {
     key: 'china',
-    label: 'China',
+    labelKey: 'compliancePage.globe.china',
     routeId: 'indiaChinaRoute',
     latitude: 11,
     longitude: 42,
@@ -144,7 +138,7 @@ export class CompliancePageComponent {
 
   protected readonly japanLocation: TradeLocation = {
     key: 'japan',
-    label: 'Japan',
+    labelKey: 'compliancePage.globe.japan',
     routeId: 'indiaJapanRoute',
     latitude: 19,
     longitude: 64,
@@ -155,7 +149,7 @@ export class CompliancePageComponent {
 
   protected readonly australiaLocation: TradeLocation = {
     key: 'australia',
-    label: 'Australia',
+    labelKey: 'compliancePage.globe.australia',
     routeId: 'indiaAustraliaRoute',
     latitude: -43,
     longitude: 76,
@@ -166,7 +160,7 @@ export class CompliancePageComponent {
 
   protected readonly europeLocation: TradeLocation = {
     key: 'europe',
-    label: 'Europe',
+    labelKey: 'compliancePage.globe.europe',
     routeId: 'indiaEuropeRoute',
     latitude: 28,
     longitude: -36,

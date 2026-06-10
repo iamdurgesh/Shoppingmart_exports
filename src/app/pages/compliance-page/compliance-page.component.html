@@ -1,21 +1,20 @@
 <main class="compliance-page" id="top">
   <section class="compliance-hero" aria-labelledby="compliance-page-title">
     <div class="compliance-hero-copy">
-      <p class="section-kicker">EU trade readiness</p>
-      <h1 id="compliance-page-title">Compliance-aware exports from India to Europe.</h1>
+      <p class="section-kicker">{{ 'compliancePage.hero.kicker' | transloco }}</p>
+      <h1 id="compliance-page-title">{{ 'compliancePage.hero.title' | transloco }}</h1>
       <p>
-        Shoppingmart Exports prepares sourcing conversations with EU buyer expectations in mind:
-        data protection, origin records, customs documents, product standards, and transparent shipment files.
+        {{ 'compliancePage.hero.copy' | transloco }}
       </p>
       <div class="compliance-hero-actions">
-        <a class="button primary" href="#readiness">View readiness model</a>
+        <a class="button primary" href="#readiness">{{ 'compliancePage.hero.primaryCta' | transloco }}</a>
         <button class="button tertiary" type="button" (click)="toggleChecklist()">
-          {{ showChecklist ? 'Hide checklist' : 'Open checklist' }}
+          {{ (showChecklist ? 'compliancePage.hero.hideChecklist' : 'compliancePage.hero.openChecklist') | transloco }}
         </button>
       </div>
     </div>
 
-    <div class="trade-visual" aria-label="Animated trade route from India to Europe">
+    <div class="trade-visual" [attr.aria-label]="'compliancePage.globe.aria' | transloco">
       <div
         class="globe"
         [class.is-dragging]="isGlobeDragging"
@@ -34,8 +33,8 @@
           aria-labelledby="trade-globe-title trade-globe-desc"
           xmlns:xlink="http://www.w3.org/1999/xlink"
         >
-          <title id="trade-globe-title">India to Europe shipping route</title>
-          <desc id="trade-globe-desc">A cargo ship animates from India through multiple trade destinations before reaching Europe.</desc>
+          <title id="trade-globe-title">{{ 'compliancePage.globe.title' | transloco }}</title>
+          <desc id="trade-globe-desc">{{ 'compliancePage.globe.description' | transloco }}</desc>
           <defs>
             <radialGradient id="globeOcean" cx="36%" cy="28%" r="74%">
               <stop offset="0" stop-color="#2b9fba" />
@@ -176,14 +175,14 @@
               [attr.y]="projectedPoint(indiaLocation).y + indiaLocation.labelDy"
               [attr.opacity]="pointOpacity(indiaLocation)"
             >
-              India
+              {{ indiaLocation.labelKey | transloco }}
             </text>
           </g>
           <g class="trade-pin europe-pin" [attr.opacity]="pointOpacity(europeLocation)">
             <circle [attr.cx]="projectedPoint(europeLocation).x" [attr.cy]="projectedPoint(europeLocation).y" r="8" />
             <circle [attr.cx]="projectedPoint(europeLocation).x" [attr.cy]="projectedPoint(europeLocation).y" r="18" />
             <text [attr.x]="projectedPoint(europeLocation).x + europeLocation.labelDx" [attr.y]="projectedPoint(europeLocation).y + europeLocation.labelDy">
-              Europe
+              {{ europeLocation.labelKey | transloco }}
             </text>
           </g>
           @for (location of regionalLocations; track location.key) {
@@ -191,54 +190,51 @@
               <circle [attr.cx]="projectedPoint(location).x" [attr.cy]="projectedPoint(location).y" r="6" />
               <circle [attr.cx]="projectedPoint(location).x" [attr.cy]="projectedPoint(location).y" r="15" />
               <text [attr.x]="projectedPoint(location).x + location.labelDx" [attr.y]="projectedPoint(location).y + location.labelDy">
-                {{ location.label }}
+                {{ location.labelKey | transloco }}
               </text>
             </g>
           }
         </svg>
         <div class="route-status">
-          <span>Live route</span>
-          <strong>5 active lanes</strong>
+          <span>{{ 'compliancePage.globe.liveRoute' | transloco }}</span>
+          <strong>{{ 'compliancePage.globe.activeLanes' | transloco }}</strong>
         </div>
       </div>
       <div class="compliance-strip">
-        <span>Origin</span>
-        <span>Customs</span>
-        <span>GDPR</span>
-        <span>Standards</span>
+        <span>{{ 'compliancePage.globe.origin' | transloco }}</span>
+        <span>{{ 'compliancePage.globe.customs' | transloco }}</span>
+        <span>{{ 'compliancePage.globe.gdpr' | transloco }}</span>
+        <span>{{ 'compliancePage.globe.standards' | transloco }}</span>
       </div>
     </div>
   </section>
 
   <section class="agreement-band" aria-labelledby="agreement-title">
     <div>
-      <p class="section-kicker">Current agreement status</p>
-      <h2 id="agreement-title">EU-India FTA negotiations are concluded, but legal finalization still matters.</h2>
+      <p class="section-kicker">{{ 'compliancePage.agreement.kicker' | transloco }}</p>
+      <h2 id="agreement-title">{{ 'compliancePage.agreement.title' | transloco }}</h2>
     </div>
     <p>
-      The European Commission states that FTA negotiations concluded on 27 January 2026. The published text is
-      informational, may still be legally revised, and becomes binding only after signature and each side completes
-      the required internal procedures. We use that status as a planning signal, not as a shortcut around compliance.
+      {{ 'compliancePage.agreement.copy' | transloco }}
     </p>
   </section>
 
   <section class="section compliance-pillars" id="readiness" aria-labelledby="readiness-title">
     <div class="section-heading">
       <div>
-        <p class="section-kicker">How we work</p>
-        <h2 id="readiness-title">A practical compliance model for export enquiries.</h2>
+        <p class="section-kicker">{{ 'compliancePage.readiness.kicker' | transloco }}</p>
+        <h2 id="readiness-title">{{ 'compliancePage.readiness.title' | transloco }}</h2>
       </div>
       <p>
-        We do not treat compliance as a final paperwork step. It starts at product selection, supplier qualification,
-        market fit, and order documentation.
+        {{ 'compliancePage.readiness.copy' | transloco }}
       </p>
     </div>
 
     <div class="pillar-grid">
-      @for (pillar of pillars; track pillar.title) {
+      @for (pillar of pillars; track pillar.titleKey) {
         <article class="pillar-card">
-          <h3>{{ pillar.title }}</h3>
-          <p>{{ pillar.description }}</p>
+          <h3>{{ pillar.titleKey | transloco }}</h3>
+          <p>{{ pillar.descriptionKey | transloco }}</p>
         </article>
       }
     </div>
@@ -247,22 +243,22 @@
   <section class="checklist-section" aria-labelledby="checklist-title">
     <div class="checklist-panel">
       <div>
-        <p class="section-kicker">Interactive checkpoint</p>
-        <h2 id="checklist-title">Buyer-ready compliance checklist.</h2>
+        <p class="section-kicker">{{ 'compliancePage.checklist.kicker' | transloco }}</p>
+        <h2 id="checklist-title">{{ 'compliancePage.checklist.title' | transloco }}</h2>
         <p>
-          Expand this checklist during an enquiry call to keep the discussion concrete and evidence-led.
+          {{ 'compliancePage.checklist.copy' | transloco }}
         </p>
         <button class="button tertiary" type="button" (click)="toggleChecklist()">
-          {{ showChecklist ? 'Collapse checklist' : 'Expand checklist' }}
+          {{ (showChecklist ? 'compliancePage.checklist.collapse' : 'compliancePage.checklist.expand') | transloco }}
         </button>
       </div>
 
       <div class="checklist-items" [class.is-open]="showChecklist">
-        @for (item of readinessItems; track item.label) {
+        @for (item of readinessItems; track item.labelKey) {
           <article>
-            <h3>{{ item.label }}</h3>
+            <h3>{{ item.labelKey | transloco }}</h3>
             @if (showChecklist) {
-              <p>{{ item.details }}</p>
+              <p>{{ item.detailsKey | transloco }}</p>
             }
           </article>
         }
@@ -272,13 +268,13 @@
 
   <section class="section source-section" aria-labelledby="sources-title">
     <div>
-      <p class="section-kicker">Official references</p>
-      <h2 id="sources-title">Trade status checked against official sources.</h2>
+      <p class="section-kicker">{{ 'compliancePage.sources.kicker' | transloco }}</p>
+      <h2 id="sources-title">{{ 'compliancePage.sources.title' | transloco }}</h2>
     </div>
     <div class="source-grid">
       @for (source of sourceLinks; track source.href) {
         <a href="{{ source.href }}" target="_blank" rel="noopener noreferrer">
-          {{ source.label }}
+          {{ source.labelKey | transloco }}
         </a>
       }
     </div>

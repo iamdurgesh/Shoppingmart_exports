@@ -1,12 +1,11 @@
 <section class="section process-section" id="process" aria-labelledby="process-title">
   <div class="section-heading">
     <div>
-      <p class="section-kicker">Operating flow</p>
-      <h2 id="process-title">A clear path from enquiry to shipment readiness.</h2>
+      <p class="section-kicker">{{ 'process.kicker' | transloco }}</p>
+      <h2 id="process-title">{{ 'process.title' | transloco }}</h2>
     </div>
     <p>
-      Every order moves through visible checkpoints, so importers know what is being sourced, checked,
-      documented, and prepared for dispatch.
+      {{ 'process.copy' | transloco }}
     </p>
   </div>
 
@@ -15,8 +14,8 @@
       <li>
         <span>{{ step.number }}</span>
         <div>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.description }}</p>
+          <h3>{{ step.titleKey | transloco }}</h3>
+          <p>{{ step.descriptionKey | transloco }}</p>
         </div>
       </li>
     }
