@@ -1,0 +1,136 @@
+<main class="custom-sourcing-page" id="top">
+  <section class="sourcing-hero" aria-labelledby="custom-sourcing-title">
+    <img
+      src="/images/products/outdoor1.webp"
+      alt="Outdoor home patio with plants, seating, and flooring finishes"
+      class="sourcing-hero-image"
+    >
+    <div class="sourcing-hero-overlay"></div>
+    <div class="sourcing-hero-content">
+      <p class="eyebrow">Custom sourcing from India</p>
+      <h1 id="custom-sourcing-title">Build your dream home, without sourcing stress.</h1>
+      <p class="hero-copy">
+        For families building or renovating abroad, Shoppingmart Exports connects Indian materials,
+        craftsmanship, and export coordination into one practical sourcing journey.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" routerLink="/" fragment="quote">Start my home enquiry</a>
+        <a class="button secondary" href="#dream-home">Explore the story</a>
+      </div>
+      <dl class="hero-metrics" aria-label="Custom sourcing capabilities">
+        <div>
+          <dt>1 desk</dt>
+          <dd>for many Indian suppliers</dd>
+        </div>
+        <div>
+          <dt>1000s</dt>
+          <dd>of possible home products</dd>
+        </div>
+        <div>
+          <dt>Export-led</dt>
+          <dd>quotation and shipment planning</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section sourcing-intro" aria-labelledby="sourcing-intro-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">General sourcing</p>
+        <h2 id="sourcing-intro-title">Global buyers do not purchase one product. They build a supply path.</h2>
+      </div>
+      <p>
+        In real export business, sourcing is a managed process: understanding the requirement, comparing suppliers,
+        checking practical specifications, planning packing, and preparing documents before the shipment moves.
+        We bring that same disciplined approach to custom product discovery from India.
+      </p>
+    </div>
+  </section>
+
+  <section class="dream-home-band" id="dream-home" aria-labelledby="dream-home-title">
+    <div class="dream-home-copy">
+      <p class="section-kicker">Build your dream home</p>
+      <h2 id="dream-home-title">A home abroad can still feel rooted, warm, and unmistakably yours.</h2>
+      <p>
+        The story often starts with one question: "Can I bring the look and feeling of India into my new home?"
+        The answer is yes, if the sourcing is handled as a complete project instead of scattered shopping.
+      </p>
+      <p>
+        We help you think through the visible surfaces, the daily-use rooms, the spiritual corner, the decor details,
+        and the export movement behind it. You focus on the home you want to live in. Our export team handles the
+        sourcing conversation from India.
+      </p>
+    </div>
+    <div class="dream-home-visual" aria-hidden="true">
+      <img src="/images/products/tile4.webp" alt="">
+      <img src="/images/products/kitchen2.jpeg" alt="">
+      <img src="/images/products/temple1.jpg" alt="">
+    </div>
+  </section>
+
+  <section class="section solution-section" aria-labelledby="solution-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">Complete solution areas</p>
+        <h2 id="solution-title">Not a fixed catalog. A curated home sourcing conversation.</h2>
+      </div>
+      <p>
+        These examples show the direction. The real solution can be broader, mixed, and tailored around your
+        destination, quantity, finish level, and installation planning.
+      </p>
+    </div>
+
+    <div class="solution-grid">
+      @for (solution of homeSolutions; track solution.title) {
+        <article class="solution-card">
+          <img [src]="solution.imageUrl" [alt]="solution.imageAlt">
+          <div>
+            <h3>{{ solution.title }}</h3>
+            <p>{{ solution.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="sourcing-steps" aria-labelledby="sourcing-steps-title">
+    <div class="sourcing-steps-inner">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">How it works</p>
+          <h2 id="sourcing-steps-title">From scattered ideas to one export-ready plan.</h2>
+        </div>
+        <p>
+          The purpose is not to overwhelm you with product lists. It is to reduce uncertainty: what to source,
+          what can travel well, what should be grouped, and what information is needed for a serious quotation.
+        </p>
+      </div>
+
+      <ol class="sourcing-step-list">
+        @for (step of sourcingSteps; track step.label) {
+          <li>
+            <span>{{ step.label }}</span>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section sourcing-cta" aria-labelledby="sourcing-cta-title">
+    <div>
+      <p class="section-kicker">Start the conversation</p>
+      <h2 id="sourcing-cta-title">Tell us the home you are trying to create.</h2>
+      <p>
+        Share your country, rooms, product interests, photos or references, approximate quantity, and timeline.
+        We will turn it into a focused sourcing discussion.
+      </p>
+    </div>
+    <div class="sourcing-cta-actions">
+      <a class="button primary" routerLink="/" fragment="quote">Request sourcing support</a>
+      <a class="button tertiary" routerLink="/contact">Contact export team</a>
+    </div>
+  </section>
+</main>

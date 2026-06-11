@@ -1,3 +1,77 @@
 :host {
   display: block;
 }
+
+.product-card-link {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.product-card-link::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--sourcing-border-angle, 0deg),
+    rgba(232, 93, 63, 0),
+    rgba(232, 93, 63, 0.9),
+    rgba(13, 148, 136, 0.9),
+    rgba(201, 146, 40, 0.9),
+    rgba(232, 93, 63, 0)
+  );
+  content: "";
+  opacity: 0.62;
+  padding: 2px;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  animation: sourcing-border-spin 4.8s linear infinite;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.product-card-link strong {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--ocean);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.product-card-link:hover,
+.product-card-link:focus-visible {
+  border-color: rgba(232, 93, 63, 0.38);
+  box-shadow: 0 18px 42px rgba(23, 32, 42, 0.1);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.product-card-link:hover::before,
+.product-card-link:focus-visible::before {
+  opacity: 1;
+}
+
+.product-card-link > * {
+  position: relative;
+  z-index: 1;
+}
+
+@property --sourcing-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes sourcing-border-spin {
+  to {
+    --sourcing-border-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card-link::before {
+    animation: none;
+  }
+}

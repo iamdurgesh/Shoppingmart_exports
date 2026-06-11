@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
 interface ProductCategory {
   readonly number: string;
   readonly titleKey: string;
   readonly descriptionKey: string;
+  readonly routerLink?: string;
+  readonly cta?: string;
 }
 
 @Component({
   selector: 'app-product-categories',
+  imports: [RouterLink],
   imports: [TranslocoPipe],
   templateUrl: './product-categories.component.html',
   styleUrl: './product-categories.component.scss',
@@ -34,6 +38,8 @@ export class ProductCategoriesComponent {
       number: '04',
       titleKey: 'products.cards.customSourcing.title',
       descriptionKey: 'products.cards.customSourcing.description',
+            routerLink: '/products/custom-sourcing',
+      cta: 'Explore service',
     },
   ];
 }

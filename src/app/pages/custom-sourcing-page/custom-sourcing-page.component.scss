@@ -1,0 +1,252 @@
+:host {
+  display: block;
+}
+
+.custom-sourcing-page {
+  background: var(--paper);
+}
+
+.sourcing-hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.sourcing-hero-image,
+.sourcing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sourcing-hero-image {
+  object-fit: cover;
+}
+
+.sourcing-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(7, 17, 27, 0.8), rgba(7, 17, 27, 0.42) 50%, rgba(7, 17, 27, 0.16)),
+    linear-gradient(0deg, rgba(7, 17, 27, 0.82), rgba(7, 17, 27, 0.04) 56%);
+}
+
+.sourcing-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 150px 0 34px;
+}
+
+.sourcing-hero h1 {
+  max-width: 860px;
+}
+
+.sourcing-intro {
+  padding-bottom: clamp(42px, 7vw, 84px);
+}
+
+.dream-home-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: center;
+  width: 100%;
+  padding: clamp(68px, 9vw, 118px) max(18px, calc((100vw - 1120px) / 2));
+  color: #ffffff;
+  background: #123340;
+}
+
+.dream-home-band .section-kicker {
+  color: #80e0d6;
+}
+
+.dream-home-copy p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.dream-home-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.dream-home-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  grid-template-rows: 210px 210px;
+  gap: 14px;
+}
+
+.dream-home-visual img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.22);
+}
+
+.dream-home-visual img:first-child {
+  grid-row: span 2;
+}
+
+.solution-section {
+  padding-bottom: clamp(58px, 8vw, 96px);
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.solution-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(23, 32, 42, 0.05);
+}
+
+.solution-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.solution-card div {
+  padding: 22px;
+}
+
+.solution-card p,
+.sourcing-step-list p,
+.sourcing-cta p {
+  color: var(--muted);
+}
+
+.sourcing-steps {
+  width: 100%;
+  padding: clamp(68px, 9vw, 112px) max(18px, calc((100vw - 1120px) / 2));
+  background: #ffffff;
+}
+
+.sourcing-steps-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.sourcing-step-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 38px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sourcing-step-list li {
+  min-height: 260px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.sourcing-step-list span {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  margin-bottom: 54px;
+  border-radius: var(--radius);
+  color: #ffffff;
+  background: var(--ocean);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.sourcing-step-list li:nth-child(2) span {
+  background: var(--teal);
+}
+
+.sourcing-step-list li:nth-child(3) span {
+  background: var(--gold);
+}
+
+.sourcing-step-list li:nth-child(4) span {
+  background: var(--coral);
+}
+
+.sourcing-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 6vw, 72px);
+  align-items: end;
+}
+
+.sourcing-cta h2 {
+  max-width: 760px;
+}
+
+.sourcing-cta p {
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
+.sourcing-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 920px) {
+  .dream-home-band,
+  .sourcing-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-grid,
+  .sourcing-step-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sourcing-cta-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .sourcing-hero {
+    min-height: 92vh;
+  }
+
+  .sourcing-hero-content {
+    width: calc(100% - 32px);
+    padding-top: 118px;
+  }
+
+  .dream-home-visual,
+  .solution-grid,
+  .sourcing-step-list {
+    grid-template-columns: 1fr;
+  }
+
+  .dream-home-visual {
+    grid-template-rows: repeat(3, minmax(190px, 46vw));
+  }
+
+  .dream-home-visual img:first-child {
+    grid-row: auto;
+  }
+
+  .sourcing-step-list li {
+    min-height: auto;
+  }
+
+  .sourcing-step-list span {
+    margin-bottom: 30px;
+  }
+}
