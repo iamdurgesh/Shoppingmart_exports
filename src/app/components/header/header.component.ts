@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
 
   protected readonly navItems: readonly NavItem[] = [
     { labelKey: 'nav.products', routerLink: '/', fragment: 'products' },
+    { label: 'Custom Sourcing', routerLink: '/products/custom-sourcing' },
     { labelKey: 'nav.process', routerLink: '/', fragment: 'process' },
     { labelKey: 'nav.compliance', routerLink: '/compliance' },
     { labelKey: 'nav.quote', routerLink: '/', fragment: 'quote' },
