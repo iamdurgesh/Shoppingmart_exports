@@ -4,14 +4,15 @@ export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
 export interface LanguageOption {
   readonly code: SupportedLanguage;
+  readonly flag: string;
   readonly labelKey: string;
   readonly shortLabel: string;
 }
 
 export const LANGUAGE_OPTIONS: readonly LanguageOption[] = [
-  { code: 'en', labelKey: 'language.english', shortLabel: 'EN' },
-  { code: 'de', labelKey: 'language.german', shortLabel: 'DE' },
-  { code: 'fr', labelKey: 'language.french', shortLabel: 'FR' },
+  { code: 'en', flag: '🇬🇧', labelKey: 'language.english', shortLabel: 'EN' },
+  { code: 'de', flag: '🇩🇪', labelKey: 'language.german', shortLabel: 'DE' },
+  { code: 'fr', flag: '🇫🇷', labelKey: 'language.french', shortLabel: 'FR' },
 ];
 
 const LANGUAGE_STORAGE_KEY = 'shoppingmart-exports.language';

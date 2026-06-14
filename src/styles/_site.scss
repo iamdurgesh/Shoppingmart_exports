@@ -115,40 +115,148 @@ select {
 }
 
 .language-switcher {
+  position: relative;
   display: inline-flex;
+  min-width: 86px;
   align-items: center;
-  gap: 4px;
   margin-left: 8px;
-  padding: 3px;
+}
+
+.language-select-trigger {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 42px;
+  width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: var(--radius);
+  padding: 0 12px;
+  color: currentColor;
   background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.language-switcher button {
-  min-width: 36px;
-  height: 34px;
+.language-flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.language-code {
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.language-chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  opacity: 0.72;
+  transition: transform 180ms ease;
+}
+
+.language-switcher.is-open .language-chevron {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  min-width: 100%;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius);
+  color: currentColor;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.language-switcher.is-open .language-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.language-option {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: center;
+  justify-content: start;
+  min-height: 38px;
+  width: 100%;
   border: 0;
   border-radius: 6px;
+  padding: 0 10px;
   color: currentColor;
   background: transparent;
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
 }
 
-.language-switcher button:hover,
-.language-switcher button:focus-visible,
-.language-switcher button.is-active {
+.language-select-trigger:hover,
+.language-select-trigger:focus-visible,
+.language-switcher.is-open .language-select-trigger {
+  background: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.language-select-trigger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18);
+}
+
+.language-option:hover,
+.language-option:focus-visible,
+.language-option.is-active {
   color: var(--ink);
   background: #ffffff;
   outline: none;
 }
 
-.site-header.is-scrolled .language-switcher,
-.site-header.is-open .language-switcher {
+.site-header.is-scrolled .language-select-trigger,
+.site-header.is-open .language-select-trigger {
   border-color: rgba(13, 76, 106, 0.16);
   background: rgba(13, 76, 106, 0.06);
+}
+
+.site-header.is-scrolled .language-select-trigger:hover,
+.site-header.is-scrolled .language-select-trigger:focus-visible,
+.site-header.is-scrolled .language-switcher.is-open .language-select-trigger,
+.site-header.is-open .language-select-trigger:hover,
+.site-header.is-open .language-select-trigger:focus-visible,
+.site-header.is-open .language-switcher.is-open .language-select-trigger {
+  background: #ffffff;
+}
+
+.site-header.is-scrolled .language-menu,
+.site-header.is-open .language-menu {
+  border-color: rgba(13, 76, 106, 0.16);
+  color: var(--ink);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.site-header.is-scrolled .language-option:hover,
+.site-header.is-scrolled .language-option:focus-visible,
+.site-header.is-scrolled .language-option.is-active,
+.site-header.is-open .language-option:hover,
+.site-header.is-open .language-option:focus-visible,
+.site-header.is-open .language-option.is-active {
+  color: #ffffff;
+  background: var(--ocean);
 }
 
 .site-nav a:hover,
@@ -780,7 +888,7 @@ h3 {
   }
 
   .language-switcher {
-    justify-content: center;
+    width: 100%;
     margin: 8px 0 0;
   }
 

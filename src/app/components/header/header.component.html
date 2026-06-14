@@ -28,18 +28,36 @@
         {{ item.labelKey | transloco }}
       </a>
     }
-    <div class="language-switcher" [attr.aria-label]="'language.label' | transloco">
-      @for (language of languages; track language.code) {
-        <button
-          type="button"
-          [class.is-active]="activeLanguage() === language.code"
-          [attr.aria-pressed]="activeLanguage() === language.code"
-          [attr.aria-label]="(language.labelKey | transloco)"
-          (click)="selectLanguage(language.code)"
-        >
-          {{ language.shortLabel }}
-        </button>
-      }
+    <div class="language-switcher" [class.is-open]="isLanguageMenuOpen">
+      <button
+        class="language-select-trigger"
+        type="button"
+        aria-haspopup="listbox"
+        [attr.aria-expanded]="isLanguageMenuOpen"
+        aria-controls="language-menu"
+        [attr.aria-label]="'language.label' | transloco"
+        (click)="toggleLanguageMenu($event)"
+      >
+        <span class="language-flag">{{ activeLanguageOption().flag }}</span>
+        <span class="language-code">{{ activeLanguageOption().shortLabel }}</span>
+        <span class="language-chevron"></span>
+      </button>
+
+      <div class="language-menu" id="language-menu" role="listbox" [attr.aria-label]="'language.label' | transloco">
+        @for (language of languages; track language.code) {
+          <button
+            class="language-option"
+            type="button"
+            role="option"
+            [class.is-active]="activeLanguage() === language.code"
+            [attr.aria-selected]="activeLanguage() === language.code"
+            (click)="selectLanguage(language.code)"
+          >
+            <span class="language-flag">{{ language.flag }}</span>
+            <span class="language-code">{{ language.shortLabel }}</span>
+          </button>
+        }
+      </div>
     </div>
   </nav>
 </header>
