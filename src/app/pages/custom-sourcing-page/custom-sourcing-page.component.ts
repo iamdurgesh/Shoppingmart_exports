@@ -1,85 +1,86 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 interface HomeSolution {
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
   readonly imageUrl: string;
-  readonly imageAlt: string;
+  readonly imageAltKey: string;
 }
 
 interface SourcingStep {
   readonly label: string;
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly descriptionKey: string;
 }
 
 @Component({
   selector: 'app-custom-sourcing-page',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './custom-sourcing-page.component.html',
   styleUrl: './custom-sourcing-page.component.scss',
 })
 export class CustomSourcingPageComponent {
   protected readonly homeSolutions: readonly HomeSolution[] = [
     {
-      title: 'Floors and surfaces',
-      description: 'Ceramic tiles, marble-look finishes, outdoor flooring, wall cladding, and practical material options.',
-      imageUrl: '/images/products/tile4.webp',
-      imageAlt: 'Modern home kitchen with polished floor and stone finishes',
-    },
-    {
-      title: 'Modular kitchens',
-      description: 'Kitchen systems, cabinets, counters, hardware, and finish coordination for apartments or villas.',
-      imageUrl: '/images/products/kitchen2.jpeg',
-      imageAlt: 'Compact modern modular kitchen with wood counter and white cabinetry',
-    },
-    {
-      title: 'Prayer and heritage spaces',
-      description: 'Mandirs, marble temples, idols, brass decor, and traditional pieces selected around your family rituals.',
-      imageUrl: '/images/products/temple1.jpg',
-      imageAlt: 'White carved home temple displayed against decorative wall finishes',
-    },
-    {
-      title: 'Decor and statement pieces',
-      description: 'Antiques, handcrafted decor, feature pieces, doors, partitions, and details that make the home personal.',
-      imageUrl: '/images/products/elephant.jpeg',
-      imageAlt: 'Golden elephant home decor piece on a display surface',
-    },
-    {
-      title: 'Doors and openings',
-      description: 'Glass doors, frames, hardware, partitions, and entrance details aligned with the interior language.',
-      imageUrl: '/images/products/door1.jpg',
-      imageAlt: 'Modern black framed glass door opened into a bright interior',
-    },
-    {
-      title: 'Outdoor living',
-      description: 'Garden, patio, balcony, and terrace finishes that support a complete indoor-outdoor home story.',
+      titleKey: 'customSourcingPage.solutions.items.surfaces.title',
+      descriptionKey: 'customSourcingPage.solutions.items.surfaces.description',
       imageUrl: '/images/products/outdoor1.webp',
-      imageAlt: 'Outdoor patio seating with plants and flooring finishes',
+      imageAltKey: 'customSourcingPage.solutions.items.surfaces.imageAlt',
+    },
+    {
+      titleKey: 'customSourcingPage.solutions.items.kitchens.title',
+      descriptionKey: 'customSourcingPage.solutions.items.kitchens.description',
+      imageUrl: '/images/products/kitchen2.jpeg',
+      imageAltKey: 'customSourcingPage.solutions.items.kitchens.imageAlt',
+    },
+    {
+      titleKey: 'customSourcingPage.solutions.items.heritage.title',
+      descriptionKey: 'customSourcingPage.solutions.items.heritage.description',
+      imageUrl: '/images/products/temple1.jpg',
+      imageAltKey: 'customSourcingPage.solutions.items.heritage.imageAlt',
+    },
+    {
+      titleKey: 'customSourcingPage.solutions.items.decor.title',
+      descriptionKey: 'customSourcingPage.solutions.items.decor.description',
+      imageUrl: '/images/products/elephant.jpeg',
+      imageAltKey: 'customSourcingPage.solutions.items.decor.imageAlt',
+    },
+    {
+      titleKey: 'customSourcingPage.solutions.items.doors.title',
+      descriptionKey: 'customSourcingPage.solutions.items.doors.description',
+      imageUrl: '/images/products/door1.jpg',
+      imageAltKey: 'customSourcingPage.solutions.items.doors.imageAlt',
+    },
+    {
+      titleKey: 'customSourcingPage.solutions.items.outdoor.title',
+      descriptionKey: 'customSourcingPage.solutions.items.outdoor.description',
+      imageUrl: '/images/products/outdoor1.webp',
+      imageAltKey: 'customSourcingPage.solutions.items.outdoor.imageAlt',
     },
   ];
 
   protected readonly sourcingSteps: readonly SourcingStep[] = [
     {
       label: '01',
-      title: 'Your home vision',
-      description: 'You share rooms, mood references, quantities, destination country, timeline, and budget direction.',
+      titleKey: 'customSourcingPage.steps.items.vision.title',
+      descriptionKey: 'customSourcingPage.steps.items.vision.description',
     },
     {
       label: '02',
-      title: 'India sourcing desk',
-      description: 'We shortlist practical options from Indian suppliers, compare finish quality, packing needs, and export fit.',
+      titleKey: 'customSourcingPage.steps.items.desk.title',
+      descriptionKey: 'customSourcingPage.steps.items.desk.description',
     },
     {
       label: '03',
-      title: 'Consolidated export plan',
-      description: 'Our team coordinates product grouping, shipment planning, documentation, and quotation follow-up.',
+      titleKey: 'customSourcingPage.steps.items.plan.title',
+      descriptionKey: 'customSourcingPage.steps.items.plan.description',
     },
     {
       label: '04',
-      title: 'Stress-free handover',
-      description: 'You receive a clear sourcing path instead of managing many vendors, calls, samples, and freight questions alone.',
+      titleKey: 'customSourcingPage.steps.items.handover.title',
+      descriptionKey: 'customSourcingPage.steps.items.handover.description',
     },
   ];
 }

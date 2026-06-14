@@ -20,12 +20,17 @@
     "contact": {
       "title": "Contact | Shoppingmart Exports",
       "description": "Contact Shoppingmart Exports for quotation requests, buyer enquiries, supplier coordination, and shipment follow-up."
+    },
+    "customSourcing": {
+      "title": "Custom Sourcing | Shoppingmart Exports",
+      "description": "Custom sourcing from India for dream homes, mixed product shipments, home decor, tiles, modular kitchens, temples, and export-ready supply planning."
     }
   },
   "nav": {
     "homeAria": "Shoppingmart Exports home",
     "open": "Open navigation",
     "products": "Products",
+    "customSourcing": "Custom Sourcing",
     "process": "Process",
     "compliance": "Compliance",
     "quote": "Request Quote",
@@ -78,7 +83,8 @@
       },
       "customSourcing": {
         "title": "Custom Sourcing",
-        "description": "Buyer-led product discovery for private label, bulk purchase, or mixed container needs."
+        "description": "Buyer-led product discovery for private label, bulk purchase, dream homes, or mixed container needs.",
+        "cta": "Explore service"
       }
     }
   },
@@ -296,6 +302,109 @@
         "texts": "Published agreement texts",
         "factsheet": "FTA benefits factsheet"
       }
+    }
+  },
+  "customSourcingPage": {
+    "hero": {
+      "imageAlt": "Outdoor home patio with plants, seating, and flooring finishes",
+      "kicker": "Custom sourcing from India",
+      "title": "Build your dream home, without sourcing stress.",
+      "copy": "For families building or renovating abroad, Shoppingmart Exports connects Indian materials, craftsmanship, and export coordination into one practical sourcing journey.",
+      "primaryCta": "Start my home enquiry",
+      "secondaryCta": "Explore the story",
+      "metricsAria": "Custom sourcing capabilities",
+      "metrics": {
+        "desk": {
+          "label": "1 desk",
+          "value": "for many Indian suppliers"
+        },
+        "products": {
+          "label": "1000s",
+          "value": "of possible home products"
+        },
+        "export": {
+          "label": "Export-led",
+          "value": "quotation and shipment planning"
+        }
+      }
+    },
+    "intro": {
+      "kicker": "General sourcing",
+      "title": "Global buyers do not purchase one product. They build a supply path.",
+      "copy": "In real export business, sourcing is a managed process: understanding the requirement, comparing suppliers, checking practical specifications, planning packing, and preparing documents before the shipment moves. We bring that same disciplined approach to custom product discovery from India."
+    },
+    "dreamHome": {
+      "kicker": "Build your dream home",
+      "title": "A home abroad can still feel rooted, warm, and unmistakably yours.",
+      "copyOne": "The story often starts with one question: \"Can I bring the look and feeling of India into my new home?\" The answer is yes, if the sourcing is handled as a complete project instead of scattered shopping.",
+      "copyTwo": "We help you think through the visible surfaces, the daily-use rooms, the spiritual corner, the decor details, and the export movement behind it. You focus on the home you want to live in. Our export team handles the sourcing conversation from India."
+    },
+    "solutions": {
+      "kicker": "Complete solution areas",
+      "title": "Not a fixed catalog. A curated home sourcing conversation.",
+      "copy": "These examples show the direction. The real solution can be broader, mixed, and tailored around your destination, quantity, finish level, and installation planning.",
+      "items": {
+        "surfaces": {
+          "title": "Floors and surfaces",
+          "description": "Ceramic tiles, marble-look finishes, outdoor flooring, wall cladding, and practical material options.",
+          "imageAlt": "Outdoor patio with seating, plants, and visible floor finishes"
+        },
+        "kitchens": {
+          "title": "Modular kitchens",
+          "description": "Kitchen systems, cabinets, counters, hardware, and finish coordination for apartments or villas.",
+          "imageAlt": "Compact modern modular kitchen with wood counter and white cabinetry"
+        },
+        "heritage": {
+          "title": "Prayer and heritage spaces",
+          "description": "Mandirs, marble temples, idols, brass decor, and traditional pieces selected around your family rituals.",
+          "imageAlt": "White carved home temple displayed against decorative wall finishes"
+        },
+        "decor": {
+          "title": "Decor and statement pieces",
+          "description": "Antiques, handcrafted decor, feature pieces, doors, partitions, and details that make the home personal.",
+          "imageAlt": "Golden elephant home decor piece on a display surface"
+        },
+        "doors": {
+          "title": "Doors and openings",
+          "description": "Glass doors, frames, hardware, partitions, and entrance details aligned with the interior language.",
+          "imageAlt": "Modern black framed glass door opened into a bright interior"
+        },
+        "outdoor": {
+          "title": "Outdoor living",
+          "description": "Garden, patio, balcony, and terrace finishes that support a complete indoor-outdoor home story.",
+          "imageAlt": "Outdoor patio seating with plants and flooring finishes"
+        }
+      }
+    },
+    "steps": {
+      "kicker": "How it works",
+      "title": "From scattered ideas to one export-ready plan.",
+      "copy": "The purpose is not to overwhelm you with product lists. It is to reduce uncertainty: what to source, what can travel well, what should be grouped, and what information is needed for a serious quotation.",
+      "items": {
+        "vision": {
+          "title": "Your home vision",
+          "description": "You share rooms, mood references, quantities, destination country, timeline, and budget direction."
+        },
+        "desk": {
+          "title": "India sourcing desk",
+          "description": "We shortlist practical options from Indian suppliers, compare finish quality, packing needs, and export fit."
+        },
+        "plan": {
+          "title": "Consolidated export plan",
+          "description": "Our team coordinates product grouping, shipment planning, documentation, and quotation follow-up."
+        },
+        "handover": {
+          "title": "Stress-free handover",
+          "description": "You receive a clear sourcing path instead of managing many vendors, calls, samples, and freight questions alone."
+        }
+      }
+    },
+    "cta": {
+      "kicker": "Start the conversation",
+      "title": "Tell us the home you are trying to create.",
+      "copy": "Share your country, rooms, product interests, photos or references, approximate quantity, and timeline. We will turn it into a focused sourcing discussion.",
+      "primaryCta": "Request sourcing support",
+      "secondaryCta": "Contact export team"
     }
   },
   "contact": {
