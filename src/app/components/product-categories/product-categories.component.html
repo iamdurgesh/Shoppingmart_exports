@@ -19,12 +19,14 @@
         <a
           class="product-card product-card-link"
           [routerLink]="category.routerLink"
-          [attr.aria-label]="'Open ' + category.title"
+          [attr.aria-label]="category.titleKey | transloco"
         >
           <span class="product-icon">{{ category.number }}</span>
-          <h3>{{ category.title }}</h3>
-          <p>{{ category.description }}</p>
-          <strong>{{ category.cta }}</strong>
+          <h3>{{ category.titleKey | transloco }}</h3>
+          <p>{{ category.descriptionKey | transloco }}</p>
+          @if (category.cta) {
+            <strong>{{ category.cta | transloco }}</strong>
+          }
         </a>
       } @else {
         <article class="product-card">

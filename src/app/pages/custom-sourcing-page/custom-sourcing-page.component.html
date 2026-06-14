@@ -2,33 +2,32 @@
   <section class="sourcing-hero" aria-labelledby="custom-sourcing-title">
     <img
       src="/images/products/outdoor1.webp"
-      alt="Outdoor home patio with plants, seating, and flooring finishes"
+      [alt]="'customSourcingPage.hero.imageAlt' | transloco"
       class="sourcing-hero-image"
     >
     <div class="sourcing-hero-overlay"></div>
     <div class="sourcing-hero-content">
-      <p class="eyebrow">Custom sourcing from India</p>
-      <h1 id="custom-sourcing-title">Build your dream home, without sourcing stress.</h1>
+      <p class="eyebrow">{{ 'customSourcingPage.hero.kicker' | transloco }}</p>
+      <h1 id="custom-sourcing-title">{{ 'customSourcingPage.hero.title' | transloco }}</h1>
       <p class="hero-copy">
-        For families building or renovating abroad, Shoppingmart Exports connects Indian materials,
-        craftsmanship, and export coordination into one practical sourcing journey.
+        {{ 'customSourcingPage.hero.copy' | transloco }}
       </p>
       <div class="hero-actions">
-        <a class="button primary" routerLink="/" fragment="quote">Start my home enquiry</a>
-        <a class="button secondary" href="#dream-home">Explore the story</a>
+        <a class="button primary" routerLink="/" fragment="quote">{{ 'customSourcingPage.hero.primaryCta' | transloco }}</a>
+        <a class="button secondary" href="#dream-home">{{ 'customSourcingPage.hero.secondaryCta' | transloco }}</a>
       </div>
-      <dl class="hero-metrics" aria-label="Custom sourcing capabilities">
+      <dl class="hero-metrics" [attr.aria-label]="'customSourcingPage.hero.metricsAria' | transloco">
         <div>
-          <dt>1 desk</dt>
-          <dd>for many Indian suppliers</dd>
+          <dt>{{ 'customSourcingPage.hero.metrics.desk.label' | transloco }}</dt>
+          <dd>{{ 'customSourcingPage.hero.metrics.desk.value' | transloco }}</dd>
         </div>
         <div>
-          <dt>1000s</dt>
-          <dd>of possible home products</dd>
+          <dt>{{ 'customSourcingPage.hero.metrics.products.label' | transloco }}</dt>
+          <dd>{{ 'customSourcingPage.hero.metrics.products.value' | transloco }}</dd>
         </div>
         <div>
-          <dt>Export-led</dt>
-          <dd>quotation and shipment planning</dd>
+          <dt>{{ 'customSourcingPage.hero.metrics.export.label' | transloco }}</dt>
+          <dd>{{ 'customSourcingPage.hero.metrics.export.value' | transloco }}</dd>
         </div>
       </dl>
     </div>
@@ -37,33 +36,28 @@
   <section class="section sourcing-intro" aria-labelledby="sourcing-intro-title">
     <div class="section-heading">
       <div>
-        <p class="section-kicker">General sourcing</p>
-        <h2 id="sourcing-intro-title">Global buyers do not purchase one product. They build a supply path.</h2>
+        <p class="section-kicker">{{ 'customSourcingPage.intro.kicker' | transloco }}</p>
+        <h2 id="sourcing-intro-title">{{ 'customSourcingPage.intro.title' | transloco }}</h2>
       </div>
       <p>
-        In real export business, sourcing is a managed process: understanding the requirement, comparing suppliers,
-        checking practical specifications, planning packing, and preparing documents before the shipment moves.
-        We bring that same disciplined approach to custom product discovery from India.
+        {{ 'customSourcingPage.intro.copy' | transloco }}
       </p>
     </div>
   </section>
 
   <section class="dream-home-band" id="dream-home" aria-labelledby="dream-home-title">
     <div class="dream-home-copy">
-      <p class="section-kicker">Build your dream home</p>
-      <h2 id="dream-home-title">A home abroad can still feel rooted, warm, and unmistakably yours.</h2>
+      <p class="section-kicker">{{ 'customSourcingPage.dreamHome.kicker' | transloco }}</p>
+      <h2 id="dream-home-title">{{ 'customSourcingPage.dreamHome.title' | transloco }}</h2>
       <p>
-        The story often starts with one question: "Can I bring the look and feeling of India into my new home?"
-        The answer is yes, if the sourcing is handled as a complete project instead of scattered shopping.
+        {{ 'customSourcingPage.dreamHome.copyOne' | transloco }}
       </p>
       <p>
-        We help you think through the visible surfaces, the daily-use rooms, the spiritual corner, the decor details,
-        and the export movement behind it. You focus on the home you want to live in. Our export team handles the
-        sourcing conversation from India.
+        {{ 'customSourcingPage.dreamHome.copyTwo' | transloco }}
       </p>
     </div>
     <div class="dream-home-visual" aria-hidden="true">
-      <img src="/images/products/tile4.webp" alt="">
+      <img src="/images/products/outdoor1.webp" alt="">
       <img src="/images/products/kitchen2.jpeg" alt="">
       <img src="/images/products/temple1.jpg" alt="">
     </div>
@@ -72,22 +66,21 @@
   <section class="section solution-section" aria-labelledby="solution-title">
     <div class="section-heading">
       <div>
-        <p class="section-kicker">Complete solution areas</p>
-        <h2 id="solution-title">Not a fixed catalog. A curated home sourcing conversation.</h2>
+        <p class="section-kicker">{{ 'customSourcingPage.solutions.kicker' | transloco }}</p>
+        <h2 id="solution-title">{{ 'customSourcingPage.solutions.title' | transloco }}</h2>
       </div>
       <p>
-        These examples show the direction. The real solution can be broader, mixed, and tailored around your
-        destination, quantity, finish level, and installation planning.
+        {{ 'customSourcingPage.solutions.copy' | transloco }}
       </p>
     </div>
 
     <div class="solution-grid">
-      @for (solution of homeSolutions; track solution.title) {
+      @for (solution of homeSolutions; track solution.titleKey) {
         <article class="solution-card">
-          <img [src]="solution.imageUrl" [alt]="solution.imageAlt">
+          <img [src]="solution.imageUrl" [alt]="solution.imageAltKey | transloco">
           <div>
-            <h3>{{ solution.title }}</h3>
-            <p>{{ solution.description }}</p>
+            <h3>{{ solution.titleKey | transloco }}</h3>
+            <p>{{ solution.descriptionKey | transloco }}</p>
           </div>
         </article>
       }
@@ -98,12 +91,11 @@
     <div class="sourcing-steps-inner">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">How it works</p>
-          <h2 id="sourcing-steps-title">From scattered ideas to one export-ready plan.</h2>
+          <p class="section-kicker">{{ 'customSourcingPage.steps.kicker' | transloco }}</p>
+          <h2 id="sourcing-steps-title">{{ 'customSourcingPage.steps.title' | transloco }}</h2>
         </div>
         <p>
-          The purpose is not to overwhelm you with product lists. It is to reduce uncertainty: what to source,
-          what can travel well, what should be grouped, and what information is needed for a serious quotation.
+          {{ 'customSourcingPage.steps.copy' | transloco }}
         </p>
       </div>
 
@@ -111,8 +103,8 @@
         @for (step of sourcingSteps; track step.label) {
           <li>
             <span>{{ step.label }}</span>
-            <h3>{{ step.title }}</h3>
-            <p>{{ step.description }}</p>
+            <h3>{{ step.titleKey | transloco }}</h3>
+            <p>{{ step.descriptionKey | transloco }}</p>
           </li>
         }
       </ol>
@@ -121,16 +113,15 @@
 
   <section class="section sourcing-cta" aria-labelledby="sourcing-cta-title">
     <div>
-      <p class="section-kicker">Start the conversation</p>
-      <h2 id="sourcing-cta-title">Tell us the home you are trying to create.</h2>
+      <p class="section-kicker">{{ 'customSourcingPage.cta.kicker' | transloco }}</p>
+      <h2 id="sourcing-cta-title">{{ 'customSourcingPage.cta.title' | transloco }}</h2>
       <p>
-        Share your country, rooms, product interests, photos or references, approximate quantity, and timeline.
-        We will turn it into a focused sourcing discussion.
+        {{ 'customSourcingPage.cta.copy' | transloco }}
       </p>
     </div>
     <div class="sourcing-cta-actions">
-      <a class="button primary" routerLink="/" fragment="quote">Request sourcing support</a>
-      <a class="button tertiary" routerLink="/contact">Contact export team</a>
+      <a class="button primary" routerLink="/" fragment="quote">{{ 'customSourcingPage.cta.primaryCta' | transloco }}</a>
+      <a class="button tertiary" routerLink="/contact">{{ 'customSourcingPage.cta.secondaryCta' | transloco }}</a>
     </div>
   </section>
 </main>

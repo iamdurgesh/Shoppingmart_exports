@@ -20,12 +20,17 @@
     "contact": {
       "title": "Kontakt | Shoppingmart Exports",
       "description": "Kontaktieren Sie Shoppingmart Exports für Angebotsanfragen, Käuferanfragen, Lieferantenkoordination und Versandnachverfolgung."
+    },
+    "customSourcing": {
+      "title": "Individuelle Beschaffung | Shoppingmart Exports",
+      "description": "Individuelle Beschaffung aus Indien für Traumhäuser, gemischte Produktsendungen, Wohnaccessoires, Fliesen, modulare Küchen, Tempel und exportbereite Lieferplanung."
     }
   },
   "nav": {
     "homeAria": "Startseite von Shoppingmart Exports",
     "open": "Navigation öffnen",
     "products": "Produkte",
+    "customSourcing": "Individuelle Beschaffung",
     "process": "Prozess",
     "compliance": "Compliance",
     "quote": "Angebot anfragen",
@@ -78,7 +83,8 @@
       },
       "customSourcing": {
         "title": "Individuelle Beschaffung",
-        "description": "Käufergeführte Produktsuche für Eigenmarken, Großeinkäufe oder gemischte Containerbedarfe."
+        "description": "Käufergeführte Produktsuche für Eigenmarken, Großeinkäufe, Traumhäuser oder gemischte Containerbedarfe.",
+        "cta": "Service ansehen"
       }
     }
   },
@@ -296,6 +302,109 @@
         "texts": "Veröffentlichte Abkommenstexte",
         "factsheet": "FTA-Nutzen-Factsheet"
       }
+    }
+  },
+  "customSourcingPage": {
+    "hero": {
+      "imageAlt": "Outdoor-Wohnbereich mit Pflanzen, Sitzgelegenheiten und Bodenbelägen",
+      "kicker": "Individuelle Beschaffung aus Indien",
+      "title": "Bauen Sie Ihr Traumhaus, ohne Beschaffungsstress.",
+      "copy": "Für Familien, die im Ausland bauen oder renovieren, verbindet Shoppingmart Exports indische Materialien, Handwerkskunst und Exportkoordination zu einer praktischen Beschaffungsreise.",
+      "primaryCta": "Hausanfrage starten",
+      "secondaryCta": "Story ansehen",
+      "metricsAria": "Fähigkeiten der individuellen Beschaffung",
+      "metrics": {
+        "desk": {
+          "label": "1 Desk",
+          "value": "für viele indische Lieferanten"
+        },
+        "products": {
+          "label": "1000e",
+          "value": "mögliche Produkte fürs Zuhause"
+        },
+        "export": {
+          "label": "Exportgeführt",
+          "value": "Angebots- und Versandplanung"
+        }
+      }
+    },
+    "intro": {
+      "kicker": "Allgemeine Beschaffung",
+      "title": "Globale Käufer kaufen nicht nur ein Produkt. Sie bauen einen Lieferweg auf.",
+      "copy": "Im echten Exportgeschäft ist Beschaffung ein gesteuerter Prozess: Anforderungen verstehen, Lieferanten vergleichen, praktische Spezifikationen prüfen, Verpackung planen und Dokumente vorbereiten, bevor die Sendung bewegt wird. Genau diese disziplinierte Arbeitsweise bringen wir in die individuelle Produktsuche aus Indien ein."
+    },
+    "dreamHome": {
+      "kicker": "Traumhaus bauen",
+      "title": "Ein Zuhause im Ausland kann trotzdem verwurzelt, warm und unverwechselbar Ihres sein.",
+      "copyOne": "Die Geschichte beginnt oft mit einer Frage: \"Kann ich den Look und das Gefühl Indiens in mein neues Zuhause bringen?\" Die Antwort lautet ja, wenn die Beschaffung als vollständiges Projekt und nicht als verstreuter Einkauf geführt wird.",
+      "copyTwo": "Wir helfen Ihnen, sichtbare Oberflächen, täglich genutzte Räume, den spirituellen Bereich, Dekordetails und die Exportbewegung dahinter zusammenzudenken. Sie konzentrieren sich auf das Zuhause, in dem Sie leben möchten. Unser Exportteam führt die Beschaffungsgespräche aus Indien."
+    },
+    "solutions": {
+      "kicker": "Komplette Lösungsbereiche",
+      "title": "Kein fester Katalog. Ein kuratiertes Gespräch zur Hausbeschaffung.",
+      "copy": "Diese Beispiele zeigen die Richtung. Die echte Lösung kann breiter, gemischt und auf Zielort, Menge, Qualitätsniveau und Montageplanung zugeschnitten sein.",
+      "items": {
+        "surfaces": {
+          "title": "Böden und Oberflächen",
+          "description": "Keramikfliesen, Marmoroptik, Außenbeläge, Wandverkleidungen und praktische Materialoptionen.",
+          "imageAlt": "Outdoor-Patio mit Sitzbereich, Pflanzen und sichtbaren Bodenbelägen"
+        },
+        "kitchens": {
+          "title": "Modulare Küchen",
+          "description": "Küchensysteme, Schränke, Arbeitsplatten, Beschläge und abgestimmte Oberflächen für Wohnungen oder Villen.",
+          "imageAlt": "Kompakte moderne modulare Küche mit Holzarbeitsplatte und weißen Schränken"
+        },
+        "heritage": {
+          "title": "Gebets- und Kulturräume",
+          "description": "Mandirs, Marmortempel, Idole, Messingdekor und traditionelle Stücke, ausgewählt rund um Ihre Familienrituale.",
+          "imageAlt": "Weiß geschnitzter Haustempel vor dekorativen Wandoberflächen"
+        },
+        "decor": {
+          "title": "Dekor und Statement-Stücke",
+          "description": "Antiquitäten, handgefertigtes Dekor, besondere Einzelstücke, Türen, Trennwände und Details, die das Zuhause persönlich machen.",
+          "imageAlt": "Goldenes Elefanten-Dekorstück auf einer Ausstellungsfläche"
+        },
+        "doors": {
+          "title": "Türen und Öffnungen",
+          "description": "Glastüren, Rahmen, Beschläge, Trennwände und Eingangdetails, abgestimmt auf die Innenraumgestaltung.",
+          "imageAlt": "Moderne schwarz gerahmte Glastür, geöffnet in einen hellen Innenraum"
+        },
+        "outdoor": {
+          "title": "Outdoor-Wohnen",
+          "description": "Garten-, Patio-, Balkon- und Terrassenoberflächen für eine komplette Indoor-Outdoor-Wohnstory.",
+          "imageAlt": "Outdoor-Sitzbereich mit Pflanzen und Bodenbelägen"
+        }
+      }
+    },
+    "steps": {
+      "kicker": "So funktioniert es",
+      "title": "Von verstreuten Ideen zu einem exportbereiten Plan.",
+      "copy": "Ziel ist nicht, Sie mit Produktlisten zu überfordern. Ziel ist, Unsicherheit zu reduzieren: was beschafft werden soll, was gut transportierbar ist, was gebündelt werden sollte und welche Informationen für ein seriöses Angebot nötig sind.",
+      "items": {
+        "vision": {
+          "title": "Ihre Wohnvision",
+          "description": "Sie teilen Räume, Mood-Referenzen, Mengen, Zielland, Zeitplan und Budgetrichtung."
+        },
+        "desk": {
+          "title": "India Sourcing Desk",
+          "description": "Wir stellen praktische Optionen indischer Lieferanten zusammen und vergleichen Oberflächenqualität, Verpackungsbedarf und Exporttauglichkeit."
+        },
+        "plan": {
+          "title": "Konsolidierter Exportplan",
+          "description": "Unser Team koordiniert Produktbündelung, Versandplanung, Dokumentation und Angebotsnachverfolgung."
+        },
+        "handover": {
+          "title": "Stressfreie Übergabe",
+          "description": "Sie erhalten einen klaren Beschaffungsweg, statt viele Anbieter, Anrufe, Muster und Frachtfragen allein zu steuern."
+        }
+      }
+    },
+    "cta": {
+      "kicker": "Gespräch starten",
+      "title": "Erzählen Sie uns, welches Zuhause Sie schaffen möchten.",
+      "copy": "Teilen Sie Land, Räume, Produktinteressen, Fotos oder Referenzen, ungefähre Menge und Zeitplan. Wir machen daraus ein fokussiertes Beschaffungsgespräch.",
+      "primaryCta": "Beschaffungsunterstützung anfragen",
+      "secondaryCta": "Exportteam kontaktieren"
     }
   },
   "contact": {

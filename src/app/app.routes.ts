@@ -30,6 +30,13 @@ export const routes: Routes = [
       descriptionKey: 'meta.contact.description',
     },
   },
-  { path: 'products/custom-sourcing', component: CustomSourcingPageComponent, title: 'Custom Sourcing | Shoppingmart Exports' },
+  {
+    path: 'products/custom-sourcing',
+    component: CustomSourcingPageComponent,
+    data: {
+      titleKey: 'meta.customSourcing.title',
+      descriptionKey: 'meta.customSourcing.description',
+    },
+  },
   { path: '**', redirectTo: '' },
 ];

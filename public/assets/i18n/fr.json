@@ -20,12 +20,17 @@
     "contact": {
       "title": "Contact | Shoppingmart Exports",
       "description": "Contactez Shoppingmart Exports pour les demandes de devis, demandes acheteurs, coordination fournisseurs et suivi d'expédition."
+    },
+    "customSourcing": {
+      "title": "Sourcing sur mesure | Shoppingmart Exports",
+      "description": "Sourcing sur mesure depuis l'Inde pour maisons de rêve, expéditions mixtes, décoration, carrelage, cuisines modulaires, temples et planification export prête à l'expédition."
     }
   },
   "nav": {
     "homeAria": "Accueil Shoppingmart Exports",
     "open": "Ouvrir la navigation",
     "products": "Produits",
+    "customSourcing": "Sourcing sur mesure",
     "process": "Processus",
     "compliance": "Conformité",
     "quote": "Demander un devis",
@@ -78,7 +83,8 @@
       },
       "customSourcing": {
         "title": "Sourcing sur mesure",
-        "description": "Recherche produit pilotée par l'acheteur pour marque privée, achat en volume ou besoins de conteneur mixte."
+        "description": "Recherche produit pilotée par l'acheteur pour marque privée, achat en volume, maisons de rêve ou besoins de conteneur mixte.",
+        "cta": "Explorer le service"
       }
     }
   },
@@ -296,6 +302,109 @@
         "texts": "Textes d'accord publiés",
         "factsheet": "Fiche bénéfices de l'ALE"
       }
+    }
+  },
+  "customSourcingPage": {
+    "hero": {
+      "imageAlt": "Patio extérieur avec plantes, assises et finitions de sol",
+      "kicker": "Sourcing sur mesure depuis l'Inde",
+      "title": "Construisez votre maison de rêve, sans stress de sourcing.",
+      "copy": "Pour les familles qui construisent ou rénovent à l'étranger, Shoppingmart Exports relie matériaux indiens, savoir-faire et coordination export dans un parcours de sourcing pratique.",
+      "primaryCta": "Démarrer ma demande maison",
+      "secondaryCta": "Explorer l'histoire",
+      "metricsAria": "Capacités de sourcing sur mesure",
+      "metrics": {
+        "desk": {
+          "label": "1 desk",
+          "value": "pour de nombreux fournisseurs indiens"
+        },
+        "products": {
+          "label": "1000s",
+          "value": "de produits maison possibles"
+        },
+        "export": {
+          "label": "Piloté export",
+          "value": "devis et planification d'expédition"
+        }
+      }
+    },
+    "intro": {
+      "kicker": "Sourcing général",
+      "title": "Les acheteurs mondiaux n'achètent pas un seul produit. Ils construisent un chemin d'approvisionnement.",
+      "copy": "Dans le commerce export réel, le sourcing est un processus piloté : comprendre le besoin, comparer les fournisseurs, vérifier les spécifications pratiques, planifier l'emballage et préparer les documents avant que l'expédition ne bouge. Nous appliquons cette même discipline à la découverte de produits sur mesure depuis l'Inde."
+    },
+    "dreamHome": {
+      "kicker": "Construire votre maison de rêve",
+      "title": "Une maison à l'étranger peut rester enracinée, chaleureuse et profondément personnelle.",
+      "copyOne": "L'histoire commence souvent par une question : \"Puis-je apporter le style et le sentiment de l'Inde dans ma nouvelle maison ?\" La réponse est oui, si le sourcing est géré comme un projet complet plutôt que comme des achats dispersés.",
+      "copyTwo": "Nous vous aidons à penser les surfaces visibles, les pièces du quotidien, l'espace spirituel, les détails décoratifs et le mouvement export derrière tout cela. Vous vous concentrez sur la maison dans laquelle vous voulez vivre. Notre équipe export gère la conversation de sourcing depuis l'Inde."
+    },
+    "solutions": {
+      "kicker": "Domaines de solution complète",
+      "title": "Pas un catalogue fixe. Une conversation de sourcing maison organisée.",
+      "copy": "Ces exemples montrent la direction. La vraie solution peut être plus large, mixte et adaptée à votre destination, quantité, niveau de finition et planification d'installation.",
+      "items": {
+        "surfaces": {
+          "title": "Sols et surfaces",
+          "description": "Carrelage céramique, finitions effet marbre, sols extérieurs, revêtements muraux et options matériaux pratiques.",
+          "imageAlt": "Patio extérieur avec assises, plantes et finitions de sol visibles"
+        },
+        "kitchens": {
+          "title": "Cuisines modulaires",
+          "description": "Systèmes de cuisine, meubles, plans de travail, quincaillerie et coordination des finitions pour appartements ou villas.",
+          "imageAlt": "Cuisine modulaire compacte avec plan de travail bois et meubles blancs"
+        },
+        "heritage": {
+          "title": "Espaces de prière et patrimoine",
+          "description": "Mandirs, temples en marbre, idoles, décor en laiton et pièces traditionnelles sélectionnées autour de vos rituels familiaux.",
+          "imageAlt": "Temple domestique blanc sculpté devant des finitions murales décoratives"
+        },
+        "decor": {
+          "title": "Décor et pièces fortes",
+          "description": "Antiquités, décor artisanal, pièces remarquables, portes, séparations et détails qui rendent la maison personnelle.",
+          "imageAlt": "Pièce décorative dorée en forme d'éléphant sur une surface d'exposition"
+        },
+        "doors": {
+          "title": "Portes et ouvertures",
+          "description": "Portes vitrées, cadres, quincaillerie, séparations et détails d'entrée alignés sur le langage intérieur.",
+          "imageAlt": "Porte vitrée moderne à cadre noir ouverte vers un intérieur lumineux"
+        },
+        "outdoor": {
+          "title": "Vie extérieure",
+          "description": "Finitions de jardin, patio, balcon et terrasse pour une histoire maison complète entre intérieur et extérieur.",
+          "imageAlt": "Assises extérieures avec plantes et finitions de sol"
+        }
+      }
+    },
+    "steps": {
+      "kicker": "Comment cela fonctionne",
+      "title": "Des idées dispersées à un plan prêt pour l'export.",
+      "copy": "L'objectif n'est pas de vous submerger de listes produits. Il est de réduire l'incertitude : quoi sourcer, ce qui voyage bien, ce qui doit être regroupé et quelles informations sont nécessaires pour un devis sérieux.",
+      "items": {
+        "vision": {
+          "title": "Votre vision maison",
+          "description": "Vous partagez pièces, références d'ambiance, quantités, pays de destination, calendrier et direction budgétaire."
+        },
+        "desk": {
+          "title": "Desk sourcing Inde",
+          "description": "Nous présélectionnons des options pratiques auprès de fournisseurs indiens et comparons qualité de finition, besoins d'emballage et adéquation export."
+        },
+        "plan": {
+          "title": "Plan export consolidé",
+          "description": "Notre équipe coordonne regroupement produits, planification d'expédition, documentation et suivi du devis."
+        },
+        "handover": {
+          "title": "Transmission sans stress",
+          "description": "Vous recevez un chemin de sourcing clair au lieu de gérer seul de nombreux fournisseurs, appels, échantillons et questions de fret."
+        }
+      }
+    },
+    "cta": {
+      "kicker": "Démarrer la conversation",
+      "title": "Dites-nous la maison que vous voulez créer.",
+      "copy": "Partagez votre pays, les pièces, les produits recherchés, photos ou références, quantité approximative et calendrier. Nous transformerons cela en discussion de sourcing ciblée.",
+      "primaryCta": "Demander un support sourcing",
+      "secondaryCta": "Contacter l'équipe export"
     }
   },
   "contact": {

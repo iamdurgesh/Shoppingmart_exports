@@ -12,8 +12,7 @@ interface ProductCategory {
 
 @Component({
   selector: 'app-product-categories',
-  imports: [RouterLink],
-  imports: [TranslocoPipe],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './product-categories.component.html',
   styleUrl: './product-categories.component.scss',
 })
@@ -38,8 +37,8 @@ export class ProductCategoriesComponent {
       number: '04',
       titleKey: 'products.cards.customSourcing.title',
       descriptionKey: 'products.cards.customSourcing.description',
-            routerLink: '/products/custom-sourcing',
-      cta: 'Explore service',
+      routerLink: '/products/custom-sourcing',
+      cta: 'products.cards.customSourcing.cta',
     },
   ];
 }
