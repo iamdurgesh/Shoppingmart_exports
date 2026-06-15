@@ -1,0 +1,47 @@
+.process-section {
+  width: 100%;
+  max-width: none;
+  padding-right: max(18px, calc((100vw - 1120px) / 2));
+  padding-left: max(18px, calc((100vw - 1120px) / 2));
+  color: #ffffff;
+  background: #123340;
+}
+
+.process-section .section-kicker {
+  color: #80e0d6;
+}
+
+.process-section .section-heading p,
+.process-section .timeline p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 42px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  position: relative;
+  min-height: 260px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.timeline span {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  margin-bottom: 74px;
+  border-radius: 50%;
+  color: #123340;
+  background: #80e0d6;
+  font-weight: 800;
+}

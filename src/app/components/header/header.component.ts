@@ -1,12 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component, computed, HostListener, inject, OnInit } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { BrandLogoComponent } from '../brand-logo/brand-logo.component';
 import { LanguageService } from '../../i18n/language.service';
-import { type SupportedLanguage } from '../../i18n/i18n.constants';
+import { isSupportedLanguage } from '../../i18n/i18n.constants';
 
 interface NavItem {
   readonly labelKey: string;
@@ -37,7 +37,11 @@ export class HeaderComponent implements OnInit {
   protected readonly activeLanguage = toSignal(this.translocoService.langChanges$, {
     initialValue: this.languageService.activeLanguage,
   });
+  protected readonly activeLanguageOption = computed(() =>
+    this.languages.find((language) => language.code === this.activeLanguage()) ?? this.languages[0],
+  );
 
+  protected isLanguageMenuOpen = false;
   protected isMenuOpen = false;
   protected isScrolled = false;
 
@@ -50,21 +54,51 @@ export class HeaderComponent implements OnInit {
     this.updateScrolledState();
   }
 
+  @HostListener('document:click', ['$event'])
+  protected onDocumentClick(event: MouseEvent): void {
+    const target = event.target;
+
+    if (!(target instanceof Element) || !target.closest('.language-switcher')) {
+      this.closeLanguageMenu();
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  protected onEscapeKey(): void {
+    this.closeLanguageMenu();
+  }
+
   private updateScrolledState(): void {
     this.isScrolled = window.scrollY > 18;
   }
 
   protected toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    this.closeLanguageMenu();
     this.document.body.classList.toggle('nav-open', this.isMenuOpen);
   }
 
   protected closeMenu(): void {
     this.isMenuOpen = false;
+    this.closeLanguageMenu();
     this.document.body.classList.remove('nav-open');
   }
 
-  protected selectLanguage(language: SupportedLanguage): void {
+  protected toggleLanguageMenu(event: MouseEvent): void {
+    event.stopPropagation();
+    this.isLanguageMenuOpen = !this.isLanguageMenuOpen;
+  }
+
+  protected closeLanguageMenu(): void {
+    this.isLanguageMenuOpen = false;
+  }
+
+  protected selectLanguage(language: string): void {
+    if (!isSupportedLanguage(language)) {
+      return;
+    }
+
     this.languageService.setLanguage(language);
+    this.closeLanguageMenu();
   }
 }
