@@ -1,0 +1,23 @@
+.section {
+  width: min(1120px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 112px) 0;
+}
+
+.intro-section {
+  padding-bottom: 68px;
+}
+
+.intro-grid,
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: end;
+}
+
+.intro-grid p,
+.section-heading p {
+  color: var(--muted);
+  font-size: 1.03rem;
+}

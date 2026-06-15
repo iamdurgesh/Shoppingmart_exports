@@ -1,0 +1,99 @@
+@media (max-width: 920px) {
+  .menu-button {
+    display: inline-block;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 78px;
+    right: 18px;
+    left: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    background: rgba(247, 244, 239, 0.98);
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    border-radius: var(--radius);
+  }
+
+  .language-switcher {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+
+  .intro-grid,
+  .section-heading,
+  .compliance-section,
+  .quote-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid,
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quote-result {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 6px 18px;
+  }
+
+  .hero {
+    min-height: 92vh;
+  }
+
+  .hero-content {
+    width: calc(100% - 32px);
+    padding-top: 118px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 18vw, 4.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 10vw, 2.7rem);
+  }
+
+  .hero-metrics,
+  .product-grid,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-metrics div {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .product-card,
+  .timeline li {
+    min-height: auto;
+  }
+
+  .product-icon,
+  .timeline span {
+    margin-bottom: 30px;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

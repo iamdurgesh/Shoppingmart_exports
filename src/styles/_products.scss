@@ -1,0 +1,50 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.product-card {
+  min-height: 250px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgba(23, 32, 42, 0.05);
+}
+
+.product-card:nth-child(2) {
+  border-top: 4px solid var(--teal);
+}
+
+.product-card:nth-child(3) {
+  border-top: 4px solid var(--gold);
+}
+
+.product-card:nth-child(4) {
+  border-top: 4px solid var(--coral);
+}
+
+.product-icon {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  margin-bottom: 52px;
+  border-radius: var(--radius);
+  color: #ffffff;
+  background: var(--ocean);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.product-card p,
+.timeline p,
+.compliance-grid p,
+.trade-status p,
+.quote-copy p,
+.quote-result p,
+.site-footer p {
+  color: var(--muted);
+}

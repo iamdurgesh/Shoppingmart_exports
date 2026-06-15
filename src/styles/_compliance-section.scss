@@ -1,0 +1,76 @@
+.compliance-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: start;
+}
+
+.compliance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.compliance-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.compliance-grid article,
+.trade-status {
+  padding: 22px;
+  border-left: 4px solid var(--coral);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 24px rgba(23, 32, 42, 0.05);
+}
+
+.trade-status {
+  border-left-color: var(--teal);
+}
+
+.trade-status.is-expanded {
+  background: #ffffff;
+}
+
+.status-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.status-list {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status-list li {
+  padding-left: 18px;
+  position: relative;
+  color: var(--muted);
+}
+
+.status-list li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  content: "";
+}
+
+.source-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--ocean);
+  font-weight: 800;
+}
