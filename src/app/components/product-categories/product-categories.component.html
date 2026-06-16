@@ -24,8 +24,8 @@
           <span class="product-icon">{{ category.number }}</span>
           <h3>{{ category.titleKey | transloco }}</h3>
           <p>{{ category.descriptionKey | transloco }}</p>
-          @if (category.cta) {
-            <strong>{{ category.cta | transloco }}</strong>
+          @if (category.ctaKey) {
+            <strong>{{ category.ctaKey | transloco }}</strong>
           }
         </a>
       } @else {
