@@ -7,7 +7,7 @@ interface ProductCategory {
   readonly titleKey: string;
   readonly descriptionKey: string;
   readonly routerLink?: string;
-  readonly cta?: string;
+  readonly ctaKey?: string;
 }
 
 @Component({
@@ -38,7 +38,7 @@ export class ProductCategoriesComponent {
       titleKey: 'products.cards.customSourcing.title',
       descriptionKey: 'products.cards.customSourcing.description',
       routerLink: '/products/custom-sourcing',
-      cta: 'products.cards.customSourcing.cta',
+      ctaKey: 'products.cards.customSourcing.cta',
     },
   ];
 }
