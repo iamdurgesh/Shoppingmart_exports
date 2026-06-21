@@ -24,6 +24,10 @@
     "customSourcing": {
       "title": "Individuelle Beschaffung | Shoppingmart Exports",
       "description": "Individuelle Beschaffung aus Indien für Traumhäuser, gemischte Produktsendungen, Wohnaccessoires, Fliesen, modulare Küchen, Tempel und exportbereite Lieferplanung."
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzerklärung | Shoppingmart Exports",
+      "description": "Datenschutzinformationen zur Website von Shoppingmart Exports, Browserspeicherung sowie Kontaktaufnahme per E-Mail und WhatsApp."
     }
   },
   "nav": {
@@ -157,20 +161,20 @@
       "contactDetails": "Telefon, WhatsApp oder bevorzugte Kontaktzeit",
       "message": "Produktdetails, Zielmenge, Verpackung, Bestimmungsort, Zertifikate oder Zeitplan."
     },
-    "note": "Das Formular erstellt eine strukturierte Angebotsanfrage als JSON-Payload. Derzeit wird sie lokal in die Warteschlange gestellt; später können wir dieselbe Payload an das Backend senden.",
+    "note": "Geben Sie korrekte Kontakt- und Bestelldaten an, damit die Angebotsanfrage effizient geprüft werden kann.",
     "submit": "Angebot anfragen",
     "result": {
-      "queuedLabel": "Payload eingereiht",
+      "queuedLabel": "Anfrage vorbereitet",
       "previewLabel": "Angebotsvorschau",
       "prepared": "Vorbereitet am {{ date }}. Anfrage-ID: {{ requestId }}.",
-      "draftSaved": "Entwurf automatisch gespeichert am {{ date }}. Die finale Übermittlung erstellt das backendfähige JSON-Objekt.",
-      "draftEmpty": "Das Formular speichert derzeit einen Browser-Entwurf. Die Übermittlung erstellt den JSON-Vertrag für die Backend-Speicherung.",
+      "draftSaved": "Entwurf gespeichert am {{ date }}.",
+      "draftEmpty": "Füllen Sie das Formular aus, um Ihre Angebotsanfrage vorzubereiten.",
       "emptyTitle": "Senden Sie die wichtigsten Angaben. Wir übernehmen den nächsten Schritt.",
-      "emptyDescription": "Teilen Sie Produkt, Bestimmungsort, Menge und Kontaktdaten. Ihr Entwurf wird vorerst lokal gespeichert und kann später mit derselben Payload-Struktur in Ihre Datenbank übertragen werden.",
+      "emptyDescription": "Teilen Sie Produkt, Bestimmungsort, Menge, Zeitplan und Kontaktdaten mit.",
       "readyTitle": "{{ name }}, diese Anfrage ist prüfbereit.",
       "readyDescription": "Wir bereiten {{ volumeFocus }} für {{ category }} nach {{ market }} vor, einschließlich Produktspezifikationen, Verpackung, Zertifikaten und {{ complianceFocus }}.",
-      "submissionTitle": "Angebots-JSON vorbereitet und eingereiht.",
-      "submissionDescription": "{{ contactName }}, Anfrage {{ requestId }} ist bereit für Backend-Speicherung und Sales-Follow-up unter {{ email }}.",
+      "submissionTitle": "Angebotsanfrage vorbereitet.",
+      "submissionDescription": "{{ contactName }}, Ihre Anfragereferenz lautet {{ requestId }}. Als Kontakt-E-Mail wurde {{ email }} angegeben.",
       "fallbackTeam": "Ihr Team"
     },
     "options": {
@@ -213,7 +217,85 @@
     }
   },
   "footer": {
-    "copy": "Globale Beschaffungsplattform für exportbereite Produktversorgung."
+    "copy": "Globale Beschaffungsplattform für exportbereite Produktversorgung.",
+    "contact": "Kontakt",
+    "follow": "Folgen Sie uns",
+    "linkedin": "Shoppingmart Exports auf LinkedIn besuchen (öffnet in einem neuen Tab)",
+    "whatsapp": "WhatsApp-Chat mit Shoppingmart Exports starten (öffnet in einem neuen Tab)",
+    "instagramPending": "Instagram – Funktion folgt in Kürze",
+    "comingSoon": "Instagram folgt in Kürze",
+    "rights": "Alle Rechte vorbehalten.",
+    "backToTop": "Nach oben",
+    "legalNavigation": "Rechtliche Informationen",
+    "privacyPolicy": "Datenschutzerklärung"
+  },
+  "privacyPolicy": {
+    "kicker": "Informationen zum Datenschutz",
+    "title": "Datenschutzerklärung",
+    "version": "Stand: 22. Juni 2026",
+    "introduction": "Diese Datenschutzerklärung informiert über die Verarbeitung personenbezogener Daten im Zusammenhang mit der Website von Shoppingmart Exports. Sie gilt für den Websiteaufruf, im Browser gespeicherte Informationen, Geschäftsanfragen sowie die per E-Mail oder WhatsApp eingeleitete Kommunikation.",
+    "controller": {
+      "title": "Verantwortlicher und Kontakt",
+      "copy": "Shoppingmart Exports bestimmt die Zwecke und Mittel der hier beschriebenen Verarbeitung und ist Verantwortlicher im Sinne von Art. 4 Nr. 7 DSGVO. Datenschutzanfragen und Anträge zur Ausübung von Betroffenenrechten können gerichtet werden an:"
+    },
+    "scope": {
+      "title": "Geltungsbereich",
+      "copy": "Diese Datenschutzerklärung gilt ausschließlich für die nachstehend beschriebenen Verarbeitungsvorgänge. Folgt ein Besucher einem Link zu einem externen Dienst, gelten ergänzend die Bedingungen und Datenschutzhinweise des jeweiligen Anbieters."
+    },
+    "delivery": {
+      "title": "Website-Bereitstellung und Serverprotokolldaten",
+      "copy": "Beim Aufruf kann die Hosting- und Auslieferungsinfrastruktur technische Verbindungsdaten verarbeiten, die für Bereitstellung und Absicherung erforderlich sind. Dazu können IP-Adresse, Zugriffszeit, angeforderte Ressource, vom Browser übermittelte Referrer-Angaben, Browsertyp, Betriebssystem und Antwortstatus gehören. Empfänger sind die eingesetzten Hosting- und technischen Dienstleister.",
+      "basis": "Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO. Die berechtigten Interessen bestehen in einer funktionsfähigen und sicheren Website, der Missbrauchsabwehr und der technischen Stabilität."
+    },
+    "storage": {
+      "title": "Lokale Speicherung im Browser",
+      "copy": "Die Website verwendet die Local-Storage-Funktion des Browsers. Informationen werden auf dem Endgerät des Besuchers gespeichert und können bei späteren Besuchen ausgelesen werden.",
+      "language": "Spracheinstellung: Die gewählte Website-Sprache wird zur Beibehaltung der Auswahl gespeichert.",
+      "enquiry": "Angebotsformular: Formulareingaben – einschließlich Name, E-Mail-Adresse, Unternehmen, Kontaktdaten, Markt, Kategorie, Sendungsvolumen, Nachricht und Bestätigungsstatus – können lokal gespeichert werden, um den Entwurf und dessen Bearbeitungsstatus beizubehalten. Der gespeicherte Datensatz kann außerdem Zeitstempel, Anfragekennung, Browsersprache und User-Agent-Angaben enthalten.",
+      "control": "Der Besucher kann die Informationen über die Browserfunktionen zum Löschen von Website-Daten entfernen. Die Verarbeitung dient der angeforderten Formularfunktion und der Vorbereitung einer möglichen Geschäftsanfrage gemäß Art. 6 Abs. 1 lit. b DSGVO."
+    },
+    "contact": {
+      "title": "E-Mail-Kontakt und Geschäftsanfragen",
+      "copy": "Der E-Mail-Link öffnet das lokal konfigurierte E-Mail-Programm. Daten werden nur übermittelt, wenn der Besucher selbst eine E-Mail versendet. Verarbeitet werden können Absender- und Kontaktdaten, Nachrichteninhalt, Anlagen und Kommunikationsmetadaten, um die Anfrage zu beantworten und zu bearbeiten.",
+      "basis": "Angebote, Vertragsverhandlungen und vorvertragliche Maßnahmen werden nach Art. 6 Abs. 1 lit. b DSGVO verarbeitet. Sonstige Geschäftskorrespondenz wird gemäß Art. 6 Abs. 1 lit. f DSGVO aufgrund des berechtigten Interesses an Beantwortung und Dokumentation verarbeitet. Gesetzliche Aufbewahrungspflichten beruhen, soweit einschlägig, auf Art. 6 Abs. 1 lit. c DSGVO."
+    },
+    "whatsapp": {
+      "title": "Kommunikation über WhatsApp",
+      "activation": "Die Website enthält einen Link zu einem WhatsApp-Chat mit Shoppingmart Exports. Es werden weder ein WhatsApp-SDK noch Tracking-Pixel oder eingebettete Social-Media-Inhalte geladen. Eine Verbindung zu WhatsApp wird erst nach Aktivierung des Links hergestellt.",
+      "data": "Bei Aktivierung kann WhatsApp technische Verbindungs- und Kontodaten nach eigenen Bedingungen verarbeiten. Sendet der Besucher eine Nachricht, verarbeitet Shoppingmart Exports Telefonnummer, freigegebene Profilinformationen, Nachrichteninhalte, Anlagen und Kommunikationsmetadaten zur Bearbeitung der Anfrage.",
+      "basis": "Angebots- und vorvertragliche Anfragen werden nach Art. 6 Abs. 1 lit. b DSGVO verarbeitet. Sonstige Geschäftskorrespondenz beruht gemäß Art. 6 Abs. 1 lit. f DSGVO auf dem berechtigten Interesse an effizienter Kommunikation über den vom Besucher gewählten Kanal.",
+      "recipient": "WhatsApp ist ein eigenständiger Anbieter. Für Nutzer in der Europäischen Region wird der Dienst durch WhatsApp Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland, bereitgestellt. WhatsApp und andere Meta-Unternehmen verarbeiten Daten in eigener Verantwortung nach ihren Datenschutzbestimmungen.",
+      "transfer": "WhatsApp gibt an, Informationen weltweit und gegebenenfalls in den USA sowie anderen Staaten außerhalb des EWR zu verarbeiten. Garantien und Übermittlungsmechanismen werden in den WhatsApp-Datenschutzhinweisen beschrieben.",
+      "voluntary": "Die Nutzung von WhatsApp ist freiwillig. Eine Kontaktaufnahme ohne WhatsApp ist per E-Mail möglich unter",
+      "providerPolicy": "WhatsApp-Datenschutzrichtlinie für die Europäische Region"
+    },
+    "external": {
+      "title": "Externe Links und LinkedIn",
+      "copy": "Die Website enthält Links zu Drittanbietern, darunter LinkedIn und WhatsApp. Deren Inhalte werden nicht eingebettet. Daten werden erst nach Aktivierung eines externen Links an den Anbieter übermittelt; anschließend gelten dessen Datenschutzhinweise."
+    },
+    "tracking": {
+      "title": "Cookies, Analyse und Marketing",
+      "copy": "Die Website setzt keine Werbe-Cookies ein und bindet keine Analyseplattform, kein Werbenetzwerk, kein Meta Pixel und keine vergleichbare websiteübergreifende Tracking-Technologie ein. Die in Abschnitt 4 beschriebene lokale Speicherung dient funktionalen Zwecken, nicht Werbung oder Profilbildung."
+    },
+    "retention": {
+      "title": "Speicherdauer und Löschung",
+      "local": "Lokal gespeicherte Informationen verbleiben auf dem Endgerät, bis sie über die Browserfunktionen entfernt, überschrieben oder durch die Browserkonfiguration gelöscht werden. Shoppingmart Exports kann Daten, die das Endgerät nicht verlassen haben, weder aus der Ferne abrufen noch löschen.",
+      "communication": "E-Mail- und WhatsApp-Korrespondenz wird nur so lange gespeichert, wie dies zur Bearbeitung der Anfrage, Vorbereitung oder Durchführung der Geschäftsbeziehung, Geltendmachung oder Abwehr von Ansprüchen und Erfüllung gesetzlicher Aufbewahrungspflichten erforderlich ist. Danach werden die Daten gelöscht oder gesperrt."
+    },
+    "rights": {
+      "title": "Rechte betroffener Personen",
+      "copy": "Unter den gesetzlichen Voraussetzungen bestehen die Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Eine Einwilligung kann nach Art. 7 Abs. 3 DSGVO jederzeit mit Wirkung für die Zukunft widerrufen werden.",
+      "contact": "Anträge können an die in Abschnitt 1 genannte Adresse gerichtet werden. Zum Schutz vor unbefugter Offenlegung kann ein angemessener Identitätsnachweis verlangt werden.",
+      "complaint": "Nach Art. 77 DSGVO besteht zudem das Recht auf Beschwerde bei einer zuständigen Aufsichtsbehörde, insbesondere am gewöhnlichen Aufenthaltsort, Arbeitsplatz oder Ort des mutmaßlichen Verstoßes."
+    },
+    "security": {
+      "title": "Sicherheit der Verarbeitung",
+      "copy": "Unter Berücksichtigung von Art, Umfang, Umständen, Zwecken und Risiken werden angemessene technische und organisatorische Maßnahmen eingesetzt. Vollständige Sicherheit der Internetkommunikation kann nicht gewährleistet werden. Besondere Kategorien personenbezogener oder vertrauliche Daten sollten nicht über eine gewöhnliche Anfrage übermittelt werden, sofern kein geeigneter Kommunikationsweg vereinbart wurde."
+    },
+    "changes": {
+      "title": "Änderungen dieser Datenschutzerklärung",
+      "copy": "Diese Erklärung bildet die am angegebenen Versionsdatum bestehenden Verarbeitungsvorgänge ab. Sie kann bei Änderungen von Zwecken, Datenkategorien, Empfängern, Dienstleistern, Speicherfristen, rechtlichen Anforderungen oder technischen Systemen angepasst werden. Das Versionsdatum kennzeichnet die jeweils geltende Fassung."
+    }
   },
   "compliancePage": {
     "hero": {

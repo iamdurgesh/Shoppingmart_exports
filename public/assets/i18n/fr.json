@@ -24,6 +24,10 @@
     "customSourcing": {
       "title": "Sourcing sur mesure | Shoppingmart Exports",
       "description": "Sourcing sur mesure depuis l'Inde pour maisons de rêve, expéditions mixtes, décoration, carrelage, cuisines modulaires, temples et planification export prête à l'expédition."
+    },
+    "privacyPolicy": {
+      "title": "Politique de confidentialité | Shoppingmart Exports",
+      "description": "Informations relatives à la confidentialité du site Shoppingmart Exports, au stockage dans le navigateur et aux communications par e-mail et WhatsApp."
     }
   },
   "nav": {
@@ -157,20 +161,20 @@
       "contactDetails": "Téléphone, WhatsApp ou créneau de contact préféré",
       "message": "Détails produit, quantité cible, emballage, destination, certificats ou calendrier."
     },
-    "note": "Le formulaire crée une demande de devis structurée en payload JSON. Pour l'instant, elle est mise en file localement ; nous pourrons ensuite envoyer le même payload au backend.",
+    "note": "Indiquez des coordonnées et informations de commande exactes afin que la demande puisse être examinée efficacement.",
     "submit": "Demander un devis",
     "result": {
-      "queuedLabel": "Payload en file",
+      "queuedLabel": "Demande préparée",
       "previewLabel": "Aperçu du devis",
       "prepared": "Préparé le {{ date }}. ID de demande : {{ requestId }}.",
-      "draftSaved": "Brouillon enregistré automatiquement le {{ date }}. L'envoi final crée l'objet JSON prêt pour le backend.",
-      "draftEmpty": "Le formulaire conserve actuellement un brouillon navigateur. L'envoi crée le contrat JSON pour le stockage backend.",
+      "draftSaved": "Brouillon enregistré le {{ date }}.",
+      "draftEmpty": "Complétez le formulaire pour préparer votre demande de devis.",
       "emptyTitle": "Envoyez les éléments essentiels. Nous gérerons la prochaine étape.",
-      "emptyDescription": "Partagez votre produit, destination, quantité et coordonnées. Votre brouillon est conservé localement pour l'instant et pourra ensuite être envoyé à votre base de données avec la même structure de payload.",
+      "emptyDescription": "Indiquez le produit, la destination, la quantité, le calendrier et vos coordonnées.",
       "readyTitle": "{{ name }}, cette demande est prête pour revue.",
       "readyDescription": "Nous préparerons {{ volumeFocus }} pour {{ category }} vers {{ market }}, ainsi que les spécifications produit, l'emballage, les certificats et {{ complianceFocus }}.",
-      "submissionTitle": "JSON de devis préparé et mis en file.",
-      "submissionDescription": "{{ contactName }}, la demande {{ requestId }} est prête pour stockage backend et suivi commercial à {{ email }}.",
+      "submissionTitle": "Demande de devis préparée.",
+      "submissionDescription": "{{ contactName }}, la référence de votre demande est {{ requestId }}. L'adresse de contact indiquée est {{ email }}.",
       "fallbackTeam": "Votre équipe"
     },
     "options": {
@@ -213,7 +217,85 @@
     }
   },
   "footer": {
-    "copy": "Plateforme mondiale de sourcing pour un approvisionnement produit prêt à l'export."
+    "copy": "Plateforme mondiale de sourcing pour un approvisionnement produit prêt à l'export.",
+    "contact": "Contact",
+    "follow": "Suivez-nous",
+    "linkedin": "Visiter Shoppingmart Exports sur LinkedIn (s'ouvre dans un nouvel onglet)",
+    "whatsapp": "Démarrer une discussion WhatsApp avec Shoppingmart Exports (s'ouvre dans un nouvel onglet)",
+    "instagramPending": "Instagram — fonctionnalité bientôt disponible",
+    "comingSoon": "Instagram bientôt disponible",
+    "rights": "Tous droits réservés.",
+    "backToTop": "Retour en haut",
+    "legalNavigation": "Informations juridiques",
+    "privacyPolicy": "Politique de confidentialité"
+  },
+  "privacyPolicy": {
+    "kicker": "Informations sur la protection des données",
+    "title": "Politique de confidentialité",
+    "version": "Version du 22 juin 2026",
+    "introduction": "La présente Politique de confidentialité décrit le traitement des données à caractère personnel lié au site Shoppingmart Exports. Elle concerne l'accès au site, les informations stockées dans le navigateur, les demandes commerciales et les communications initiées par e-mail ou WhatsApp.",
+    "controller": {
+      "title": "Responsable du traitement et contact",
+      "copy": "Shoppingmart Exports détermine les finalités et moyens des traitements décrits et agit donc en qualité de responsable du traitement au sens de l'article 4, point 7, du RGPD. Les demandes relatives à la protection des données et à l'exercice des droits peuvent être adressées à :"
+    },
+    "scope": {
+      "title": "Champ d'application",
+      "copy": "La présente politique s'applique exclusivement aux traitements décrits ci-dessous. Lorsqu'un visiteur suit un lien vers un service externe, les conditions et informations de confidentialité du fournisseur concerné s'appliquent également."
+    },
+    "delivery": {
+      "title": "Fourniture du site et journaux serveur",
+      "copy": "Lors de l'accès au site, l'infrastructure d'hébergement et de diffusion peut traiter les données techniques nécessaires à sa fourniture et à sa sécurité. Il peut s'agir de l'adresse IP, de la date et l'heure, de la ressource demandée, du référent transmis par le navigateur, du type de navigateur, du système d'exploitation et du statut de réponse. Les destinataires sont les prestataires techniques et d'hébergement engagés à ces fins.",
+      "basis": "Le traitement repose sur l'article 6, paragraphe 1, point f), du RGPD. Les intérêts légitimes consistent à fournir un site fonctionnel et sécurisé, prévenir les abus et maintenir sa stabilité technique."
+    },
+    "storage": {
+      "title": "Stockage local dans le navigateur",
+      "copy": "Le site utilise la fonction de stockage local du navigateur. Les informations sont conservées sur l'appareil du visiteur et peuvent être relues lors de visites ultérieures.",
+      "language": "Préférence linguistique : la langue sélectionnée est conservée afin de respecter le choix du visiteur.",
+      "enquiry": "Formulaire de devis : les données saisies — notamment nom, e-mail, entreprise, coordonnées, marché, catégorie, volume, message et état de confirmation — peuvent être enregistrées localement afin de conserver le brouillon et son état de traitement. L'enregistrement peut également contenir un horodatage, un identifiant de demande, la langue du navigateur et le user-agent.",
+      "control": "Le visiteur peut supprimer ces informations au moyen des commandes du navigateur relatives aux données du site. Le traitement sert la fonctionnalité demandée et la préparation d'une éventuelle relation commerciale conformément à l'article 6, paragraphe 1, point b), du RGPD."
+    },
+    "contact": {
+      "title": "Contact par e-mail et demandes commerciales",
+      "copy": "Le lien e-mail ouvre l'application de messagerie configurée localement. Les données ne sont transmises que si le visiteur envoie lui-même un e-mail. Peuvent être traités les coordonnées de l'expéditeur, le contenu, les pièces jointes et les métadonnées de communication afin de répondre et gérer la demande.",
+      "basis": "Les devis, négociations contractuelles et mesures précontractuelles sont traités sur le fondement de l'article 6, paragraphe 1, point b), du RGPD. Les autres correspondances professionnelles reposent sur l'article 6, paragraphe 1, point f), et l'intérêt légitime à répondre et documenter les échanges. Les obligations légales de conservation reposent, le cas échéant, sur l'article 6, paragraphe 1, point c)."
+    },
+    "whatsapp": {
+      "title": "Communication via WhatsApp",
+      "activation": "Le site contient un lien vers une discussion WhatsApp avec Shoppingmart Exports. Aucun kit de développement WhatsApp, pixel de suivi ou contenu social intégré n'est chargé. La connexion à WhatsApp n'est établie qu'après activation du lien par le visiteur.",
+      "data": "Lors de l'activation, WhatsApp peut traiter des données techniques de connexion et de compte selon ses propres conditions. Si un message est envoyé, Shoppingmart Exports traite le numéro de téléphone, les informations de profil rendues accessibles, le contenu, les pièces jointes et les métadonnées afin de gérer la demande.",
+      "basis": "Les demandes de devis et mesures précontractuelles reposent sur l'article 6, paragraphe 1, point b), du RGPD. Les autres correspondances professionnelles reposent sur l'article 6, paragraphe 1, point f), et l'intérêt légitime à communiquer efficacement par le canal choisi par le visiteur.",
+      "recipient": "WhatsApp est un fournisseur indépendant. Pour les utilisateurs de la Région européenne, le service est fourni par WhatsApp Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irlande. WhatsApp et les autres sociétés Meta traitent les données sous leur propre responsabilité et conformément à leurs règles de confidentialité.",
+      "transfer": "WhatsApp indique traiter les informations mondialement et pouvoir les transférer vers les États-Unis et d'autres pays hors de l'Espace économique européen. Les garanties et mécanismes applicables sont décrits dans sa politique de confidentialité.",
+      "voluntary": "L'utilisation de WhatsApp est facultative. Il est possible de contacter Shoppingmart Exports sans WhatsApp par e-mail à",
+      "providerPolicy": "Politique de confidentialité WhatsApp pour la Région européenne"
+    },
+    "external": {
+      "title": "Liens externes et LinkedIn",
+      "copy": "Le site contient des liens vers des services tiers, notamment LinkedIn et WhatsApp. Aucun contenu de ces fournisseurs n'est intégré. Les données ne sont transmises au fournisseur concerné qu'après activation d'un lien externe ; ses propres informations de confidentialité régissent alors le traitement."
+    },
+    "tracking": {
+      "title": "Cookies, analyse et marketing",
+      "copy": "Le site ne dépose aucun cookie publicitaire et n'intègre aucune plateforme d'analyse, régie publicitaire, Meta Pixel ou technologie comparable de suivi intersites. Le stockage local décrit à la section 4 répond à des finalités fonctionnelles et non à la publicité comportementale ou au profilage."
+    },
+    "retention": {
+      "title": "Durée de conservation et effacement",
+      "local": "Les informations stockées localement restent sur l'appareil jusqu'à leur suppression par les commandes du navigateur, leur écrasement par un usage ultérieur ou leur suppression par la configuration du navigateur. Shoppingmart Exports ne peut ni récupérer ni effacer à distance les données n'ayant pas quitté l'appareil.",
+      "communication": "Les échanges par e-mail et WhatsApp sont conservés uniquement pendant la durée nécessaire au traitement de la demande, à la préparation ou l'exécution de la relation commerciale, à la constatation ou défense de droits et au respect des obligations légales commerciales, fiscales et documentaires. Ils sont ensuite effacés ou leur utilisation opérationnelle est restreinte."
+    },
+    "rights": {
+      "title": "Droits des personnes concernées",
+      "copy": "Sous réserve des conditions légales, les personnes disposent des droits d'accès (article 15 du RGPD), de rectification (article 16), d'effacement (article 17), de limitation (article 18), de portabilité (article 20) et d'opposition (article 21). Tout consentement peut être retiré à tout moment pour l'avenir conformément à l'article 7, paragraphe 3.",
+      "contact": "Les demandes peuvent être adressées aux coordonnées indiquées à la section 1. Une vérification d'identité raisonnablement nécessaire peut être exigée afin d'éviter toute divulgation non autorisée.",
+      "complaint": "Conformément à l'article 77 du RGPD, toute personne peut également introduire une réclamation auprès d'une autorité de contrôle compétente, notamment dans l'État membre de sa résidence habituelle, de son lieu de travail ou du lieu de l'infraction alléguée."
+    },
+    "security": {
+      "title": "Sécurité du traitement",
+      "copy": "Des mesures techniques et organisationnelles appropriées sont appliquées compte tenu de la nature, de la portée, du contexte, des finalités et des risques du traitement. La sécurité absolue des communications Internet ne peut toutefois être garantie. Les visiteurs ne doivent pas transmettre de catégories particulières de données ou d'informations confidentielles par une demande ordinaire sans qu'un canal approprié ait été convenu."
+    },
+    "changes": {
+      "title": "Modification de la présente politique",
+      "copy": "La présente politique reflète les traitements en vigueur à la date indiquée. Elle peut être modifiée en cas de changement des finalités, catégories de données, destinataires, prestataires, durées de conservation, exigences légales ou systèmes techniques. La date de version identifie la révision applicable."
+    }
   },
   "compliancePage": {
     "hero": {

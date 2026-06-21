@@ -24,6 +24,10 @@
     "customSourcing": {
       "title": "Custom Sourcing | Shoppingmart Exports",
       "description": "Custom sourcing from India for dream homes, mixed product shipments, home decor, tiles, modular kitchens, temples, and export-ready supply planning."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy | Shoppingmart Exports",
+      "description": "Privacy information concerning the Shoppingmart Exports website, browser storage, enquiries, email and WhatsApp communication."
     }
   },
   "nav": {
@@ -157,20 +161,20 @@
       "contactDetails": "Phone, WhatsApp, or preferred contact time",
       "message": "Product details, target quantity, packaging, destination, certificates, or timeline."
     },
-    "note": "The form creates a structured quotation JSON payload. For now it is queued locally; next we can post the same payload to the backend.",
+    "note": "Provide accurate contact and order details so the quotation request can be reviewed efficiently.",
     "submit": "Request quotation",
     "result": {
-      "queuedLabel": "Payload queued",
+      "queuedLabel": "Request prepared",
       "previewLabel": "Quotation preview",
       "prepared": "Prepared on {{ date }}. Request ID: {{ requestId }}.",
-      "draftSaved": "Draft autosaved on {{ date }}. The final submit creates the backend-ready JSON object.",
-      "draftEmpty": "The form currently keeps a browser draft. Submit creates the JSON contract for backend storage.",
+      "draftSaved": "Draft saved on {{ date }}.",
+      "draftEmpty": "Complete the form to prepare your quotation request.",
       "emptyTitle": "Send the essentials. We will handle the next step.",
-      "emptyDescription": "Share your product, destination, quantity, and contact details. Your draft is kept locally for now and can later be posted to your database with the same payload shape.",
+      "emptyDescription": "Share your product, destination, quantity, timeline, and contact details.",
       "readyTitle": "{{ name }}, this enquiry is ready for review.",
       "readyDescription": "We will prepare {{ volumeFocus }} for {{ category }} into {{ market }}, plus product specifications, packaging, certificates, and {{ complianceFocus }}.",
-      "submissionTitle": "Quotation JSON prepared and queued.",
-      "submissionDescription": "{{ contactName }}, request {{ requestId }} is ready for backend storage and sales follow-up at {{ email }}.",
+      "submissionTitle": "Quotation request prepared.",
+      "submissionDescription": "{{ contactName }}, your request reference is {{ requestId }}. The contact email provided is {{ email }}.",
       "fallbackTeam": "Your team"
     },
     "options": {
@@ -213,7 +217,85 @@
     }
   },
   "footer": {
-    "copy": "Global sourcing platform for export-ready product supply."
+    "copy": "Global sourcing platform for export-ready product supply.",
+    "contact": "Contact",
+    "follow": "Follow us",
+    "linkedin": "Visit Shoppingmart Exports on LinkedIn (opens in a new tab)",
+    "whatsapp": "Start a WhatsApp chat with Shoppingmart Exports (opens in a new tab)",
+    "instagramPending": "Instagram — feature coming soon",
+    "comingSoon": "Instagram coming soon",
+    "rights": "All rights reserved.",
+    "backToTop": "Back to top",
+    "legalNavigation": "Legal information",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "privacyPolicy": {
+    "kicker": "Data protection information",
+    "title": "Privacy Policy",
+    "version": "Version dated 22 June 2026",
+    "introduction": "This Privacy Policy provides information on the processing of personal data in connection with the Shoppingmart Exports website. It applies to website access, information stored in the visitor's browser, business enquiries, and communications initiated by email or WhatsApp.",
+    "controller": {
+      "title": "Controller and contact",
+      "copy": "Shoppingmart Exports determines the purposes and means of the processing described in this Privacy Policy and is therefore the controller within the meaning of Article 4(7) GDPR. Enquiries concerning data protection and the exercise of data-subject rights may be addressed to:"
+    },
+    "scope": {
+      "title": "Scope of this Privacy Policy",
+      "copy": "This Privacy Policy applies exclusively to the processing operations described below. Where a visitor follows a link to an external service, the terms and privacy information of the respective provider additionally apply."
+    },
+    "delivery": {
+      "title": "Website delivery and server log data",
+      "copy": "When the website is requested, the hosting and delivery infrastructure may process technical connection data required to deliver and secure the website. Such data may include the IP address, date and time of access, requested resource, referrer information transmitted by the browser, browser type, operating system and response status. Recipients are the hosting and technical service providers engaged for website delivery and security.",
+      "basis": "Processing is carried out pursuant to Article 6(1)(f) GDPR. The legitimate interests consist of providing a functional and secure website, preventing misuse and maintaining technical stability."
+    },
+    "storage": {
+      "title": "Local storage in the visitor's browser",
+      "copy": "The website uses the browser's local-storage facility. The information is stored on the visitor's device and may be read by the website on subsequent visits.",
+      "language": "Language preference: the selected website language is stored to retain the visitor's choice.",
+      "enquiry": "Quotation form: entries made in the quotation form—including name, email address, company, contact details, market, category, shipment volume, message and confirmation status—may be stored locally to retain the draft and its processing status. The stored record may also contain a timestamp, request identifier, browser language and user-agent information.",
+      "control": "The visitor may remove this information through the browser controls for deleting site data. Processing serves the requested form functionality and preparation of a potential business enquiry pursuant to Article 6(1)(b) GDPR."
+    },
+    "contact": {
+      "title": "Contact by email and business enquiries",
+      "copy": "The email link opens the visitor's locally configured email application. Personal data is transmitted to Shoppingmart Exports only where the visitor independently sends an email. The data processed may include sender and contact details, message content, attachments and communication metadata. It is used to respond to and administer the enquiry.",
+      "basis": "Where communication concerns a quotation, contract negotiations or steps requested before entering into a contract, processing is based on Article 6(1)(b) GDPR. General business correspondence is processed pursuant to Article 6(1)(f) GDPR, based on the legitimate interest in responding to and documenting business communications. Statutory retention obligations are based on Article 6(1)(c) GDPR where applicable."
+    },
+    "whatsapp": {
+      "title": "Communication via WhatsApp",
+      "activation": "The website contains a link to a WhatsApp chat with Shoppingmart Exports. No WhatsApp software development kit, tracking pixel or embedded social-media content is loaded by this website. A connection to WhatsApp is initiated only when the visitor activates the link.",
+      "data": "Upon activation, WhatsApp may process technical connection and account data in accordance with its own terms. If the visitor sends a message, Shoppingmart Exports processes the sender's telephone number, profile information made available by the sender, message content, attachments and communication metadata for the purpose of responding to and administering the enquiry.",
+      "basis": "Processing of quotation and pre-contractual enquiries is based on Article 6(1)(b) GDPR. Other business correspondence is processed pursuant to Article 6(1)(f) GDPR, based on the legitimate interest in maintaining efficient business communications through a channel selected by the visitor.",
+      "recipient": "WhatsApp is an independent provider. For users in the European Region, the service is provided by WhatsApp Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Ireland. WhatsApp and other Meta companies process data under their own responsibility and in accordance with their own privacy terms.",
+      "transfer": "WhatsApp states that information is processed globally and may be transferred to the United States and other countries outside the European Economic Area. The applicable safeguards and transfer mechanisms are described in WhatsApp's privacy information.",
+      "voluntary": "Use of WhatsApp is voluntary. Visitors may contact Shoppingmart Exports without using WhatsApp by sending an email to",
+      "providerPolicy": "WhatsApp Privacy Policy for the European Region"
+    },
+    "external": {
+      "title": "External links and LinkedIn",
+      "copy": "The website contains links to third-party services, including LinkedIn and WhatsApp. No content from these providers is embedded in the website. Data is transmitted to the respective provider only after the visitor activates an external link. The subsequent processing is governed by that provider's privacy information."
+    },
+    "tracking": {
+      "title": "Cookies, analytics and marketing technologies",
+      "copy": "The website does not set advertising cookies and does not integrate an analytics platform, advertising network, Meta Pixel or comparable cross-site tracking technology. The browser local-storage operations described in section 4 are used for functional purposes and not for behavioural advertising or profiling."
+    },
+    "retention": {
+      "title": "Retention and erasure",
+      "local": "Information stored in browser local storage remains on the visitor's device until it is removed through the browser's site-data controls, overwritten by later use or deleted by browser configuration. Shoppingmart Exports cannot remotely retrieve or erase data that has not left the visitor's device.",
+      "communication": "Email and WhatsApp correspondence is retained only for as long as necessary to respond to the enquiry, conduct or prepare the business relationship, establish or defend legal claims, and comply with applicable commercial, tax and record-keeping obligations. Upon expiry of the relevant purpose and mandatory retention periods, the data is erased or restricted from further operational use."
+    },
+    "rights": {
+      "title": "Rights of data subjects",
+      "copy": "Subject to the statutory requirements, data subjects have the right of access under Article 15 GDPR, rectification under Article 16 GDPR, erasure under Article 17 GDPR, restriction of processing under Article 18 GDPR, data portability under Article 20 GDPR and objection under Article 21 GDPR. Where processing is based on consent, consent may be withdrawn at any time with effect for the future under Article 7(3) GDPR.",
+      "contact": "Requests concerning these rights may be submitted to the contact address stated in section 1. Identity verification may be required where reasonably necessary to protect personal data against unauthorised disclosure.",
+      "complaint": "Data subjects also have the right to lodge a complaint with a competent supervisory authority pursuant to Article 77 GDPR, in particular in the Member State of their habitual residence, place of work or place of the alleged infringement."
+    },
+    "security": {
+      "title": "Security of processing",
+      "copy": "Appropriate technical and organisational measures are applied having regard to the nature, scope, context and purposes of processing and the risks to data subjects. Internet communications cannot, however, be guaranteed to be completely secure. Visitors should not transmit special-category data or confidential information through an ordinary enquiry unless this is necessary and an appropriate communication channel has been agreed."
+    },
+    "changes": {
+      "title": "Amendments to this Privacy Policy",
+      "copy": "This Privacy Policy reflects the processing activities in effect on the version date stated above. It may be amended where processing purposes, data categories, recipients, service providers, retention periods, legal requirements or technical systems change. The version date identifies the applicable revision."
+    }
   },
   "compliancePage": {
     "hero": {

@@ -1,0 +1,108 @@
+:host {
+  display: block;
+}
+
+.privacy-page {
+  min-height: 100vh;
+  padding: 132px 0 clamp(72px, 9vw, 120px);
+  background:
+    linear-gradient(180deg, #102c38 0, #102c38 460px, transparent 460px),
+    var(--paper);
+}
+
+.privacy-hero,
+.privacy-document {
+  width: min(900px, calc(100% - 36px));
+  margin: 0 auto;
+}
+
+.privacy-hero {
+  color: #ffffff;
+}
+
+.privacy-hero h1 {
+  max-width: none;
+  margin-bottom: 18px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+}
+
+.privacy-hero > p:not(.section-kicker, .privacy-version) {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.04rem;
+}
+
+.privacy-version {
+  margin-bottom: 18px;
+  color: #ffcf75;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.privacy-document {
+  margin-top: 54px;
+  padding: clamp(28px, 5vw, 58px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(23, 32, 42, 0.1);
+}
+
+.privacy-document section + section {
+  margin-top: 38px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
+.privacy-document h2 {
+  margin-bottom: 16px;
+  color: var(--ocean);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.privacy-document p,
+.privacy-document li {
+  color: #3f4c5b;
+}
+
+.privacy-document p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-document li + li {
+  margin-top: 8px;
+}
+
+.privacy-document a {
+  color: var(--ocean);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.privacy-document a:hover,
+.privacy-document a:focus-visible {
+  color: var(--teal);
+}
+
+.privacy-document address {
+  font-style: normal;
+}
+
+@media (max-width: 640px) {
+  .privacy-page {
+    padding-top: 108px;
+    background:
+      linear-gradient(180deg, #102c38 0, #102c38 500px, transparent 500px),
+      var(--paper);
+  }
+
+  .privacy-document {
+    margin-top: 36px;
+  }
+}
