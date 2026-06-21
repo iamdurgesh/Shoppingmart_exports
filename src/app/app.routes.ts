@@ -4,6 +4,7 @@ import { CompliancePageComponent } from './pages/compliance-page/compliance-page
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { CustomSourcingPageComponent } from './pages/custom-sourcing-page/custom-sourcing-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-policy-page.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,14 @@ export const routes: Routes = [
     data: {
       titleKey: 'meta.customSourcing.title',
       descriptionKey: 'meta.customSourcing.description',
+    },
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyPageComponent,
+    data: {
+      titleKey: 'meta.privacyPolicy.title',
+      descriptionKey: 'meta.privacyPolicy.description',
     },
   },
   { path: '**', redirectTo: '' },

@@ -26,7 +26,7 @@ export class CustomSourcingPageComponent {
     {
       titleKey: 'customSourcingPage.solutions.items.surfaces.title',
       descriptionKey: 'customSourcingPage.solutions.items.surfaces.description',
-      imageUrl: '/images/products/outdoor-view.webp',
+      imageUrl: '/images/products/outdoor-view.jpg',
       imageAltKey: 'customSourcingPage.solutions.items.surfaces.imageAlt',
     },
     {
@@ -56,7 +56,7 @@ export class CustomSourcingPageComponent {
     {
       titleKey: 'customSourcingPage.solutions.items.outdoor.title',
       descriptionKey: 'customSourcingPage.solutions.items.outdoor.description',
-      imageUrl: '/images/products/outdoor-view.webp',
+      imageUrl: '/images/products/outdoor-view.jpg',
       imageAltKey: 'customSourcingPage.solutions.items.outdoor.imageAlt',
     },
   ];
