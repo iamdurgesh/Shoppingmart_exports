@@ -2,7 +2,7 @@ import { computed, Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators, type AbstractControl } from '@angular/forms';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
-import { debounceTime, map, startWith } from 'rxjs';
+import { debounceTime, filter, map, startWith } from 'rxjs';
 
 import {
   QuoteEnquiryService,
@@ -100,9 +100,17 @@ export class QuoteFormComponent {
     this.translocoService.langChanges$.pipe(startWith(this.translocoService.getActiveLang())),
     { initialValue: this.translocoService.getActiveLang() },
   );
+  private readonly translationLoaded = toSignal(
+    this.translocoService.events$.pipe(
+      filter((event) => event.type === 'translationLoadSuccess' || event.type === 'langChanged'),
+      startWith(null),
+    ),
+    { initialValue: null },
+  );
 
   protected readonly result = computed<QuoteResultView>(() => {
     this.activeLanguage();
+    this.translationLoaded();
     const submitted = this.submittedRecord();
 
     if (submitted) {
