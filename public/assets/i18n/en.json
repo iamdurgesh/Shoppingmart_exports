@@ -173,6 +173,7 @@
       "emptyDescription": "Share your product, destination, quantity, timeline, and contact details.",
       "readyTitle": "{{ name }}, this enquiry is ready for review.",
       "readyDescription": "We will prepare {{ volumeFocus }} for {{ category }} into {{ market }}, plus product specifications, packaging, certificates, and {{ complianceFocus }}.",
+      "readyDescriptionSimple": "We will use your message to prepare {{ volumeFocus }}, product specifications, packaging notes, document checks, and the next follow-up questions.",
       "submissionTitle": "Quotation request prepared.",
       "submissionDescription": "{{ contactName }}, your request reference is {{ requestId }}. The contact email provided is {{ email }}.",
       "fallbackTeam": "Your team"
