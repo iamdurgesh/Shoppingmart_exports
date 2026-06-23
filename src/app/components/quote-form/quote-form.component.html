@@ -9,58 +9,31 @@
     </div>
 
     <form class="quote-form" [formGroup]="quoteForm" (ngSubmit)="submitEnquiry()" novalidate>
-      <label [class.has-error]="showError('name')">
-        {{ 'quote.fields.name' | transloco }}
-        <input
-          type="text"
-          autocomplete="name"
-          formControlName="name"
-        >
-        @if (errorMessage('name'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
-      <label [class.has-error]="showError('email')">
-        {{ 'quote.fields.email' | transloco }}
-        <input
-          type="email"
-          autocomplete="email"
-          formControlName="email"
-        >
-        @if (errorMessage('email'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
-      <label>
-        {{ 'quote.fields.company' | transloco }}
-        <input
-          type="text"
-          autocomplete="organization"
-          formControlName="company"
-        >
-      </label>
-      <label [class.has-error]="showError('market')">
-        {{ 'quote.fields.market' | transloco }}
-        <select formControlName="market">
-          @for (market of markets; track market.value) {
-            <option [value]="market.value">{{ market.labelKey | transloco }}</option>
+      <div class="field-grid">
+        <label [class.has-error]="showError('name')">
+          {{ 'quote.fields.name' | transloco }}
+          <input
+            type="text"
+            autocomplete="name"
+            formControlName="name"
+          >
+          @if (errorMessage('name'); as error) {
+            <span class="field-error">{{ error.key | transloco: error.params }}</span>
           }
-        </select>
-        @if (errorMessage('market'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
-      <label [class.has-error]="showError('category')">
-        {{ 'quote.fields.category' | transloco }}
-        <select formControlName="category">
-          @for (category of categories; track category.value) {
-            <option [value]="category.value">{{ category.labelKey | transloco }}</option>
+        </label>
+        <label [class.has-error]="showError('email')">
+          {{ 'quote.fields.email' | transloco }}
+          <input
+            type="email"
+            autocomplete="email"
+            formControlName="email"
+          >
+          @if (errorMessage('email'); as error) {
+            <span class="field-error">{{ error.key | transloco: error.params }}</span>
           }
-        </select>
-        @if (errorMessage('category'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
+        </label>
+      </div>
+
       <label [class.has-error]="showError('volume')">
         {{ 'quote.fields.volume' | transloco }}
         <select formControlName="volume">
@@ -72,15 +45,27 @@
           <span class="field-error">{{ error.key | transloco: error.params }}</span>
         }
       </label>
-      <label>
-        {{ 'quote.fields.contactDetails' | transloco }}
-        <input
-          type="text"
-          autocomplete="tel"
-          [placeholder]="'quote.placeholders.contactDetails' | transloco"
-          formControlName="contactDetails"
-        >
-      </label>
+
+      <div class="field-grid secondary-fields">
+        <label>
+          {{ 'quote.fields.company' | transloco }}
+          <input
+            type="text"
+            autocomplete="organization"
+            formControlName="company"
+          >
+        </label>
+        <label>
+          {{ 'quote.fields.contactDetails' | transloco }}
+          <input
+            type="text"
+            autocomplete="tel"
+            [placeholder]="'quote.placeholders.contactDetails' | transloco"
+            formControlName="contactDetails"
+          >
+        </label>
+      </div>
+
       <label class="full-field" [class.has-error]="showError('message')">
         {{ 'quote.fields.message' | transloco }}
         <textarea

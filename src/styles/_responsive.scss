@@ -34,8 +34,7 @@
 
   .intro-grid,
   .section-heading,
-  .compliance-section,
-  .quote-panel {
+  .compliance-section {
     grid-template-columns: 1fr;
   }
 
@@ -44,9 +43,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .quote-result {
-    min-height: 220px;
-  }
 }
 
 @media (max-width: 640px) {

@@ -173,6 +173,7 @@
       "emptyDescription": "Teilen Sie Produkt, Bestimmungsort, Menge, Zeitplan und Kontaktdaten mit.",
       "readyTitle": "{{ name }}, diese Anfrage ist prüfbereit.",
       "readyDescription": "Wir bereiten {{ volumeFocus }} für {{ category }} nach {{ market }} vor, einschließlich Produktspezifikationen, Verpackung, Zertifikaten und {{ complianceFocus }}.",
+      "readyDescriptionSimple": "Wir nutzen Ihre Nachricht, um {{ volumeFocus }}, Produktspezifikationen, Verpackungshinweise, Dokumentenprüfungen und die nächsten Rückfragen vorzubereiten.",
       "submissionTitle": "Angebotsanfrage vorbereitet.",
       "submissionDescription": "{{ contactName }}, Ihre Anfragereferenz lautet {{ requestId }}. Als Kontakt-E-Mail wurde {{ email }} angegeben.",
       "fallbackTeam": "Ihr Team"

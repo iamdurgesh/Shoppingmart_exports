@@ -2,16 +2,12 @@ import { computed, Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators, type AbstractControl } from '@angular/forms';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
-import { debounceTime, map, startWith } from 'rxjs';
+import { debounceTime, filter, map, startWith } from 'rxjs';
 
 import {
   QuoteEnquiryService,
-  type Category,
-  type Market,
-  type OptionItem,
   type QuoteEnquiryDraft,
   type QuoteSubmissionRecord,
-  type Volume,
 } from '../../services/quote-enquiry.service';
 
 interface QuoteResultView {
@@ -49,8 +45,6 @@ export class QuoteFormComponent {
   private readonly submittedRecord = signal<QuoteSubmissionRecord | null>(null);
   private readonly lastSavedAt = signal<string | null>(this.initialSnapshot.savedAt);
 
-  protected readonly markets = this.quoteEnquiryService.marketOptions;
-  protected readonly categories = this.quoteEnquiryService.categoryOptions;
   protected readonly volumes = this.quoteEnquiryService.volumeOptions;
 
   protected readonly quoteForm = this.formBuilder.group({
@@ -106,9 +100,17 @@ export class QuoteFormComponent {
     this.translocoService.langChanges$.pipe(startWith(this.translocoService.getActiveLang())),
     { initialValue: this.translocoService.getActiveLang() },
   );
+  private readonly translationLoaded = toSignal(
+    this.translocoService.events$.pipe(
+      filter((event) => event.type === 'translationLoadSuccess' || event.type === 'langChanged'),
+      startWith(null),
+    ),
+    { initialValue: null },
+  );
 
   protected readonly result = computed<QuoteResultView>(() => {
     this.activeLanguage();
+    this.translationLoaded();
     const submitted = this.submittedRecord();
 
     if (submitted) {
@@ -147,17 +149,12 @@ export class QuoteFormComponent {
     };
     const descriptionParams: Record<string, string> = {
       volumeFocus: this.translocoService.translate(`quote.volumeFocus.${draft.volume}`),
-      category: this.translocoService.translate(this.getOptionLabelKey(draft.category, this.categories)),
-      market: this.translocoService.translate(this.getOptionLabelKey(draft.market, this.markets)),
-      complianceFocus: this.translocoService.translate(
-        draft.market === 'European Union' ? 'quote.complianceFocus.eu' : 'quote.complianceFocus.standard',
-      ),
     };
 
     const readyResult: QuoteResultView = {
       titleKey: 'quote.result.readyTitle',
       titleParams,
-      descriptionKey: 'quote.result.readyDescription',
+      descriptionKey: 'quote.result.readyDescriptionSimple',
       descriptionParams,
     };
 
@@ -255,12 +252,5 @@ export class QuoteFormComponent {
       dateStyle: 'medium',
       timeStyle: 'short',
     }).format(new Date(value));
-  }
-
-  private getOptionLabelKey<TValue extends Market | Category | Volume>(
-    value: TValue,
-    options: readonly OptionItem<TValue>[],
-  ): string {
-    return options.find((option) => option.value === value)?.labelKey ?? '';
   }
 }

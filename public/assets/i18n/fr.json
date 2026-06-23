@@ -173,6 +173,7 @@
       "emptyDescription": "Indiquez le produit, la destination, la quantité, le calendrier et vos coordonnées.",
       "readyTitle": "{{ name }}, cette demande est prête pour revue.",
       "readyDescription": "Nous préparerons {{ volumeFocus }} pour {{ category }} vers {{ market }}, ainsi que les spécifications produit, l'emballage, les certificats et {{ complianceFocus }}.",
+      "readyDescriptionSimple": "Nous utiliserons votre message pour préparer {{ volumeFocus }}, les spécifications produit, les notes d'emballage, les contrôles documentaires et les prochaines questions de suivi.",
       "submissionTitle": "Demande de devis préparée.",
       "submissionDescription": "{{ contactName }}, la référence de votre demande est {{ requestId }}. L'adresse de contact indiquée est {{ email }}.",
       "fallbackTeam": "Votre équipe"
