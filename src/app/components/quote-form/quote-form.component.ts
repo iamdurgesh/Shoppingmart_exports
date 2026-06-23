@@ -15,8 +15,15 @@ import {
 } from '../../services/quote-enquiry.service';
 
 interface QuoteResultView {
-  readonly title: string;
-  readonly description: string;
+  readonly titleKey: string;
+  readonly titleParams?: Record<string, string>;
+  readonly descriptionKey: string;
+  readonly descriptionParams?: Record<string, string>;
+}
+
+interface TranslationMessage {
+  readonly key: string;
+  readonly params?: Record<string, string>;
 }
 
 interface ValidationMessage {
@@ -107,15 +114,19 @@ export class QuoteFormComponent {
     if (submitted) {
       const contactName =
         submitted.payload.contact.fullName.trim() || this.translocoService.translate('quote.result.fallbackTeam');
-
-      return {
-        title: this.translocoService.translate('quote.result.submissionTitle'),
-        description: this.translocoService.translate('quote.result.submissionDescription', {
-          contactName,
-          requestId: submitted.payload.requestId,
-          email: submitted.payload.contact.email,
-        }),
+      const descriptionParams: Record<string, string> = {
+        contactName,
+        requestId: submitted.payload.requestId,
+        email: submitted.payload.contact.email,
       };
+
+      const submittedResult: QuoteResultView = {
+        titleKey: 'quote.result.submissionTitle',
+        descriptionKey: 'quote.result.submissionDescription',
+        descriptionParams,
+      };
+
+      return submittedResult;
     }
 
     const draft = this.draftValue();
@@ -123,52 +134,70 @@ export class QuoteFormComponent {
     const message = draft.message.trim();
 
     if (!name && !message) {
-      return {
-        title: this.translocoService.translate('quote.result.emptyTitle'),
-        description: this.translocoService.translate('quote.result.emptyDescription'),
+      const emptyResult: QuoteResultView = {
+        titleKey: 'quote.result.emptyTitle',
+        descriptionKey: 'quote.result.emptyDescription',
       };
+
+      return emptyResult;
     }
 
-    return {
-      title: this.translocoService.translate('quote.result.readyTitle', {
-        name: name || this.translocoService.translate('quote.result.fallbackTeam'),
-      }),
-      description: this.translocoService.translate('quote.result.readyDescription', {
-        volumeFocus: this.translocoService.translate(`quote.volumeFocus.${draft.volume}`),
-        category: this.translocoService.translate(this.getOptionLabelKey(draft.category, this.categories)),
-        market: this.translocoService.translate(this.getOptionLabelKey(draft.market, this.markets)),
-        complianceFocus: this.translocoService.translate(
-          draft.market === 'European Union' ? 'quote.complianceFocus.eu' : 'quote.complianceFocus.standard',
-        ),
-      }),
+    const titleParams: Record<string, string> = {
+      name: name || this.translocoService.translate('quote.result.fallbackTeam'),
     };
+    const descriptionParams: Record<string, string> = {
+      volumeFocus: this.translocoService.translate(`quote.volumeFocus.${draft.volume}`),
+      category: this.translocoService.translate(this.getOptionLabelKey(draft.category, this.categories)),
+      market: this.translocoService.translate(this.getOptionLabelKey(draft.market, this.markets)),
+      complianceFocus: this.translocoService.translate(
+        draft.market === 'European Union' ? 'quote.complianceFocus.eu' : 'quote.complianceFocus.standard',
+      ),
+    };
+
+    const readyResult: QuoteResultView = {
+      titleKey: 'quote.result.readyTitle',
+      titleParams,
+      descriptionKey: 'quote.result.readyDescription',
+      descriptionParams,
+    };
+
+    return readyResult;
   });
 
-  protected readonly resultLabel = computed(() => {
-    this.activeLanguage();
-    return this.translocoService.translate(
-      this.submittedRecord() ? 'quote.result.queuedLabel' : 'quote.result.previewLabel',
-    );
-  });
+  protected readonly resultLabelKey = computed(() =>
+    this.submittedRecord() ? 'quote.result.queuedLabel' : 'quote.result.previewLabel',
+  );
 
-  protected readonly draftStatus = computed(() => {
+  protected readonly draftStatus = computed<TranslationMessage>(() => {
     this.activeLanguage();
     const submitted = this.submittedRecord();
 
     if (submitted) {
-      return this.translocoService.translate('quote.result.prepared', {
+      const params: Record<string, string> = {
         date: this.formatTimestamp(submitted.savedAt),
         requestId: submitted.payload.requestId,
-      });
+      };
+
+      return {
+        key: 'quote.result.prepared',
+        params,
+      };
     }
 
     const savedAt = this.lastSavedAt();
 
-    return savedAt
-      ? this.translocoService.translate('quote.result.draftSaved', {
-          date: this.formatTimestamp(savedAt),
-        })
-      : this.translocoService.translate('quote.result.draftEmpty');
+    if (savedAt) {
+      const params: Record<string, string> = {
+        date: this.formatTimestamp(savedAt),
+      };
+
+      return {
+        key: 'quote.result.draftSaved',
+        params,
+      };
+    }
+
+    return { key: 'quote.result.draftEmpty' };
   });
 
   protected readonly canSubmit = computed(() => this.formStatus() === 'VALID');

@@ -108,10 +108,10 @@
     </form>
 
     <aside class="quote-result" aria-live="polite">
-      <span class="result-label">{{ resultLabel() }}</span>
-      <h3>{{ result().title }}</h3>
-      <p>{{ result().description }}</p>
-      <p class="result-meta">{{ draftStatus() }}</p>
+      <span class="result-label">{{ resultLabelKey() | transloco }}</span>
+      <h3>{{ result().titleKey | transloco: result().titleParams }}</h3>
+      <p>{{ result().descriptionKey | transloco: result().descriptionParams }}</p>
+      <p class="result-meta">{{ draftStatus().key | transloco: draftStatus().params }}</p>
     </aside>
   </div>
 </section>
