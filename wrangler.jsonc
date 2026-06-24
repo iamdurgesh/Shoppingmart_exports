@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "shoppingmart-exports",
+  "main": "./worker/index.mjs",
+  "compatibility_date": "2026-06-02",
+  "assets": {
+    "directory": "./dist/shoppingmart-exports/browser",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "routes": [
+    {
+      "pattern": "shoppingmartexports.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.shoppingmartexports.com",
+      "custom_domain": true
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "QUOTE_DB",
+      "database_name": "shoppingmart_exports",
+      "database_id": "4c9c1d9e-8b36-4787-afd3-d5fd235a2339"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  }
+}
