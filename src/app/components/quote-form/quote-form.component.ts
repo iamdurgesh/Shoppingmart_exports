@@ -9,6 +9,7 @@ import {
   type QuoteEnquiryDraft,
   type QuoteSubmissionRecord,
 } from '../../services/quote-enquiry.service';
+import { QuoteRequestStore } from './quote-request.store';
 
 interface QuoteResultView {
   readonly titleKey: string;
@@ -36,16 +37,20 @@ function noWhitespaceValidator(control: AbstractControl<string>): { whitespace: 
   imports: [ReactiveFormsModule, TranslocoPipe],
   templateUrl: './quote-form.component.html',
   styleUrl: './quote-form.component.scss',
+  providers: [QuoteRequestStore],
 })
 export class QuoteFormComponent {
   private readonly formBuilder = inject(NonNullableFormBuilder);
   private readonly quoteEnquiryService = inject(QuoteEnquiryService);
+  private readonly quoteRequestStore = inject(QuoteRequestStore);
   private readonly translocoService = inject(TranslocoService);
   private readonly initialSnapshot = this.quoteEnquiryService.loadDraftSnapshot();
   private readonly submittedRecord = signal<QuoteSubmissionRecord | null>(null);
   private readonly lastSavedAt = signal<string | null>(this.initialSnapshot.savedAt);
 
   protected readonly volumes = this.quoteEnquiryService.volumeOptions;
+  protected readonly isSubmitting = this.quoteRequestStore.isSubmitting;
+  protected readonly submitError = this.quoteRequestStore.errorMessage;
 
   protected readonly quoteForm = this.formBuilder.group({
     name: this.formBuilder.control(this.initialSnapshot.draft.name, {
@@ -197,19 +202,23 @@ export class QuoteFormComponent {
     return { key: 'quote.result.draftEmpty' };
   });
 
-  protected readonly canSubmit = computed(() => this.formStatus() === 'VALID');
+  protected readonly canSubmit = computed(() => this.formStatus() === 'VALID' && !this.isSubmitting());
 
-  protected submitEnquiry(): void {
+  protected async submitEnquiry(): Promise<void> {
     if (!this.canSubmit()) {
       this.quoteForm.markAllAsTouched();
       return;
     }
 
-    const submission = this.quoteEnquiryService.queueSubmission(this.draftValue());
+    try {
+      const submission = await this.quoteRequestStore.submitDraft(this.draftValue());
 
-    this.submittedRecord.set(submission);
-    this.lastSavedAt.set(submission.savedAt);
-    this.quoteForm.markAsPristine();
+      this.submittedRecord.set(submission);
+      this.lastSavedAt.set(submission.savedAt);
+      this.quoteForm.markAsPristine();
+    } catch {
+      this.submittedRecord.set(null);
+    }
   }
 
   protected showError(field: keyof QuoteEnquiryDraft): boolean {

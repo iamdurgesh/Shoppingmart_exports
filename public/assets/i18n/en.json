@@ -163,6 +163,7 @@
     },
     "note": "Provide accurate contact and order details so the quotation request can be reviewed efficiently.",
     "submit": "Request quotation",
+    "submitting": "Sending request...",
     "result": {
       "queuedLabel": "Request prepared",
       "previewLabel": "Quotation preview",
@@ -214,7 +215,8 @@
       "privacy": "Please confirm quotation follow-up permission.",
       "email": "Enter a valid business email address.",
       "minlength": "Use at least {{ requiredLength }} characters.",
-      "review": "Please review this field."
+      "review": "Please review this field.",
+      "submitFailed": "We could not save your request. Please try again or contact us directly."
     }
   },
   "footer": {

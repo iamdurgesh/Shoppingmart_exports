@@ -163,6 +163,7 @@
     },
     "note": "Indiquez des coordonnées et informations de commande exactes afin que la demande puisse être examinée efficacement.",
     "submit": "Demander un devis",
+    "submitting": "Envoi de la demande...",
     "result": {
       "queuedLabel": "Demande préparée",
       "previewLabel": "Aperçu du devis",
@@ -214,7 +215,8 @@
       "privacy": "Veuillez confirmer l'autorisation de suivi du devis.",
       "email": "Saisissez une adresse e-mail professionnelle valide.",
       "minlength": "Utilisez au moins {{ requiredLength }} caractères.",
-      "review": "Veuillez vérifier ce champ."
+      "review": "Veuillez vérifier ce champ.",
+      "submitFailed": "Nous n'avons pas pu enregistrer votre demande. Veuillez réessayer ou nous contacter directement."
     }
   },
   "footer": {

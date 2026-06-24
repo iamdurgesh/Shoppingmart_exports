@@ -130,9 +130,13 @@ $controls: 'input:not([type="radio"]):not([type="checkbox"]), select, textarea';
   .field-error { grid-column: 2; }
 }
 
-:is(.field-error, .form-note, .result-meta) { font-size: 0.84rem; line-height: 1.45; }
+:is(.field-error, .form-note, .submit-error, .result-meta) { font-size: 0.84rem; line-height: 1.45; }
 
-.field-error { color: var(--coral); font-weight: 700; }
+.field-error,
+.submit-error { color: var(--coral); font-weight: 700; }
+
+.submit-error { margin: 0; }
+
 .form-note { margin: -2px 0 0; color: var(--muted); }
 
 .quote-result {
