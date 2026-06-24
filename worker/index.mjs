@@ -3,6 +3,7 @@ const MAX_QUOTE_REQUEST_BYTES = 16_384;
 const ALLOWED_MARKETS = new Set(["European Union", "United Kingdom", "Middle East", "North America", "Other market"]);
 const ALLOWED_CATEGORIES = new Set(["Consumer Goods", "Food and Staples", "Textiles", "Custom Sourcing"]);
 const ALLOWED_LOCALES = new Set(["en", "de", "fr"]);
+const RESEND_EMAIL_ENDPOINT = "https://api.resend.com/emails";
 const SHIPMENT_LABELS = {
   sample: "Samples or trial order",
   pallet: "Pallet-level order",
@@ -114,6 +115,15 @@ function readLocale(value) {
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function escapeText(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 async function readBoundedRequestText(request) {
@@ -308,6 +318,99 @@ async function insertQuoteRequest(db, payload) {
     .run();
 }
 
+async function updateQuoteNotificationStatus(db, requestId, notificationStatus) {
+  await db
+    .prepare(
+      `UPDATE quote_requests
+       SET notification_status = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')
+       WHERE request_id = ?`,
+    )
+    .bind(notificationStatus, requestId)
+    .run();
+}
+
+function buildQuoteNotificationEmail(payload) {
+  const optionalCompany = payload.contact.companyName ? `Company: ${payload.contact.companyName}\n` : "";
+  const optionalContact = payload.contact.preferredContact ? `Preferred contact: ${payload.contact.preferredContact}\n` : "";
+
+  const text = [
+    `New quote request: ${payload.requestId}`,
+    "",
+    `Submitted: ${payload.submittedAt}`,
+    `Name: ${payload.contact.fullName}`,
+    `Email: ${payload.contact.email}`,
+    optionalCompany.trimEnd(),
+    optionalContact.trimEnd(),
+    `Market: ${payload.trade.destinationMarket}`,
+    `Category: ${payload.trade.productCategory}`,
+    `Shipment size: ${payload.trade.shipmentSize.label}`,
+    `Locale: ${payload.metadata.locale}`,
+    "",
+    "Message:",
+    payload.enquiry.message,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const html = `
+    <h2>New quote request</h2>
+    <p><strong>Request ID:</strong> ${escapeText(payload.requestId)}</p>
+    <p><strong>Submitted:</strong> ${escapeText(payload.submittedAt)}</p>
+    <p><strong>Name:</strong> ${escapeText(payload.contact.fullName)}</p>
+    <p><strong>Email:</strong> ${escapeText(payload.contact.email)}</p>
+    ${payload.contact.companyName ? `<p><strong>Company:</strong> ${escapeText(payload.contact.companyName)}</p>` : ""}
+    ${payload.contact.preferredContact ? `<p><strong>Preferred contact:</strong> ${escapeText(payload.contact.preferredContact)}</p>` : ""}
+    <p><strong>Market:</strong> ${escapeText(payload.trade.destinationMarket)}</p>
+    <p><strong>Category:</strong> ${escapeText(payload.trade.productCategory)}</p>
+    <p><strong>Shipment size:</strong> ${escapeText(payload.trade.shipmentSize.label)}</p>
+    <p><strong>Locale:</strong> ${escapeText(payload.metadata.locale)}</p>
+    <h3>Message</h3>
+    <p>${escapeText(payload.enquiry.message).replaceAll("\n", "<br>")}</p>
+  `;
+
+  return {
+    subject: `New quote request from ${payload.contact.fullName}`,
+    text,
+    html,
+  };
+}
+
+async function sendQuoteNotification(env, payload) {
+  const apiKey = readBoundedString(env.RESEND_API_KEY, 512);
+  const from = readBoundedString(env.QUOTE_NOTIFICATION_FROM, 320);
+  const to = readBoundedString(env.QUOTE_NOTIFICATION_TO, 320);
+
+  if (!apiKey || !from || !to) {
+    return "not_configured";
+  }
+
+  const email = buildQuoteNotificationEmail(payload);
+  const response = await fetch(RESEND_EMAIL_ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": payload.requestId,
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      subject: email.subject,
+      text: email.text,
+      html: email.html,
+      reply_to: payload.contact.email,
+      tags: [
+        {
+          name: "source",
+          value: "website_quote_form",
+        },
+      ],
+    }),
+  });
+
+  return response.ok ? "sent" : "failed";
+}
+
 async function handleQuoteRequest(request, env) {
   if (request.method === "OPTIONS") {
     return jsonResponse(request, {}, { status: 204 });
@@ -338,6 +441,10 @@ async function handleQuoteRequest(request, env) {
   } catch {
     return jsonResponse(request, { error: "database_write_failed" }, { status: 500 });
   }
+
+  const notificationStatus = await sendQuoteNotification(env, normalized.payload).catch(() => "failed");
+
+  await updateQuoteNotificationStatus(env.QUOTE_DB, normalized.payload.requestId, notificationStatus).catch(() => undefined);
 
   return jsonResponse(
     request,
