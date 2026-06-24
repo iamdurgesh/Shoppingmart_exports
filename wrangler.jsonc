@@ -10,12 +10,12 @@
   },
   "routes": [
     {
-      "pattern": "shoppingmartexports.com",
-      "custom_domain": true
+      "pattern": "shoppingmartexports.com/*",
+      "zone_name": "shoppingmartexports.com"
     },
     {
-      "pattern": "www.shoppingmartexports.com",
-      "custom_domain": true
+      "pattern": "www.shoppingmartexports.com/*",
+      "zone_name": "shoppingmartexports.com"
     }
   ],
   "d1_databases": [
