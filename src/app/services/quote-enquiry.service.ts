@@ -188,6 +188,13 @@ export class QuoteEnquiryService {
     return submission;
   }
 
+  markSubmissionSaved(draft: QuoteEnquiryDraft, savedAt: string): void {
+    this.writeJson(this.draftStorageKey, {
+      draft: this.sanitizeDraft(draft),
+      savedAt,
+    } satisfies QuoteDraftSnapshot);
+  }
+
   buildQuoteRequestPayload(draft: QuoteEnquiryDraft, submittedAt = new Date().toISOString()): QuoteRequestPayload {
     const sanitized = this.sanitizeDraft(draft);
     const shipmentSizeLabel = this.getShipmentSizeLabel(sanitized.volume);

@@ -163,6 +163,7 @@
     },
     "note": "Geben Sie korrekte Kontakt- und Bestelldaten an, damit die Angebotsanfrage effizient geprüft werden kann.",
     "submit": "Angebot anfragen",
+    "submitting": "Anfrage wird gesendet...",
     "result": {
       "queuedLabel": "Anfrage vorbereitet",
       "previewLabel": "Angebotsvorschau",
@@ -214,7 +215,8 @@
       "privacy": "Bitte bestätigen Sie die Erlaubnis zur Angebotsnachverfolgung.",
       "email": "Geben Sie eine gültige geschäftliche E-Mail-Adresse ein.",
       "minlength": "Verwenden Sie mindestens {{ requiredLength }} Zeichen.",
-      "review": "Bitte prüfen Sie dieses Feld."
+      "review": "Bitte prüfen Sie dieses Feld.",
+      "submitFailed": "Ihre Anfrage konnte nicht gespeichert werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt."
     }
   },
   "footer": {

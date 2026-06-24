@@ -87,8 +87,11 @@
       <p class="form-note full-field">
         {{ 'quote.note' | transloco }}
       </p>
+      @if (submitError(); as errorKey) {
+        <p class="submit-error full-field">{{ errorKey | transloco }}</p>
+      }
       <button class="button primary full-width" type="submit" [disabled]="!canSubmit()">
-        {{ 'quote.submit' | transloco }}
+        {{ (isSubmitting() ? 'quote.submitting' : 'quote.submit') | transloco }}
       </button>
     </form>
 
