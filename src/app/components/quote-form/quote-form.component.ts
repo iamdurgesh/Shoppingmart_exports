@@ -169,6 +169,21 @@ export class QuoteFormComponent {
   protected readonly resultLabelKey = computed(() =>
     this.submittedRecord() ? 'quote.result.queuedLabel' : 'quote.result.previewLabel',
   );
+  protected readonly successNotice = computed<TranslationMessage | null>(() => {
+    const submitted = this.submittedRecord();
+
+    if (!submitted) {
+      return null;
+    }
+
+    return {
+      key: 'quote.success.description',
+      params: {
+        requestId: submitted.payload.requestId,
+        email: submitted.payload.contact.email,
+      },
+    };
+  });
 
   protected readonly draftStatus = computed<TranslationMessage>(() => {
     this.activeLanguage();
@@ -212,10 +227,14 @@ export class QuoteFormComponent {
 
     try {
       const submission = await this.quoteRequestStore.submitDraft(this.draftValue());
+      const nextDraft = this.quoteEnquiryService.createDefaultDraft();
 
       this.submittedRecord.set(submission);
       this.lastSavedAt.set(submission.savedAt);
+      this.quoteEnquiryService.clearDraft();
+      this.quoteForm.reset(nextDraft, { emitEvent: false });
       this.quoteForm.markAsPristine();
+      this.quoteForm.markAsUntouched();
     } catch {
       this.submittedRecord.set(null);
     }

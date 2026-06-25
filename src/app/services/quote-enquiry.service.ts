@@ -99,7 +99,6 @@ export interface QuoteRequestPayload {
   };
   readonly metadata: {
     readonly locale: string;
-    readonly userAgent: string | null;
   };
 }
 
@@ -195,6 +194,14 @@ export class QuoteEnquiryService {
     } satisfies QuoteDraftSnapshot);
   }
 
+  clearDraft(): void {
+    try {
+      globalThis.localStorage?.removeItem(this.draftStorageKey);
+    } catch {
+      // Ignore storage errors and keep the form functional.
+    }
+  }
+
   buildQuoteRequestPayload(draft: QuoteEnquiryDraft, submittedAt = new Date().toISOString()): QuoteRequestPayload {
     const sanitized = this.sanitizeDraft(draft);
     const shipmentSizeLabel = this.getShipmentSizeLabel(sanitized.volume);
@@ -228,7 +235,6 @@ export class QuoteEnquiryService {
       },
       metadata: {
         locale: globalThis.navigator?.language ?? 'en',
-        userAgent: globalThis.navigator?.userAgent ?? null,
       },
     };
   }
@@ -301,7 +307,6 @@ export class QuoteEnquiryService {
       },
       metadata: {
         locale: this.readString(metadata['locale']) ?? fallback.metadata.locale,
-        userAgent: this.readNullableString(metadata['userAgent']),
       },
     };
   }

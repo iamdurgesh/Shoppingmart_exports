@@ -105,6 +105,20 @@ $controls: 'input:not([type="radio"]):not([type="checkbox"]), select, textarea';
   @media (max-width: 640px) { padding: 4px; background: transparent; }
 }
 
+.quote-fields {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  gap: 16px;
+
+  &:disabled {
+    opacity: 0.72;
+    pointer-events: none;
+  }
+}
+
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -137,7 +151,41 @@ $controls: 'input:not([type="radio"]):not([type="checkbox"]), select, textarea';
 
 .submit-error { margin: 0; }
 
+.submit-success {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(13, 148, 136, 0.28);
+  border-radius: var(--radius);
+  color: #0f3f3a;
+  background: rgba(232, 250, 246, 0.92);
+  font-size: 0.9rem;
+  line-height: 1.45;
+
+  strong {
+    color: #0b655c;
+    font-size: 0.92rem;
+  }
+}
+
 .form-note { margin: -2px 0 0; color: var(--muted); }
+
+.button-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 999px;
+  vertical-align: -0.15em;
+  animation: quote-spin 0.75s linear infinite;
+}
+
+@keyframes quote-spin {
+  to { transform: rotate(360deg); }
+}
 
 .quote-result {
   display: flex;
