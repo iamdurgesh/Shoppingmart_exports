@@ -8,90 +8,101 @@
       </p>
     </div>
 
-    <form class="quote-form" [formGroup]="quoteForm" (ngSubmit)="submitEnquiry()" novalidate>
-      <div class="field-grid">
-        <label [class.has-error]="showError('name')">
-          {{ 'quote.fields.name' | transloco }}
-          <input
-            type="text"
-            autocomplete="name"
-            formControlName="name"
-          >
-          @if (errorMessage('name'); as error) {
+    <form class="quote-form" [formGroup]="quoteForm" (ngSubmit)="submitEnquiry()" [attr.aria-busy]="isSubmitting()" novalidate>
+      <fieldset class="quote-fields" [disabled]="isSubmitting()">
+        <div class="field-grid">
+          <label [class.has-error]="showError('name')">
+            {{ 'quote.fields.name' | transloco }}
+            <input
+              type="text"
+              autocomplete="name"
+              formControlName="name"
+            >
+            @if (errorMessage('name'); as error) {
+              <span class="field-error">{{ error.key | transloco: error.params }}</span>
+            }
+          </label>
+          <label [class.has-error]="showError('email')">
+            {{ 'quote.fields.email' | transloco }}
+            <input
+              type="email"
+              autocomplete="email"
+              formControlName="email"
+            >
+            @if (errorMessage('email'); as error) {
+              <span class="field-error">{{ error.key | transloco: error.params }}</span>
+            }
+          </label>
+        </div>
+
+        <label [class.has-error]="showError('volume')">
+          {{ 'quote.fields.volume' | transloco }}
+          <select formControlName="volume">
+            @for (volume of volumes; track volume.value) {
+              <option [value]="volume.value">{{ volume.labelKey | transloco }}</option>
+            }
+          </select>
+          @if (errorMessage('volume'); as error) {
             <span class="field-error">{{ error.key | transloco: error.params }}</span>
           }
         </label>
-        <label [class.has-error]="showError('email')">
-          {{ 'quote.fields.email' | transloco }}
-          <input
-            type="email"
-            autocomplete="email"
-            formControlName="email"
-          >
-          @if (errorMessage('email'); as error) {
+
+        <div class="field-grid secondary-fields">
+          <label>
+            {{ 'quote.fields.company' | transloco }}
+            <input
+              type="text"
+              autocomplete="organization"
+              formControlName="company"
+            >
+          </label>
+          <label>
+            {{ 'quote.fields.contactDetails' | transloco }}
+            <input
+              type="text"
+              autocomplete="tel"
+              [placeholder]="'quote.placeholders.contactDetails' | transloco"
+              formControlName="contactDetails"
+            >
+          </label>
+        </div>
+
+        <label class="full-field" [class.has-error]="showError('message')">
+          {{ 'quote.fields.message' | transloco }}
+          <textarea
+            rows="4"
+            [placeholder]="'quote.placeholders.message' | transloco"
+            formControlName="message"
+          ></textarea>
+          @if (errorMessage('message'); as error) {
             <span class="field-error">{{ error.key | transloco: error.params }}</span>
           }
         </label>
-      </div>
-
-      <label [class.has-error]="showError('volume')">
-        {{ 'quote.fields.volume' | transloco }}
-        <select formControlName="volume">
-          @for (volume of volumes; track volume.value) {
-            <option [value]="volume.value">{{ volume.labelKey | transloco }}</option>
+        <label class="consent-field full-field" [class.has-error]="showError('privacyAccepted')">
+          <input type="checkbox" formControlName="privacyAccepted">
+          <span>{{ 'quote.fields.privacy' | transloco }}</span>
+          @if (errorMessage('privacyAccepted'); as error) {
+            <span class="field-error">{{ error.key | transloco: error.params }}</span>
           }
-        </select>
-        @if (errorMessage('volume'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
-
-      <div class="field-grid secondary-fields">
-        <label>
-          {{ 'quote.fields.company' | transloco }}
-          <input
-            type="text"
-            autocomplete="organization"
-            formControlName="company"
-          >
         </label>
-        <label>
-          {{ 'quote.fields.contactDetails' | transloco }}
-          <input
-            type="text"
-            autocomplete="tel"
-            [placeholder]="'quote.placeholders.contactDetails' | transloco"
-            formControlName="contactDetails"
-          >
-        </label>
-      </div>
-
-      <label class="full-field" [class.has-error]="showError('message')">
-        {{ 'quote.fields.message' | transloco }}
-        <textarea
-          rows="4"
-          [placeholder]="'quote.placeholders.message' | transloco"
-          formControlName="message"
-        ></textarea>
-        @if (errorMessage('message'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
-      <label class="consent-field full-field" [class.has-error]="showError('privacyAccepted')">
-        <input type="checkbox" formControlName="privacyAccepted">
-        <span>{{ 'quote.fields.privacy' | transloco }}</span>
-        @if (errorMessage('privacyAccepted'); as error) {
-          <span class="field-error">{{ error.key | transloco: error.params }}</span>
-        }
-      </label>
+      </fieldset>
       <p class="form-note full-field">
         {{ 'quote.note' | transloco }}
       </p>
+      @if (successNotice(); as notice) {
+        <div class="submit-success full-field" role="status" aria-live="polite">
+          <strong>{{ 'quote.success.title' | transloco }}</strong>
+          <span>{{ notice.key | transloco: notice.params }}</span>
+        </div>
+      }
       @if (submitError(); as errorKey) {
         <p class="submit-error full-field">{{ errorKey | transloco }}</p>
       }
       <button class="button primary full-width" type="submit" [disabled]="!canSubmit()">
-        {{ (isSubmitting() ? 'quote.submitting' : 'quote.submit') | transloco }}
+        @if (isSubmitting()) {
+          <span class="button-spinner" aria-hidden="true"></span>
+        }
+        <span>{{ (isSubmitting() ? 'quote.submitting' : 'quote.submit') | transloco }}</span>
       </button>
     </form>
 

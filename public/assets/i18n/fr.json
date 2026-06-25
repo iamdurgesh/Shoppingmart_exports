@@ -164,6 +164,10 @@
     "note": "Indiquez des coordonnées et informations de commande exactes afin que la demande puisse être examinée efficacement.",
     "submit": "Demander un devis",
     "submitting": "Envoi de la demande...",
+    "success": {
+      "title": "Demande envoyée avec succès.",
+      "description": "La référence {{ requestId }} a été enregistrée et associée à {{ email }}. Les champs du formulaire ont été effacés pour la prochaine demande."
+    },
     "result": {
       "queuedLabel": "Demande préparée",
       "previewLabel": "Aperçu du devis",

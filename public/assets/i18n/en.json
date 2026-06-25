@@ -164,6 +164,10 @@
     "note": "Provide accurate contact and order details so the quotation request can be reviewed efficiently.",
     "submit": "Request quotation",
     "submitting": "Sending request...",
+    "success": {
+      "title": "Request sent successfully.",
+      "description": "Reference {{ requestId }} was saved and linked to {{ email }}. The form fields have been cleared for the next request."
+    },
     "result": {
       "queuedLabel": "Request prepared",
       "previewLabel": "Quotation preview",

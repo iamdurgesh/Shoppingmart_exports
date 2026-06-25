@@ -164,6 +164,10 @@
     "note": "Geben Sie korrekte Kontakt- und Bestelldaten an, damit die Angebotsanfrage effizient geprüft werden kann.",
     "submit": "Angebot anfragen",
     "submitting": "Anfrage wird gesendet...",
+    "success": {
+      "title": "Anfrage erfolgreich gesendet.",
+      "description": "Die Referenz {{ requestId }} wurde gespeichert und mit {{ email }} verknüpft. Die Formularfelder wurden für die nächste Anfrage geleert."
+    },
     "result": {
       "queuedLabel": "Anfrage vorbereitet",
       "previewLabel": "Angebotsvorschau",
