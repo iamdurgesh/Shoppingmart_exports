@@ -34,8 +34,8 @@
 
 .contact-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.52fr);
-  gap: clamp(28px, 7vw, 88px);
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 0.78fr);
+  gap: clamp(28px, 4.5vw, 56px);
   align-items: end;
   padding: clamp(58px, 9vw, 112px) 0 clamp(52px, 8vw, 96px);
 }
@@ -91,7 +91,8 @@
   color: #083f59;
   font-size: 1.18rem;
   font-weight: 900;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  white-space: nowrap;
 }
 
 .contact-card p {
@@ -131,6 +132,11 @@
 
   .contact-card {
     align-self: stretch;
+  }
+
+  .contact-card a {
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
 
   .contact-hero h1 {
