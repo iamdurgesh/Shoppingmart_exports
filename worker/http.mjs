@@ -1,10 +1,11 @@
 const IMMUTABLE_ASSET_PATTERN = /\.[0-9A-Z]{8,}\.(?:css|js)$/i;
 
-export function buildSecurityHeaders(request, assetPath) {
+export function buildSecurityHeaders(request, assetPath, responseStatus = 200, responseContentType = "") {
   const headers = new Headers();
   const isDocumentRequest =
-    request.method === "GET" &&
-    request.headers.get("accept")?.includes("text/html");
+    responseStatus === 200 &&
+    (request.method === "GET" || request.method === "HEAD") &&
+    (responseContentType.includes("text/html") || assetPath.endsWith(".html") || assetPath === "/");
 
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   headers.set("X-Content-Type-Options", "nosniff");
@@ -18,6 +19,11 @@ export function buildSecurityHeaders(request, assetPath) {
   }
 
   if (isDocumentRequest) {
+    const requestUrl = new URL(request.url);
+    const canonicalUrl = new URL(requestUrl.pathname, "https://shoppingmartexports.com");
+
+    headers.set("Link", `<${canonicalUrl.href}>; rel="canonical"`);
+    headers.set("X-Robots-Tag", "index, follow");
     headers.set(
       "Content-Security-Policy",
       [
@@ -39,7 +45,7 @@ export function buildSecurityHeaders(request, assetPath) {
 
   if (IMMUTABLE_ASSET_PATTERN.test(assetPath)) {
     headers.set("Cache-Control", "public, max-age=31536000, immutable");
-  } else if (assetPath.endsWith(".html") || assetPath === "/") {
+  } else if (isDocumentRequest) {
     headers.set("Cache-Control", "public, max-age=0, must-revalidate");
   }
 
@@ -48,7 +54,12 @@ export function buildSecurityHeaders(request, assetPath) {
 
 export function withHeaders(response, request, assetPath) {
   const headers = new Headers(response.headers);
-  const securityHeaders = buildSecurityHeaders(request, assetPath);
+  const securityHeaders = buildSecurityHeaders(
+    request,
+    assetPath,
+    response.status,
+    response.headers.get("content-type") ?? "",
+  );
 
   for (const [key, value] of securityHeaders.entries()) {
     headers.set(key, value);
