@@ -166,12 +166,12 @@
     "submitting": "Envoi de la demande...",
     "success": {
       "title": "Demande envoyée avec succès.",
-      "description": "La référence {{ requestId }} a été enregistrée et associée à {{ email }}. Les champs du formulaire ont été effacés pour la prochaine demande."
+      "description": "La référence {{ requestId }} a été enregistrée et associée à {{ email }}."
     },
     "result": {
       "queuedLabel": "Demande préparée",
       "previewLabel": "Aperçu du devis",
-      "prepared": "Préparé le {{ date }}. ID de demande : {{ requestId }}.",
+      "prepared": "Préparé le {{ date }}. Référence : {{ requestId }}.",
       "draftSaved": "Brouillon enregistré le {{ date }}.",
       "draftEmpty": "Complétez le formulaire pour préparer votre demande de devis.",
       "emptyTitle": "Envoyez les éléments essentiels. Nous gérerons la prochaine étape.",
@@ -180,7 +180,7 @@
       "readyDescription": "Nous préparerons {{ volumeFocus }} pour {{ category }} vers {{ market }}, ainsi que les spécifications produit, l'emballage, les certificats et {{ complianceFocus }}.",
       "readyDescriptionSimple": "Nous utiliserons votre message pour préparer {{ volumeFocus }}, les spécifications produit, les notes d'emballage, les contrôles documentaires et les prochaines questions de suivi.",
       "submissionTitle": "Demande de devis préparée.",
-      "submissionDescription": "{{ contactName }}, la référence de votre demande est {{ requestId }}. L'adresse de contact indiquée est {{ email }}.",
+      "submissionDescription": "{{ contactName }}, votre référence de devis est {{ requestId }}. Nous vous répondrons à {{ email }}.",
       "fallbackTeam": "Votre équipe"
     },
     "options": {
@@ -256,7 +256,7 @@
       "title": "Stockage local dans le navigateur",
       "copy": "Le site utilise la fonction de stockage local du navigateur. Les informations sont conservées sur l'appareil du visiteur et peuvent être relues lors de visites ultérieures.",
       "language": "Préférence linguistique : la langue sélectionnée est conservée afin de respecter le choix du visiteur.",
-      "enquiry": "Formulaire de devis : les données saisies — notamment nom, e-mail, entreprise, coordonnées, marché, catégorie, volume, message et état de confirmation — peuvent être enregistrées localement afin de conserver le brouillon et son état de traitement. L'enregistrement peut également contenir un horodatage, un identifiant de demande, la langue du navigateur et le user-agent.",
+      "enquiry": "Formulaire de devis : les données saisies — notamment nom, e-mail, entreprise, coordonnées, marché, catégorie, volume, message et état de confirmation — peuvent être enregistrées localement afin de conserver le brouillon et son état de traitement. L'enregistrement peut également contenir un horodatage, un identifiant de demande et la langue du navigateur.",
       "control": "Le visiteur peut supprimer ces informations au moyen des commandes du navigateur relatives aux données du site. Le traitement sert la fonctionnalité demandée et la préparation d'une éventuelle relation commerciale conformément à l'article 6, paragraphe 1, point b), du RGPD."
     },
     "contact": {

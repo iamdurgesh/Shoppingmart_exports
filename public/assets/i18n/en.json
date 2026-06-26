@@ -166,12 +166,12 @@
     "submitting": "Sending request...",
     "success": {
       "title": "Request sent successfully.",
-      "description": "Reference {{ requestId }} was saved and linked to {{ email }}. The form fields have been cleared for the next request."
+      "description": "Reference {{ requestId }} was saved and linked to {{ email }}."
     },
     "result": {
       "queuedLabel": "Request prepared",
       "previewLabel": "Quotation preview",
-      "prepared": "Prepared on {{ date }}. Request ID: {{ requestId }}.",
+      "prepared": "Prepared on {{ date }}. Reference: {{ requestId }}.",
       "draftSaved": "Draft saved on {{ date }}.",
       "draftEmpty": "Complete the form to prepare your quotation request.",
       "emptyTitle": "Send the essentials. We will handle the next step.",
@@ -180,7 +180,7 @@
       "readyDescription": "We will prepare {{ volumeFocus }} for {{ category }} into {{ market }}, plus product specifications, packaging, certificates, and {{ complianceFocus }}.",
       "readyDescriptionSimple": "We will use your message to prepare {{ volumeFocus }}, product specifications, packaging notes, document checks, and the next follow-up questions.",
       "submissionTitle": "Quotation request prepared.",
-      "submissionDescription": "{{ contactName }}, your request reference is {{ requestId }}. The contact email provided is {{ email }}.",
+      "submissionDescription": "{{ contactName }}, your quotation reference is {{ requestId }}. We will follow up at {{ email }}.",
       "fallbackTeam": "Your team"
     },
     "options": {
@@ -256,7 +256,7 @@
       "title": "Local storage in the visitor's browser",
       "copy": "The website uses the browser's local-storage facility. The information is stored on the visitor's device and may be read by the website on subsequent visits.",
       "language": "Language preference: the selected website language is stored to retain the visitor's choice.",
-      "enquiry": "Quotation form: entries made in the quotation form—including name, email address, company, contact details, market, category, shipment volume, message and confirmation status—may be stored locally to retain the draft and its processing status. The stored record may also contain a timestamp, request identifier, browser language and user-agent information.",
+      "enquiry": "Quotation form: entries made in the quotation form—including name, email address, company, contact details, market, category, shipment volume, message and confirmation status—may be stored locally to retain the draft and its processing status. The stored record may also contain a timestamp, request identifier and browser language.",
       "control": "The visitor may remove this information through the browser controls for deleting site data. Processing serves the requested form functionality and preparation of a potential business enquiry pursuant to Article 6(1)(b) GDPR."
     },
     "contact": {
