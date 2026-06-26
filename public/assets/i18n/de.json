@@ -166,12 +166,12 @@
     "submitting": "Anfrage wird gesendet...",
     "success": {
       "title": "Anfrage erfolgreich gesendet.",
-      "description": "Die Referenz {{ requestId }} wurde gespeichert und mit {{ email }} verknüpft. Die Formularfelder wurden für die nächste Anfrage geleert."
+      "description": "Die Referenz {{ requestId }} wurde gespeichert und mit {{ email }} verknüpft."
     },
     "result": {
       "queuedLabel": "Anfrage vorbereitet",
       "previewLabel": "Angebotsvorschau",
-      "prepared": "Vorbereitet am {{ date }}. Anfrage-ID: {{ requestId }}.",
+      "prepared": "Vorbereitet am {{ date }}. Referenz: {{ requestId }}.",
       "draftSaved": "Entwurf gespeichert am {{ date }}.",
       "draftEmpty": "Füllen Sie das Formular aus, um Ihre Angebotsanfrage vorzubereiten.",
       "emptyTitle": "Senden Sie die wichtigsten Angaben. Wir übernehmen den nächsten Schritt.",
@@ -180,7 +180,7 @@
       "readyDescription": "Wir bereiten {{ volumeFocus }} für {{ category }} nach {{ market }} vor, einschließlich Produktspezifikationen, Verpackung, Zertifikaten und {{ complianceFocus }}.",
       "readyDescriptionSimple": "Wir nutzen Ihre Nachricht, um {{ volumeFocus }}, Produktspezifikationen, Verpackungshinweise, Dokumentenprüfungen und die nächsten Rückfragen vorzubereiten.",
       "submissionTitle": "Angebotsanfrage vorbereitet.",
-      "submissionDescription": "{{ contactName }}, Ihre Anfragereferenz lautet {{ requestId }}. Als Kontakt-E-Mail wurde {{ email }} angegeben.",
+      "submissionDescription": "{{ contactName }}, Ihre Angebotsreferenz lautet {{ requestId }}. Wir melden uns unter {{ email }}.",
       "fallbackTeam": "Ihr Team"
     },
     "options": {
@@ -256,7 +256,7 @@
       "title": "Lokale Speicherung im Browser",
       "copy": "Die Website verwendet die Local-Storage-Funktion des Browsers. Informationen werden auf dem Endgerät des Besuchers gespeichert und können bei späteren Besuchen ausgelesen werden.",
       "language": "Spracheinstellung: Die gewählte Website-Sprache wird zur Beibehaltung der Auswahl gespeichert.",
-      "enquiry": "Angebotsformular: Formulareingaben – einschließlich Name, E-Mail-Adresse, Unternehmen, Kontaktdaten, Markt, Kategorie, Sendungsvolumen, Nachricht und Bestätigungsstatus – können lokal gespeichert werden, um den Entwurf und dessen Bearbeitungsstatus beizubehalten. Der gespeicherte Datensatz kann außerdem Zeitstempel, Anfragekennung, Browsersprache und User-Agent-Angaben enthalten.",
+      "enquiry": "Angebotsformular: Formulareingaben – einschließlich Name, E-Mail-Adresse, Unternehmen, Kontaktdaten, Markt, Kategorie, Sendungsvolumen, Nachricht und Bestätigungsstatus – können lokal gespeichert werden, um den Entwurf und dessen Bearbeitungsstatus beizubehalten. Der gespeicherte Datensatz kann außerdem Zeitstempel, Anfragekennung und Browsersprache enthalten.",
       "control": "Der Besucher kann die Informationen über die Browserfunktionen zum Löschen von Website-Daten entfernen. Die Verarbeitung dient der angeforderten Formularfunktion und der Vorbereitung einer möglichen Geschäftsanfrage gemäß Art. 6 Abs. 1 lit. b DSGVO."
     },
     "contact": {
