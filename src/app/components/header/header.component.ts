@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, computed, HostListener, inject, OnInit } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, computed, HostListener, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
@@ -23,6 +23,7 @@ interface NavItem {
 export class HeaderComponent implements OnInit {
   private readonly document = inject(DOCUMENT);
   private readonly languageService = inject(LanguageService);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly translocoService = inject(TranslocoService);
 
   protected readonly navItems: readonly NavItem[] = [
@@ -69,6 +70,10 @@ export class HeaderComponent implements OnInit {
   }
 
   private updateScrolledState(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.isScrolled = window.scrollY > 18;
   }
 

@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
@@ -11,6 +12,8 @@ import { BrandLogoComponent } from '../brand-logo/brand-logo.component';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
   protected readonly currentYear = new Date().getFullYear();
   protected isScrollToTopVisible = false;
 
@@ -24,6 +27,10 @@ export class FooterComponent implements OnInit {
   }
 
   protected scrollToTop(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     window.scrollTo({
@@ -33,6 +40,10 @@ export class FooterComponent implements OnInit {
   }
 
   private updateScrollToTopVisibility(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.isScrollToTopVisible = window.scrollY > 360;
   }
 }
