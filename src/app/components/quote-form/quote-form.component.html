@@ -80,7 +80,12 @@
         </label>
         <label class="consent-field full-field" [class.has-error]="showError('privacyAccepted')">
           <input type="checkbox" formControlName="privacyAccepted">
-          <span>{{ 'quote.fields.privacy' | transloco }}</span>
+          <span>
+            {{ 'quote.fields.privacy' | transloco }}
+            <a class="privacy-policy-link" routerLink="/privacy-policy">
+              {{ 'quote.fields.privacyPolicy' | transloco }}
+            </a>.
+          </span>
           @if (errorMessage('privacyAccepted'); as error) {
             <span class="field-error">{{ error.key | transloco: error.params }}</span>
           }

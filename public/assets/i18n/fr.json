@@ -155,7 +155,8 @@
       "volume": "Taille d'expédition",
       "contactDetails": "Coordonnées",
       "message": "Message de demande",
-      "privacy": "J'accepte d'être contacté au sujet de cette demande de devis et je comprends que les informations sont utilisées pour le suivi de la demande."
+      "privacy": "Je demande le suivi de ce devis et j'ai lu la",
+      "privacyPolicy": "Politique de confidentialité"
     },
     "placeholders": {
       "contactDetails": "Téléphone, WhatsApp ou créneau de contact préféré",
@@ -216,7 +217,7 @@
     },
     "errors": {
       "required": "Ce champ est obligatoire.",
-      "privacy": "Veuillez confirmer l'autorisation de suivi du devis.",
+      "privacy": "Veuillez confirmer la demande de suivi du devis et la prise de connaissance de la Politique de confidentialité.",
       "email": "Saisissez une adresse e-mail professionnelle valide.",
       "minlength": "Utilisez au moins {{ requiredLength }} caractères.",
       "review": "Veuillez vérifier ce champ.",
@@ -237,7 +238,7 @@
   "privacyPolicy": {
     "kicker": "Informations sur la protection des données",
     "title": "Politique de confidentialité",
-    "version": "Version du 22 juin 2026",
+    "version": "Version actuelle",
     "introduction": "La présente Politique de confidentialité décrit le traitement des données à caractère personnel lié au site Shoppingmart Exports. Elle concerne l'accès au site, les informations stockées dans le navigateur, les demandes commerciales et les communications initiées par e-mail ou WhatsApp.",
     "controller": {
       "title": "Responsable du traitement et contact",
@@ -249,15 +250,24 @@
     },
     "delivery": {
       "title": "Fourniture du site et journaux serveur",
-      "copy": "Lors de l'accès au site, l'infrastructure d'hébergement et de diffusion peut traiter les données techniques nécessaires à sa fourniture et à sa sécurité. Il peut s'agir de l'adresse IP, de la date et l'heure, de la ressource demandée, du référent transmis par le navigateur, du type de navigateur, du système d'exploitation et du statut de réponse. Les destinataires sont les prestataires techniques et d'hébergement engagés à ces fins.",
+      "copy": "Lors de l'accès au site, l'infrastructure d'hébergement et de diffusion peut traiter les données techniques nécessaires à sa fourniture et à sa sécurité. Il peut s'agir de l'adresse IP, de la ressource demandée, du référent transmis par le navigateur, du type de navigateur, du système d'exploitation et du statut de réponse. Les destinataires sont les prestataires techniques et d'hébergement engagés à ces fins.",
       "basis": "Le traitement repose sur l'article 6, paragraphe 1, point f), du RGPD. Les intérêts légitimes consistent à fournir un site fonctionnel et sécurisé, prévenir les abus et maintenir sa stabilité technique."
     },
     "storage": {
       "title": "Stockage local dans le navigateur",
       "copy": "Le site utilise la fonction de stockage local du navigateur. Les informations sont conservées sur l'appareil du visiteur et peuvent être relues lors de visites ultérieures.",
       "language": "Préférence linguistique : la langue sélectionnée est conservée afin de respecter le choix du visiteur.",
-      "enquiry": "Formulaire de devis : les données saisies — notamment nom, e-mail, entreprise, coordonnées, marché, catégorie, volume, message et état de confirmation — peuvent être enregistrées localement afin de conserver le brouillon et son état de traitement. L'enregistrement peut également contenir un horodatage, un identifiant de demande et la langue du navigateur.",
+      "enquiry": "Formulaire de devis : les données saisies — notamment nom, e-mail, entreprise, coordonnées, marché, catégorie, volume, message et état de confirmation — peuvent être enregistrées localement afin de conserver le brouillon et son état de traitement. L'enregistrement peut également contenir un identifiant de demande et la langue du navigateur.",
       "control": "Le visiteur peut supprimer ces informations au moyen des commandes du navigateur relatives aux données du site. Le traitement sert la fonctionnalité demandée et la préparation d'une éventuelle relation commerciale conformément à l'article 6, paragraphe 1, point b), du RGPD."
+    },
+    "quotationProcessing": {
+      "title": "Traitement du formulaire de devis",
+      "data": "Lors de l'envoi du formulaire de devis, le nom, l'adresse e-mail, l'entreprise, les coordonnées préférées, le marché de destination, la catégorie de produit, le volume d'expédition, le message, la langue du site, la demande de suivi du devis et la prise de connaissance de la Politique de confidentialité sont transmis à Shoppingmart Exports.",
+      "purpose": "Les données sont traitées pour examiner la demande, y répondre, préparer un devis et prendre les mesures précontractuelles demandées conformément à l'article 6, paragraphe 1, point b), du RGPD. La prévention des abus et la sécurité du service reposent sur les intérêts légitimes visés à l'article 6, paragraphe 1, point f), du RGPD.",
+      "recipients": "Cloudflare fournit, en qualité de sous-traitant, la diffusion du site, l'exécution du Worker et le stockage dans la base D1. Resend, exploité par Plus Five Five, Inc., traite l'envoi de l'e-mail de notification. La boîte commerciale désignée de Shoppingmart Exports et le personnel commercial autorisé reçoivent la demande pour son suivi.",
+      "transfers": "Ces prestataires peuvent traiter des données à caractère personnel hors de l'Espace économique européen. Lorsque cela est requis, les transferts sont protégés par une décision d'adéquation ou des garanties appropriées, notamment les clauses contractuelles types de la Commission européenne, dans le cadre de l'accord de traitement applicable.",
+      "retention": "Les demandes de devis dans D1 et les copies de notification dans la boîte professionnelle désignée sont conservées pendant 12 mois au maximum. Lorsqu'une demande devient un élément d'un contrat ou d'un dossier commercial, les données nécessaires à cette relation, aux obligations légales de conservation ou aux recours juridiques peuvent être conservées pendant la durée applicable plus longue. Resend indique que les données d'e-mail sont conservées pendant 30 jours avec ses offres standard ; une durée configurée individuellement pour une offre Enterprise peut différer.",
+      "deletion": "Les demandes arrivées à échéance qui restent dans la file de devis sont supprimées automatiquement. Un effacement anticipé peut être demandé au contact indiqué à la section 1, sous réserve des obligations légales de conservation et autres exceptions licites. Les copies pertinentes sont incluses dans le traitement d'une demande d'effacement acceptée."
     },
     "contact": {
       "title": "Contact par e-mail et demandes commerciales",
@@ -299,7 +309,7 @@
     },
     "changes": {
       "title": "Modification de la présente politique",
-      "copy": "La présente politique reflète les traitements en vigueur à la date indiquée. Elle peut être modifiée en cas de changement des finalités, catégories de données, destinataires, prestataires, durées de conservation, exigences légales ou systèmes techniques. La date de version identifie la révision applicable."
+      "copy": "La présente politique reflète les traitements actuellement en vigueur. Elle peut être modifiée en cas de changement des finalités, catégories de données, destinataires, prestataires, durées de conservation, exigences légales ou systèmes techniques."
     }
   },
   "compliancePage": {

@@ -92,3 +92,16 @@ export async function updateQuoteNotificationStatus(db, requestId, notificationS
     .bind(notificationStatus, requestId)
     .run();
 }
+
+export async function deleteExpiredQuoteRequests(db, retentionDays) {
+  const result = await db
+    .prepare(
+      `DELETE FROM quote_requests
+       WHERE status = 'queued'
+         AND datetime(created_at) < datetime('now', ?)`,
+    )
+    .bind(`-${retentionDays} days`)
+    .run();
+
+  return result.meta?.changes ?? 0;
+}

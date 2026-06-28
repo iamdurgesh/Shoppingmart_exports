@@ -1,6 +1,7 @@
-import { computed, Component, inject, signal } from '@angular/core';
+import { afterNextRender, computed, Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators, type AbstractControl } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { debounceTime, filter, map, startWith } from 'rxjs';
 
@@ -34,7 +35,7 @@ function noWhitespaceValidator(control: AbstractControl<string>): { whitespace: 
 
 @Component({
   selector: 'app-quote-form',
-  imports: [ReactiveFormsModule, TranslocoPipe],
+  imports: [ReactiveFormsModule, RouterLink, TranslocoPipe],
   templateUrl: './quote-form.component.html',
   styleUrl: './quote-form.component.scss',
   providers: [QuoteRequestStore],
@@ -44,7 +45,10 @@ export class QuoteFormComponent {
   private readonly quoteEnquiryService = inject(QuoteEnquiryService);
   private readonly quoteRequestStore = inject(QuoteRequestStore);
   private readonly translocoService = inject(TranslocoService);
-  private readonly initialSnapshot = this.quoteEnquiryService.loadDraftSnapshot();
+  private readonly initialSnapshot = {
+    draft: this.quoteEnquiryService.createDefaultDraft(),
+    savedAt: null,
+  };
   private readonly submittedRecord = signal<QuoteSubmissionRecord | null>(null);
   private readonly lastSavedAt = signal<string | null>(this.initialSnapshot.savedAt);
 
@@ -218,6 +222,17 @@ export class QuoteFormComponent {
   });
 
   protected readonly canSubmit = computed(() => this.formStatus() === 'VALID' && !this.isSubmitting());
+
+  constructor() {
+    afterNextRender(() => {
+      const snapshot = this.quoteEnquiryService.loadDraftSnapshot();
+
+      this.lastSavedAt.set(snapshot.savedAt);
+      this.quoteForm.reset(snapshot.draft);
+      this.quoteForm.markAsPristine();
+      this.quoteForm.markAsUntouched();
+    });
+  }
 
   protected async submitEnquiry(): Promise<void> {
     if (!this.canSubmit()) {

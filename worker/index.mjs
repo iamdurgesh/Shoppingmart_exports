@@ -1,5 +1,6 @@
 import { withHeaders } from "./http.mjs";
 import { handleQuoteRequest } from "./quote-route.mjs";
+import { deleteExpiredQuoteRequests } from "./quote-repository.mjs";
 
 const CANONICAL_HOST = "shoppingmartexports.com";
 const PUBLIC_ROUTES = new Set([
@@ -59,6 +60,11 @@ function getCanonicalRedirect(requestUrl) {
   return shouldRedirect ? canonicalUrl : null;
 }
 
+function getRetentionDays(value) {
+  const parsed = Number.parseInt(value ?? "", 10);
+  return Number.isInteger(parsed) && parsed >= 30 && parsed <= 3650 ? parsed : 365;
+}
+
 export default {
   async fetch(request, env) {
     const requestUrl = new URL(request.url);
@@ -80,5 +86,21 @@ export default {
     }
 
     return withHeaders(response, request, requestUrl.pathname);
+  },
+  scheduled(_controller, env, context) {
+    const retentionDays = getRetentionDays(env.QUOTE_RETENTION_DAYS);
+
+    context.waitUntil(
+      deleteExpiredQuoteRequests(env.QUOTE_DB, retentionDays)
+        .then((deletedCount) => {
+          console.log("quote.retention_cleanup_completed", { deletedCount });
+        })
+        .catch((error) => {
+          console.error("quote.retention_cleanup_failed", {
+            errorName: error instanceof Error ? error.name : "UnknownError",
+          });
+          throw error;
+        }),
+    );
   },
 };
