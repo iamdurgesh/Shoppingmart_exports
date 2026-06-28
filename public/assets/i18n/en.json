@@ -155,7 +155,8 @@
       "volume": "Shipment size",
       "contactDetails": "Contact details",
       "message": "Enquiry message",
-      "privacy": "I agree to be contacted about this quotation request and understand the details are used for enquiry follow-up."
+      "privacy": "I request follow-up on this quotation and have read the",
+      "privacyPolicy": "Privacy Policy"
     },
     "placeholders": {
       "contactDetails": "Phone, WhatsApp, or preferred contact time",
@@ -216,7 +217,7 @@
     },
     "errors": {
       "required": "This field is required.",
-      "privacy": "Please confirm quotation follow-up permission.",
+      "privacy": "Please confirm the quotation follow-up request and Privacy Policy acknowledgement.",
       "email": "Enter a valid business email address.",
       "minlength": "Use at least {{ requiredLength }} characters.",
       "review": "Please review this field.",
@@ -237,7 +238,7 @@
   "privacyPolicy": {
     "kicker": "Data protection information",
     "title": "Privacy Policy",
-    "version": "Version dated 22 June 2026",
+    "version": "Current version",
     "introduction": "This Privacy Policy provides information on the processing of personal data in connection with the Shoppingmart Exports website. It applies to website access, information stored in the visitor's browser, business enquiries, and communications initiated by email or WhatsApp.",
     "controller": {
       "title": "Controller and contact",
@@ -249,15 +250,24 @@
     },
     "delivery": {
       "title": "Website delivery and server log data",
-      "copy": "When the website is requested, the hosting and delivery infrastructure may process technical connection data required to deliver and secure the website. Such data may include the IP address, date and time of access, requested resource, referrer information transmitted by the browser, browser type, operating system and response status. Recipients are the hosting and technical service providers engaged for website delivery and security.",
+      "copy": "When the website is requested, the hosting and delivery infrastructure may process technical connection data required to deliver and secure the website. Such data may include the IP address, requested resource, referrer information transmitted by the browser, browser type, operating system and response status. Recipients are the hosting and technical service providers engaged for website delivery and security.",
       "basis": "Processing is carried out pursuant to Article 6(1)(f) GDPR. The legitimate interests consist of providing a functional and secure website, preventing misuse and maintaining technical stability."
     },
     "storage": {
       "title": "Local storage in the visitor's browser",
       "copy": "The website uses the browser's local-storage facility. The information is stored on the visitor's device and may be read by the website on subsequent visits.",
       "language": "Language preference: the selected website language is stored to retain the visitor's choice.",
-      "enquiry": "Quotation form: entries made in the quotation form—including name, email address, company, contact details, market, category, shipment volume, message and confirmation status—may be stored locally to retain the draft and its processing status. The stored record may also contain a timestamp, request identifier and browser language.",
+      "enquiry": "Quotation form: entries made in the quotation form—including name, email address, company, contact details, market, category, shipment volume, message and confirmation status—may be stored locally to retain the draft and its processing status. The stored record may also contain a request identifier and browser language.",
       "control": "The visitor may remove this information through the browser controls for deleting site data. Processing serves the requested form functionality and preparation of a potential business enquiry pursuant to Article 6(1)(b) GDPR."
+    },
+    "quotationProcessing": {
+      "title": "Quotation form processing",
+      "data": "When the quotation form is submitted, the entered name, email address, company, preferred contact details, destination market, product category, shipment size, enquiry message, website language, requested quotation follow-up and acknowledgement of the privacy notice are transmitted to Shoppingmart Exports.",
+      "purpose": "The data is processed to review and respond to the enquiry, prepare a quotation and take requested pre-contractual steps under Article 6(1)(b) GDPR. Abuse prevention and service security are based on the legitimate interests under Article 6(1)(f) GDPR.",
+      "recipients": "Cloudflare provides website delivery, Worker execution and D1 database storage as a processor. Resend, operated by Plus Five Five, Inc., processes delivery of the notification email. The designated Shoppingmart Exports sales mailbox and authorised sales personnel receive the enquiry for follow-up.",
+      "transfers": "These providers may process personal data outside the European Economic Area. Where required, transfers are protected by an adequacy decision or appropriate safeguards, including the European Commission's Standard Contractual Clauses, under the applicable data-processing agreement.",
+      "retention": "Quotation enquiries in D1 and notification copies in the designated business mailbox are retained for no longer than 12 months. If an enquiry becomes part of a contract or business record, data required for that relationship, statutory retention duties or legal claims may be retained for the applicable longer period. Resend states that email data is retained for 30 days on its standard plans; individually configured enterprise retention may differ.",
+      "deletion": "Expired enquiries that remain in the quotation queue are deleted automatically. Earlier erasure may be requested using the contact in section 1, subject to statutory retention duties and other lawful exceptions. Relevant copies are included in the handling of an accepted erasure request."
     },
     "contact": {
       "title": "Contact by email and business enquiries",
@@ -299,7 +309,7 @@
     },
     "changes": {
       "title": "Amendments to this Privacy Policy",
-      "copy": "This Privacy Policy reflects the processing activities in effect on the version date stated above. It may be amended where processing purposes, data categories, recipients, service providers, retention periods, legal requirements or technical systems change. The version date identifies the applicable revision."
+      "copy": "This Privacy Policy reflects the processing activities currently in effect. It may be amended where processing purposes, data categories, recipients, service providers, retention periods, legal requirements or technical systems change."
     }
   },
   "compliancePage": {

@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { inject, Injectable } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { afterNextRender, inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 
 import {
@@ -13,16 +13,21 @@ import {
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
   private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly translocoService = inject(TranslocoService);
 
   readonly languages = LANGUAGE_OPTIONS;
 
   constructor() {
-    this.setLanguage(getInitialLanguage());
-    this.translocoService.langChanges$.subscribe((language) => {
-      if (isSupportedLanguage(language)) {
-        this.document.documentElement.lang = language;
-        persistLanguage(language);
+    const preferredLanguage = this.isBrowser ? getInitialLanguage() : 'en';
+
+    // The static document is rendered in English. The browser must start from
+    // the same state for hydration, then it can restore the saved preference.
+    this.applyLanguage('en', false);
+
+    afterNextRender(() => {
+      if (this.isBrowser && preferredLanguage !== 'en') {
+        this.setLanguage(preferredLanguage);
       }
     });
   }
@@ -33,8 +38,15 @@ export class LanguageService {
   }
 
   setLanguage(language: SupportedLanguage): void {
+    this.applyLanguage(language, true);
+  }
+
+  private applyLanguage(language: SupportedLanguage, persist: boolean): void {
     this.translocoService.setActiveLang(language);
     this.document.documentElement.lang = language;
-    persistLanguage(language);
+
+    if (persist) {
+      persistLanguage(language);
+    }
   }
 }

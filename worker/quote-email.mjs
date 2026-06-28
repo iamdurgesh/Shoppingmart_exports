@@ -79,6 +79,7 @@ export async function sendQuoteNotification(env, payload) {
         },
       ],
     }),
+    signal: AbortSignal.timeout(10_000),
   });
 
   return response.ok ? "sent" : "failed";

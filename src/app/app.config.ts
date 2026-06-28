@@ -1,15 +1,17 @@
 import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, isDevMode } from '@angular/core';
+import { provideClientHydration } from '@angular/platform-browser';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideTransloco, translocoConfig } from '@jsverse/transloco';
 
-import { getInitialLanguage, SUPPORTED_LANGUAGES } from './i18n/i18n.constants';
+import { SUPPORTED_LANGUAGES } from './i18n/i18n.constants';
 import { TranslocoHttpLoader } from './i18n/transloco-loader';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
+    provideClientHydration(),
     provideRouter(
       routes,
       withInMemoryScrolling({
@@ -20,7 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideTransloco({
       config: translocoConfig({
         availableLangs: [...SUPPORTED_LANGUAGES],
-        defaultLang: getInitialLanguage(),
+        defaultLang: 'en',
         fallbackLang: 'en',
         prodMode: !isDevMode(),
         reRenderOnLangChange: true,

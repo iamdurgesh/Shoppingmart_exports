@@ -155,7 +155,8 @@
       "volume": "Sendungsgröße",
       "contactDetails": "Kontaktdaten",
       "message": "Anfragenachricht",
-      "privacy": "Ich stimme zu, zu dieser Angebotsanfrage kontaktiert zu werden, und verstehe, dass die Angaben für die Nachverfolgung der Anfrage verwendet werden."
+      "privacy": "Ich wünsche die Bearbeitung dieser Angebotsanfrage und habe die",
+      "privacyPolicy": "Datenschutzerklärung gelesen"
     },
     "placeholders": {
       "contactDetails": "Telefon, WhatsApp oder bevorzugte Kontaktzeit",
@@ -216,7 +217,7 @@
     },
     "errors": {
       "required": "Dieses Feld ist erforderlich.",
-      "privacy": "Bitte bestätigen Sie die Erlaubnis zur Angebotsnachverfolgung.",
+      "privacy": "Bitte bestätigen Sie die gewünschte Angebotsbearbeitung und die Kenntnisnahme der Datenschutzerklärung.",
       "email": "Geben Sie eine gültige geschäftliche E-Mail-Adresse ein.",
       "minlength": "Verwenden Sie mindestens {{ requiredLength }} Zeichen.",
       "review": "Bitte prüfen Sie dieses Feld.",
@@ -237,7 +238,7 @@
   "privacyPolicy": {
     "kicker": "Informationen zum Datenschutz",
     "title": "Datenschutzerklärung",
-    "version": "Stand: 22. Juni 2026",
+    "version": "Aktuelle Fassung",
     "introduction": "Diese Datenschutzerklärung informiert über die Verarbeitung personenbezogener Daten im Zusammenhang mit der Website von Shoppingmart Exports. Sie gilt für den Websiteaufruf, im Browser gespeicherte Informationen, Geschäftsanfragen sowie die per E-Mail oder WhatsApp eingeleitete Kommunikation.",
     "controller": {
       "title": "Verantwortlicher und Kontakt",
@@ -249,15 +250,24 @@
     },
     "delivery": {
       "title": "Website-Bereitstellung und Serverprotokolldaten",
-      "copy": "Beim Aufruf kann die Hosting- und Auslieferungsinfrastruktur technische Verbindungsdaten verarbeiten, die für Bereitstellung und Absicherung erforderlich sind. Dazu können IP-Adresse, Zugriffszeit, angeforderte Ressource, vom Browser übermittelte Referrer-Angaben, Browsertyp, Betriebssystem und Antwortstatus gehören. Empfänger sind die eingesetzten Hosting- und technischen Dienstleister.",
+      "copy": "Beim Aufruf kann die Hosting- und Auslieferungsinfrastruktur technische Verbindungsdaten verarbeiten, die für Bereitstellung und Absicherung erforderlich sind. Dazu können IP-Adresse, angeforderte Ressource, vom Browser übermittelte Referrer-Angaben, Browsertyp, Betriebssystem und Antwortstatus gehören. Empfänger sind die eingesetzten Hosting- und technischen Dienstleister.",
       "basis": "Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO. Die berechtigten Interessen bestehen in einer funktionsfähigen und sicheren Website, der Missbrauchsabwehr und der technischen Stabilität."
     },
     "storage": {
       "title": "Lokale Speicherung im Browser",
       "copy": "Die Website verwendet die Local-Storage-Funktion des Browsers. Informationen werden auf dem Endgerät des Besuchers gespeichert und können bei späteren Besuchen ausgelesen werden.",
       "language": "Spracheinstellung: Die gewählte Website-Sprache wird zur Beibehaltung der Auswahl gespeichert.",
-      "enquiry": "Angebotsformular: Formulareingaben – einschließlich Name, E-Mail-Adresse, Unternehmen, Kontaktdaten, Markt, Kategorie, Sendungsvolumen, Nachricht und Bestätigungsstatus – können lokal gespeichert werden, um den Entwurf und dessen Bearbeitungsstatus beizubehalten. Der gespeicherte Datensatz kann außerdem Zeitstempel, Anfragekennung und Browsersprache enthalten.",
+      "enquiry": "Angebotsformular: Formulareingaben – einschließlich Name, E-Mail-Adresse, Unternehmen, Kontaktdaten, Markt, Kategorie, Sendungsvolumen, Nachricht und Bestätigungsstatus – können lokal gespeichert werden, um den Entwurf und dessen Bearbeitungsstatus beizubehalten. Der gespeicherte Datensatz kann außerdem Anfragekennung und Browsersprache enthalten.",
       "control": "Der Besucher kann die Informationen über die Browserfunktionen zum Löschen von Website-Daten entfernen. Die Verarbeitung dient der angeforderten Formularfunktion und der Vorbereitung einer möglichen Geschäftsanfrage gemäß Art. 6 Abs. 1 lit. b DSGVO."
+    },
+    "quotationProcessing": {
+      "title": "Verarbeitung des Angebotsformulars",
+      "data": "Beim Absenden des Angebotsformulars werden der eingegebene Name, die E-Mail-Adresse, das Unternehmen, bevorzugte Kontaktdaten, Zielmarkt, Produktkategorie, Sendungsgröße, Nachricht, Website-Sprache, die gewünschte Angebotsbearbeitung und die Kenntnisnahme des Datenschutzhinweises an Shoppingmart Exports übermittelt.",
+      "purpose": "Die Daten werden zur Prüfung und Beantwortung der Anfrage, zur Angebotserstellung und für angeforderte vorvertragliche Maßnahmen gemäß Art. 6 Abs. 1 lit. b DSGVO verarbeitet. Missbrauchsabwehr und Dienstsicherheit beruhen auf den berechtigten Interessen gemäß Art. 6 Abs. 1 lit. f DSGVO.",
+      "recipients": "Cloudflare stellt als Auftragsverarbeiter Website-Auslieferung, Worker-Ausführung und D1-Datenbankspeicherung bereit. Resend, betrieben von Plus Five Five, Inc., verarbeitet den Versand der Benachrichtigungs-E-Mail. Das vorgesehene Vertriebspostfach von Shoppingmart Exports und befugte Vertriebsmitarbeiter erhalten die Anfrage zur Bearbeitung.",
+      "transfers": "Diese Anbieter können personenbezogene Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten. Soweit erforderlich, werden Übermittlungen durch einen Angemessenheitsbeschluss oder geeignete Garantien, insbesondere die Standardvertragsklauseln der Europäischen Kommission, im Rahmen des jeweiligen Auftragsverarbeitungsvertrags geschützt.",
+      "retention": "Angebotsanfragen in D1 und Benachrichtigungskopien im vorgesehenen Geschäftspostfach werden höchstens 12 Monate gespeichert. Wird eine Anfrage Bestandteil eines Vertrags oder Geschäftsdatensatzes, können für die Geschäftsbeziehung, gesetzliche Aufbewahrungspflichten oder Rechtsansprüche erforderliche Daten für die jeweils längere Frist gespeichert werden. Resend gibt für E-Mail-Daten in Standardtarifen eine Speicherdauer von 30 Tagen an; individuell konfigurierte Enterprise-Fristen können abweichen.",
+      "deletion": "Abgelaufene Anfragen, die in der Angebotswarteschlange verbleiben, werden automatisch gelöscht. Eine frühere Löschung kann über den Kontakt in Abschnitt 1 verlangt werden; gesetzliche Aufbewahrungspflichten und andere rechtmäßige Ausnahmen bleiben vorbehalten. Relevante Kopien werden bei einem berechtigten Löschantrag einbezogen."
     },
     "contact": {
       "title": "E-Mail-Kontakt und Geschäftsanfragen",
@@ -299,7 +309,7 @@
     },
     "changes": {
       "title": "Änderungen dieser Datenschutzerklärung",
-      "copy": "Diese Erklärung bildet die am angegebenen Versionsdatum bestehenden Verarbeitungsvorgänge ab. Sie kann bei Änderungen von Zwecken, Datenkategorien, Empfängern, Dienstleistern, Speicherfristen, rechtlichen Anforderungen oder technischen Systemen angepasst werden. Das Versionsdatum kennzeichnet die jeweils geltende Fassung."
+      "copy": "Diese Erklärung bildet die derzeit bestehenden Verarbeitungsvorgänge ab. Sie kann bei Änderungen von Zwecken, Datenkategorien, Empfängern, Dienstleistern, Speicherfristen, rechtlichen Anforderungen oder technischen Systemen angepasst werden."
     }
   },
   "compliancePage": {
