@@ -1,8 +1,10 @@
 <span class="brand-logo" [class.is-on-dark]="background() === 'dark'" [class.is-on-light]="background() === 'light'">
   <img
     class="brand-logo__image"
-    [src]="background() === 'dark' ? 'shoppingmart-logo-light.png' : 'shoppingmart-logo.png'"
+    [src]="background() === 'dark' ? 'shoppingmart-logo-light.webp' : 'shoppingmart-logo.webp'"
     [alt]="'common.brandAlt' | transloco"
+    width="180"
+    height="42"
     decoding="async"
   >
 </span>

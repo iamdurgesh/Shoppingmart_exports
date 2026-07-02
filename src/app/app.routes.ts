@@ -1,10 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { CompliancePageComponent } from './pages/compliance-page/compliance-page.component';
-import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-import { CustomSourcingPageComponent } from './pages/custom-sourcing-page/custom-sourcing-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-policy-page.component';
 
 export const routes: Routes = [
   {
@@ -17,7 +13,10 @@ export const routes: Routes = [
   },
   {
     path: 'compliance',
-    component: CompliancePageComponent,
+    loadComponent: () =>
+      import('./pages/compliance-page/compliance-page.component').then(
+        (m) => m.CompliancePageComponent,
+      ),
     data: {
       titleKey: 'meta.compliance.title',
       descriptionKey: 'meta.compliance.description',
@@ -25,7 +24,10 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    component: ContactPageComponent,
+    loadComponent: () =>
+      import('./pages/contact-page/contact-page.component').then(
+        (m) => m.ContactPageComponent,
+      ),
     data: {
       titleKey: 'meta.contact.title',
       descriptionKey: 'meta.contact.description',
@@ -33,7 +35,10 @@ export const routes: Routes = [
   },
   {
     path: 'products/custom-sourcing',
-    component: CustomSourcingPageComponent,
+    loadComponent: () =>
+      import('./pages/custom-sourcing-page/custom-sourcing-page.component').then(
+        (m) => m.CustomSourcingPageComponent,
+      ),
     data: {
       titleKey: 'meta.customSourcing.title',
       descriptionKey: 'meta.customSourcing.description',
@@ -41,7 +46,10 @@ export const routes: Routes = [
   },
   {
     path: 'privacy-policy',
-    component: PrivacyPolicyPageComponent,
+    loadComponent: () =>
+      import('./pages/privacy-policy-page/privacy-policy-page.component').then(
+        (m) => m.PrivacyPolicyPageComponent,
+      ),
     data: {
       titleKey: 'meta.privacyPolicy.title',
       descriptionKey: 'meta.privacyPolicy.description',

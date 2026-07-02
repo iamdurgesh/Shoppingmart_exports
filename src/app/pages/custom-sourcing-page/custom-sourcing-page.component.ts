@@ -26,37 +26,37 @@ export class CustomSourcingPageComponent {
     {
       titleKey: 'customSourcingPage.solutions.items.surfaces.title',
       descriptionKey: 'customSourcingPage.solutions.items.surfaces.description',
-      imageUrl: '/images/products/outdoor-view.jpg',
+      imageUrl: '/images/products/outdoor-view.webp',
       imageAltKey: 'customSourcingPage.solutions.items.surfaces.imageAlt',
     },
     {
       titleKey: 'customSourcingPage.solutions.items.kitchens.title',
       descriptionKey: 'customSourcingPage.solutions.items.kitchens.description',
-      imageUrl: '/images/products/kitchen2.jpeg',
+      imageUrl: '/images/products/kitchen2.webp',
       imageAltKey: 'customSourcingPage.solutions.items.kitchens.imageAlt',
     },
     {
       titleKey: 'customSourcingPage.solutions.items.heritage.title',
       descriptionKey: 'customSourcingPage.solutions.items.heritage.description',
-      imageUrl: '/images/products/temple1.jpg',
+      imageUrl: '/images/products/temple1.webp',
       imageAltKey: 'customSourcingPage.solutions.items.heritage.imageAlt',
     },
     {
       titleKey: 'customSourcingPage.solutions.items.decor.title',
       descriptionKey: 'customSourcingPage.solutions.items.decor.description',
-      imageUrl: '/images/products/elephant.jpeg',
+      imageUrl: '/images/products/elephant.webp',
       imageAltKey: 'customSourcingPage.solutions.items.decor.imageAlt',
     },
     {
       titleKey: 'customSourcingPage.solutions.items.doors.title',
       descriptionKey: 'customSourcingPage.solutions.items.doors.description',
-      imageUrl: '/images/products/door1.jpg',
+      imageUrl: '/images/products/door1.webp',
       imageAltKey: 'customSourcingPage.solutions.items.doors.imageAlt',
     },
     {
       titleKey: 'customSourcingPage.solutions.items.outdoor.title',
       descriptionKey: 'customSourcingPage.solutions.items.outdoor.description',
-      imageUrl: '/images/products/outdoor-view.jpg',
+      imageUrl: '/images/products/outdoor-view.webp',
       imageAltKey: 'customSourcingPage.solutions.items.outdoor.imageAlt',
     },
   ];

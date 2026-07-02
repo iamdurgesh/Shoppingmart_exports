@@ -1,18 +1,32 @@
 <section class="hero" aria-labelledby="hero-title">
+  <picture>
+    <source
+      media="(max-width: 640px)"
+      srcset="hero-container-ship-mobile.webp"
+      type="image/webp"
+    >
+    <img
+      class="hero-image"
+      src="hero-container-ship.webp"
+      alt=""
+      aria-hidden="true"
+      fetchpriority="high"
+      decoding="async"
+      width="1920"
+      height="1287"
+    >
+  </picture>
   <video
-    class="hero-image"
-    autoplay
+    #heroVideo
+    class="hero-image hero-video"
     muted
     loop
     playsinline
-    preload="metadata"
-    poster="hero-container-ship.jpeg"
+    preload="none"
     aria-hidden="true"
-    (loadedmetadata)="playHeroVideo($event)"
   >
     <source src="upscaled-bg-4k.webm" type="video/webm">
     <source src="background-dynamic.mp4" type="video/mp4">
-    {{ 'hero.videoUnsupported' | transloco }}
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
