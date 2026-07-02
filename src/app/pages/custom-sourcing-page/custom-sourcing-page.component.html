@@ -1,9 +1,11 @@
 <main class="custom-sourcing-page" id="top">
   <section class="sourcing-hero" aria-labelledby="custom-sourcing-title">
     <img
-      src="/images/products/outdoor-view.jpg"
+      src="/images/products/outdoor-view.webp"
       [alt]="'customSourcingPage.hero.imageAlt' | transloco"
       class="sourcing-hero-image"
+      fetchpriority="high"
+      decoding="async"
     >
     <div class="sourcing-hero-overlay"></div>
     <div class="sourcing-hero-content">
@@ -57,9 +59,9 @@
       </p>
     </div>
     <div class="dream-home-visual" aria-hidden="true">
-      <img src="/images/products/outdoor-view.jpg" alt="">
-      <img src="/images/products/kitchen2.jpeg" alt="">
-      <img src="/images/products/temple1.jpg" alt="">
+      <img src="/images/products/outdoor-view.webp" alt="" loading="lazy" decoding="async">
+      <img src="/images/products/kitchen2.webp" alt="" loading="lazy" decoding="async">
+      <img src="/images/products/temple1.webp" alt="" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -77,7 +79,7 @@
     <div class="solution-grid">
       @for (solution of homeSolutions; track solution.titleKey) {
         <article class="solution-card">
-          <img [src]="solution.imageUrl" [alt]="solution.imageAltKey | transloco">
+          <img [src]="solution.imageUrl" [alt]="solution.imageAltKey | transloco" loading="lazy" decoding="async">
           <div>
             <h3>{{ solution.titleKey | transloco }}</h3>
             <p>{{ solution.descriptionKey | transloco }}</p>
